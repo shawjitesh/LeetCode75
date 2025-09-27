@@ -40,7 +40,8 @@ LeetCode75/
 ├── Array/
 │   └── String/
 │       ├── MergeStringsAlternately.java
-│       └── GreatestCommonDivisorOfStrings.java
+│       ├── GreatestCommonDivisorOfStrings.java
+│       └── KidsWithTheGreatestNumberOfCandies.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -53,10 +54,9 @@ LeetCode75/
 └── Backtracking/
 ```
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
 ### Prerequisites
-
 - **Java 8 or higher** installed on your system
 - **Git** for cloning the repository
 - **IDE** of your choice (IntelliJ IDEA, Eclipse, VS Code, etc.)
@@ -64,67 +64,56 @@ LeetCode75/
 ### 📋 Setup Instructions
 
 #### 1. Clone the Repository
-
 ```bash
 git clone https://github.com/shawjitesh/LeetCode75.git
-```
-
-#### 2. Navigate to the Project Directory
-
-```bash
 cd LeetCode75
 ```
 
-#### 3. Verify Java Installation
-
+#### 2. Verify Java Installation
 ```bash
 java -version
 javac -version
 ```
 
-#### 4. Compile and Run Solutions
-
-Navigate to any solution file and compile it:
-
+#### 3. Run Solutions
 ```bash
-# Example: Running MergeStringsAlternately solution
+# Navigate to any solution directory
 cd Array/String/
-javac MergeStringsAlternately.java
-java MergeStringsAlternately
 
-# Example: Running GreatestCommonDivisorOfStrings solution
-javac GreatestCommonDivisorOfStrings.java
-java GreatestCommonDivisorOfStrings.java
+# Compile and run examples
+javac MergeStringsAlternately.java && java MergeStringsAlternately
+javac GreatestCommonDivisorOfStrings.java && java GreatestCommonDivisorOfStrings
+javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberOfCandies
 ```
 
 ### 🛠️ IDE Setup
 
-#### For IntelliJ IDEA:
+#### IntelliJ IDEA
 1. Open IntelliJ IDEA
 2. Select "Open" and navigate to the cloned repository
 3. IntelliJ will automatically detect the Java project structure
 4. Configure JDK if prompted
 
-#### For VS Code:
+#### VS Code
 1. Install the "Extension Pack for Java" by Microsoft
 2. Open the repository folder in VS Code
 3. VS Code will automatically configure the Java environment
 
-## 📚 Progress Tracking
+## 📊 Progress Overview
 
-- [x] **Array & String**: 
-  - [x] Merge Strings Alternately
-  - [x] Greatest Common Divisor of Strings
-- [ ] **Two Pointers**: Coming Soon
-- [ ] **Sliding Window**: Coming Soon
-- [ ] **Stack**: Coming Soon
-- [ ] **Queue**: Coming Soon
-- [ ] **LinkedList**: Coming Soon
-- [ ] **Tree**: Coming Soon
-- [ ] **Graph**: Coming Soon
-- [ ] **Dynamic Programming**: Coming Soon
-- [ ] **Binary Search**: Coming Soon
-- [ ] **Backtracking**: Coming Soon
+| Category | Completed | Total | Progress |
+|----------|-----------|-------|----------|
+| **Array & String** | 3 | 3 | ✅ 100% |
+| **Two Pointers** | 0 | 3 | ⏳ 0% |
+| **Sliding Window** | 0 | 3 | ⏳ 0% |
+| **Stack** | 0 | 3 | ⏳ 0% |
+| **Queue** | 0 | 3 | ⏳ 0% |
+| **LinkedList** | 0 | 3 | ⏳ 0% |
+| **Tree** | 0 | 3 | ⏳ 0% |
+| **Graph** | 0 | 3 | ⏳ 0% |
+| **Dynamic Programming** | 0 | 3 | ⏳ 0% |
+| **Binary Search** | 0 | 3 | ⏳ 0% |
+| **Backtracking** | 0 | 3 | ⏳ 0% |
 
 ## 💡 Solutions Overview
 
@@ -135,27 +124,55 @@ java GreatestCommonDivisorOfStrings.java
 - **Approach**: Two-pointer technique with string building
 - **Time Complexity**: O(n + m)
 - **Space Complexity**: O(n + m)
+- **Difficulty**: Easy
 
 #### 2. Greatest Common Divisor of Strings
 - **Problem**: Find the largest string that divides both input strings
 - **Approach**: Mathematical GCD with string validation
 - **Time Complexity**: O(n + m)
 - **Space Complexity**: O(n + m)
+- **Difficulty**: Easy
 - **Note**: Refactored to use Java Streams for modern functional programming approach
+
+#### 3. Kids With the Greatest Number of Candies
+- **Problem**: Determine which kids can have the greatest number of candies
+- **Approach**: Stream-based functional programming with max finding
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(n)
+- **Difficulty**: Easy
+- **Note**: Uses Java Streams for elegant functional programming solution
+
+## 🎯 Key Features
+
+- ✅ **Clean, well-commented code** with detailed explanations
+- ✅ **Multiple solution approaches** where applicable
+- ✅ **Time and space complexity analysis** for each solution
+- ✅ **Modern Java features** including Streams and functional programming
+- ✅ **Comprehensive test cases** with main methods
+- ✅ **Consistent coding style** and best practices
+
+## 🚀 Recent Updates
+
+- **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
+- **Refactored Greatest Common Divisor of Strings** to use Java Streams
+- **Enhanced README** with better structure and comprehensive documentation
+- **Added progress tracking** with visual indicators
 
 ## 🤝 Contributing
 
 While this is a personal learning repository, suggestions and improvements are welcome! Feel free to:
 
-- Open issues for bugs or improvements
-- Suggest better solutions or optimizations
-- Share your own approaches to these problems
+- 🐛 Open issues for bugs or improvements
+- 💡 Suggest better solutions or optimizations
+- 🔄 Share your own approaches to these problems
+- 📚 Contribute to documentation improvements
 
 ## 📊 Learning Resources
 
 - [LeetCode 75 Study Plan](https://leetcode.com/studyplan/leetcode-75/)
 - [LeetCode Official Website](https://leetcode.com/)
 - [Java Documentation](https://docs.oracle.com/en/java/)
+- [Java Streams Tutorial](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
 
 ## 🏆 Goals
 
@@ -163,6 +180,8 @@ While this is a personal learning repository, suggestions and improvements are w
 - ✅ Provide clean, well-commented solutions
 - ✅ Include time and space complexity analysis
 - ✅ Document different approaches and optimizations
+- ✅ Use modern Java features and best practices
+- ✅ Create comprehensive documentation
 
 ---
 
