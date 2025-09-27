@@ -42,7 +42,8 @@ LeetCode75/
 │       ├── MergeStringsAlternately.java
 │       ├── GreatestCommonDivisorOfStrings.java
 │       ├── KidsWithTheGreatestNumberOfCandies.java
-│       └── CanPlaceFlowers.java
+│       ├── CanPlaceFlowers.java
+│       └── ReverseVowelsOfAString.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -86,6 +87,7 @@ javac MergeStringsAlternately.java && java MergeStringsAlternately
 javac GreatestCommonDivisorOfStrings.java && java GreatestCommonDivisorOfStrings
 javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberOfCandies
 javac CanPlaceFlowers.java && java CanPlaceFlowers
+javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
 ```
 
 ### 🛠️ IDE Setup
@@ -135,6 +137,14 @@ javac CanPlaceFlowers.java && java CanPlaceFlowers
 - **Space Complexity**: O(1)
 - **Difficulty**: Easy
 - **Note**: Uses short-circuit evaluation to safely handle array boundaries
+
+#### 5. Reverse Vowels of a String
+- **Problem**: Reverse only the vowels in a string while keeping consonants in their original positions
+- **Approach**: Two-pointer technique with in-place vowel swapping
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Optimized solution using direct character comparison and single-pass algorithm
 
 ## 🎯 Key Features
 
