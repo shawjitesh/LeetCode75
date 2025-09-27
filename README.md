@@ -43,7 +43,8 @@ LeetCode75/
 │       ├── GreatestCommonDivisorOfStrings.java
 │       ├── KidsWithTheGreatestNumberOfCandies.java
 │       ├── CanPlaceFlowers.java
-│       └── ReverseVowelsOfAString.java
+│       ├── ReverseVowelsOfAString.java
+│       └── ReverseWordsInAString.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -88,6 +89,7 @@ javac GreatestCommonDivisorOfStrings.java && java GreatestCommonDivisorOfStrings
 javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberOfCandies
 javac CanPlaceFlowers.java && java CanPlaceFlowers
 javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
+javac ReverseWordsInAString.java && java ReverseWordsInAString
 ```
 
 ### 🛠️ IDE Setup
@@ -145,6 +147,14 @@ javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
 - **Space Complexity**: O(1)
 - **Difficulty**: Easy
 - **Note**: Optimized solution using direct character comparison and single-pass algorithm
+
+#### 6. Reverse Words in a String
+- **Problem**: Reverse the order of words in a string while maintaining single spaces between words
+- **Approach**: String splitting and reverse iteration with StringBuilder
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(n)
+- **Difficulty**: Medium
+- **Note**: Handles multiple spaces and empty words efficiently using split() and trim()
 
 ## 🎯 Key Features
 
