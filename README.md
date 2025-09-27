@@ -99,22 +99,6 @@ javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberO
 2. Open the repository folder in VS Code
 3. VS Code will automatically configure the Java environment
 
-## 📊 Progress Overview
-
-| Category | Completed | Total | Progress |
-|----------|-----------|-------|----------|
-| **Array & String** | 3 | 3 | ✅ 100% |
-| **Two Pointers** | 0 | 3 | ⏳ 0% |
-| **Sliding Window** | 0 | 3 | ⏳ 0% |
-| **Stack** | 0 | 3 | ⏳ 0% |
-| **Queue** | 0 | 3 | ⏳ 0% |
-| **LinkedList** | 0 | 3 | ⏳ 0% |
-| **Tree** | 0 | 3 | ⏳ 0% |
-| **Graph** | 0 | 3 | ⏳ 0% |
-| **Dynamic Programming** | 0 | 3 | ⏳ 0% |
-| **Binary Search** | 0 | 3 | ⏳ 0% |
-| **Backtracking** | 0 | 3 | ⏳ 0% |
-
 ## 💡 Solutions Overview
 
 ### Array & String Problems
