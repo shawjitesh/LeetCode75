@@ -1,5 +1,6 @@
 package Array.String;
 
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class MergeStringsAlternately {
@@ -9,7 +10,7 @@ public class MergeStringsAlternately {
             .mapToObj(i -> 
                 (i < word1.length() ? String.valueOf(word1.charAt(i)) : "") +
                 (i < word2.length() ? String.valueOf(word2.charAt(i)) : ""))
-            .collect(java.util.stream.Collectors.joining());
+            .collect(Collectors.joining());
     }
     
     public static void main(String[] args) {
