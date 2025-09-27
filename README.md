@@ -41,7 +41,8 @@ LeetCode75/
 │   └── String/
 │       ├── MergeStringsAlternately.java
 │       ├── GreatestCommonDivisorOfStrings.java
-│       └── KidsWithTheGreatestNumberOfCandies.java
+│       ├── KidsWithTheGreatestNumberOfCandies.java
+│       └── CanPlaceFlowers.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -84,6 +85,7 @@ cd Array/String/
 javac MergeStringsAlternately.java && java MergeStringsAlternately
 javac GreatestCommonDivisorOfStrings.java && java GreatestCommonDivisorOfStrings
 javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberOfCandies
+javac CanPlaceFlowers.java && java CanPlaceFlowers
 ```
 
 ### 🛠️ IDE Setup
@@ -125,6 +127,14 @@ javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberO
 - **Space Complexity**: O(n)
 - **Difficulty**: Easy
 - **Note**: Uses Java Streams for elegant functional programming solution
+
+#### 4. Can Place Flowers
+- **Problem**: Determine if n new flowers can be planted in a flowerbed without violating the no-adjacent-flowers rule
+- **Approach**: Greedy algorithm with boundary condition handling
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Uses short-circuit evaluation to safely handle array boundaries
 
 ## 🎯 Key Features
 
