@@ -44,7 +44,8 @@ LeetCode75/
 │       ├── KidsWithTheGreatestNumberOfCandies.java
 │       ├── CanPlaceFlowers.java
 │       ├── ReverseVowelsOfAString.java
-│       └── ReverseWordsInAString.java
+│       ├── ReverseWordsInAString.java
+│       └── ProductOfArrayExceptSelf.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -90,6 +91,7 @@ javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberO
 javac CanPlaceFlowers.java && java CanPlaceFlowers
 javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
 javac ReverseWordsInAString.java && java ReverseWordsInAString
+javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
 ```
 
 ### 🛠️ IDE Setup
@@ -156,6 +158,14 @@ javac ReverseWordsInAString.java && java ReverseWordsInAString
 - **Difficulty**: Medium
 - **Note**: Handles multiple spaces and empty words efficiently using split() and trim()
 
+#### 7. Product of Array Except Self
+- **Problem**: Return an array where each element is the product of all elements except the element at that index
+- **Approach**: Two-pass algorithm using left and right product arrays
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1) excluding output array
+- **Difficulty**: Medium
+- **Note**: Optimized solution using constant extra space by reusing the result array
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -167,6 +177,7 @@ javac ReverseWordsInAString.java && java ReverseWordsInAString
 
 ## 🚀 Recent Updates
 
+- **Added Product of Array Except Self** solution with optimized two-pass algorithm
 - **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
 - **Refactored Greatest Common Divisor of Strings** to use Java Streams
 - **Enhanced README** with better structure and comprehensive documentation
