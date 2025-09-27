@@ -39,7 +39,8 @@ The LeetCode 75 study plan is a carefully selected set of 75 coding problems tha
 LeetCode75/
 ├── Array/
 │   └── String/
-│       └── MergeStringsAlternately.java
+│       ├── MergeStringsAlternately.java
+│       └── GreatestCommonDivisorOfStrings.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -90,6 +91,10 @@ Navigate to any solution file and compile it:
 cd Array/String/
 javac MergeStringsAlternately.java
 java MergeStringsAlternately
+
+# Example: Running GreatestCommonDivisorOfStrings solution
+javac GreatestCommonDivisorOfStrings.java
+java GreatestCommonDivisorOfStrings.java
 ```
 
 ### 🛠️ IDE Setup
@@ -107,7 +112,9 @@ java MergeStringsAlternately
 
 ## 📚 Progress Tracking
 
-- [x] **Array & String**: Merge Strings Alternately
+- [x] **Array & String**: 
+  - [x] Merge Strings Alternately
+  - [x] Greatest Common Divisor of Strings
 - [ ] **Two Pointers**: Coming Soon
 - [ ] **Sliding Window**: Coming Soon
 - [ ] **Stack**: Coming Soon
@@ -118,6 +125,23 @@ java MergeStringsAlternately
 - [ ] **Dynamic Programming**: Coming Soon
 - [ ] **Binary Search**: Coming Soon
 - [ ] **Backtracking**: Coming Soon
+
+## 💡 Solutions Overview
+
+### Array & String Problems
+
+#### 1. Merge Strings Alternately
+- **Problem**: Merge two strings by adding letters in alternating order
+- **Approach**: Two-pointer technique with string building
+- **Time Complexity**: O(n + m)
+- **Space Complexity**: O(n + m)
+
+#### 2. Greatest Common Divisor of Strings
+- **Problem**: Find the largest string that divides both input strings
+- **Approach**: Mathematical GCD with string validation
+- **Time Complexity**: O(n + m)
+- **Space Complexity**: O(n + m)
+- **Note**: Refactored to use Java Streams for modern functional programming approach
 
 ## 🤝 Contributing
 
