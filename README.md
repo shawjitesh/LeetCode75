@@ -52,6 +52,7 @@ LeetCode75/
 │   ├── MoveZeroes.java
 │   └── IsSubsequence.java
 ├── SlidingWindow/
+│   └── MaximumAverageSubarrayI.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -125,6 +126,15 @@ cd TwoPointers/
 # Compile and run examples
 javac MoveZeroes.java && java MoveZeroes
 javac IsSubsequence.java && java IsSubsequence
+```
+
+### Sliding Window Solutions
+```bash
+# Navigate to SlidingWindow directory
+cd SlidingWindow/
+
+# Compile and run examples
+javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 ```
 
 ## 💡 Solutions Overview
@@ -202,6 +212,16 @@ javac IsSubsequence.java && java IsSubsequence
 - **Difficulty**: Medium
 - **Note**: Efficient in-place solution using read and write pointers to compress the string without extra space
 
+### Sliding Window Problems
+
+#### 1. Maximum Average Subarray I
+- **Problem**: Find a contiguous subarray whose length is equal to k that has the maximum average value
+- **Approach**: Sliding window technique with sum optimization
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Efficient single-pass solution using sliding window to avoid recalculating sums
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -232,6 +252,7 @@ javac IsSubsequence.java && java IsSubsequence
 
 ## 🚀 Recent Updates
 
+- **Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
 - **Added WARP.md** configuration file for Warp terminal integration and development guidance
 - **Added Is Subsequence** solution with efficient two-pointer technique for string subsequence checking
 - **Added Move Zeroes** solution with efficient two-pointer technique for in-place array manipulation
