@@ -45,7 +45,8 @@ LeetCode75/
 │       ├── CanPlaceFlowers.java
 │       ├── ReverseVowelsOfAString.java
 │       ├── ReverseWordsInAString.java
-│       └── ProductOfArrayExceptSelf.java
+│       ├── ProductOfArrayExceptSelf.java
+│       └── IncreasingTripletSubsequence.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -92,6 +93,7 @@ javac CanPlaceFlowers.java && java CanPlaceFlowers
 javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
 javac ReverseWordsInAString.java && java ReverseWordsInAString
 javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
+javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
 ```
 
 ### 🛠️ IDE Setup
@@ -166,6 +168,14 @@ javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
 - **Difficulty**: Medium
 - **Note**: Optimized solution using constant extra space by reusing the result array
 
+#### 8. Increasing Triplet Subsequence
+- **Problem**: Determine if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k]
+- **Approach**: Greedy algorithm tracking two minimum values
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Elegant solution using two variables to track the smallest and second smallest elements
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -177,6 +187,7 @@ javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
 
 ## 🚀 Recent Updates
 
+- **Added Increasing Triplet Subsequence** solution with greedy algorithm approach
 - **Added Product of Array Except Self** solution with optimized two-pass algorithm
 - **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
 - **Refactored Greatest Common Divisor of Strings** to use Java Streams
