@@ -82,9 +82,24 @@ java -version
 javac -version
 ```
 
-#### 3. Run Solutions
+### 🛠️ IDE Setup
+
+#### IntelliJ IDEA
+1. Open IntelliJ IDEA
+2. Select "Open" and navigate to the cloned repository
+3. IntelliJ will automatically detect the Java project structure
+4. Configure JDK if prompted
+
+#### VS Code
+1. Install the "Extension Pack for Java" by Microsoft
+2. Open the repository folder in VS Code
+3. VS Code will automatically configure the Java environment
+
+## 🚀 Run Solutions
+
+### Array & String Solutions
 ```bash
-# Navigate to any solution directory
+# Navigate to Array/String directory
 cd Array/String/
 
 # Compile and run examples
@@ -99,7 +114,7 @@ javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
 javac StringCompression.java && java StringCompression
 ```
 
-#### TwoPointers Solutions
+### Two Pointers Solutions
 ```bash
 # Navigate to TwoPointers directory
 cd TwoPointers/
@@ -107,19 +122,6 @@ cd TwoPointers/
 # Compile and run examples
 javac MoveZeroes.java && java MoveZeroes
 ```
-
-### 🛠️ IDE Setup
-
-#### IntelliJ IDEA
-1. Open IntelliJ IDEA
-2. Select "Open" and navigate to the cloned repository
-3. IntelliJ will automatically detect the Java project structure
-4. Configure JDK if prompted
-
-#### VS Code
-1. Install the "Extension Pack for Java" by Microsoft
-2. Open the repository folder in VS Code
-3. VS Code will automatically configure the Java environment
 
 ## 💡 Solutions Overview
 
@@ -224,7 +226,6 @@ javac MoveZeroes.java && java MoveZeroes
 - **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
 - **Refactored Greatest Common Divisor of Strings** to use Java Streams
 - **Enhanced README** with better structure and comprehensive documentation
-- **Added progress tracking** with visual indicators
 
 ## 🤝 Contributing
 
