@@ -46,7 +46,8 @@ LeetCode75/
 │       ├── ReverseVowelsOfAString.java
 │       ├── ReverseWordsInAString.java
 │       ├── ProductOfArrayExceptSelf.java
-│       └── IncreasingTripletSubsequence.java
+│       ├── IncreasingTripletSubsequence.java
+│       └── StringCompression.java
 ├── TwoPointers/
 ├── SlidingWindow/
 ├── Stack/
@@ -94,6 +95,7 @@ javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
 javac ReverseWordsInAString.java && java ReverseWordsInAString
 javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
 javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
+javac StringCompression.java && java StringCompression
 ```
 
 ### 🛠️ IDE Setup
@@ -176,6 +178,14 @@ javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
 - **Difficulty**: Medium
 - **Note**: Elegant solution using two variables to track the smallest and second smallest elements
 
+#### 9. String Compression
+- **Problem**: Compress a string by replacing consecutive duplicate characters with the character followed by its count
+- **Approach**: Two-pointer technique with in-place compression
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Efficient in-place solution using read and write pointers to compress the string without extra space
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -187,6 +197,7 @@ javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
 
 ## 🚀 Recent Updates
 
+- **Added String Compression** solution with efficient in-place two-pointer approach
 - **Added Increasing Triplet Subsequence** solution with greedy algorithm approach
 - **Added Product of Array Except Self** solution with optimized two-pass algorithm
 - **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
