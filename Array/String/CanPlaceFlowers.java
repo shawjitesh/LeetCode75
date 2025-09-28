@@ -1,7 +1,18 @@
 package Array.String;
 
+/**
+ * Solution for LeetCode 75 - Can Place Flowers
+ * Determines if n new flowers can be planted in a flowerbed without violating the no-adjacent-flowers rule.
+ */
 public class CanPlaceFlowers {
 
+    /**
+     * Determines if n new flowers can be planted in a flowerbed.
+     * 
+     * @param flowerbed array representing the flowerbed (0 = empty, 1 = planted)
+     * @param n the number of new flowers to plant
+     * @return true if n flowers can be planted, false otherwise
+     */
     public boolean canPlaceFlowers(int[] flowerbed, int n) {
         int count = 0;
         for (int i = 0; i < flowerbed.length; i++) {

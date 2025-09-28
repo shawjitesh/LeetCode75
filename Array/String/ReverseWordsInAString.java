@@ -1,7 +1,17 @@
 package Array.String;
 
+/**
+ * Solution for LeetCode 75 - Reverse Words in a String
+ * Reverses the order of words in a string while maintaining single spaces between words.
+ */
 public class ReverseWordsInAString {
 
+    /**
+     * Reverses the order of words in a string.
+     * 
+     * @param s the input string
+     * @return string with words in reversed order
+     */
     public String reverseWords(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();

@@ -1,7 +1,16 @@
 package TwoPointers;
 
+/**
+ * Solution for LeetCode 75 - Move Zeroes
+ * Moves all 0's to the end of the array while maintaining the relative order of non-zero elements.
+ */
 public class MoveZeroes {
 
+    /**
+     * Moves all zeros to the end of the array while maintaining relative order of non-zero elements.
+     * 
+     * @param nums the input array to modify in-place
+     */
     public void moveZeroes(int[] nums) {
         int n = nums.length;
         int left = 0;
@@ -18,6 +27,13 @@ public class MoveZeroes {
         }
     }
 
+    /**
+     * Swaps two elements in an array.
+     * 
+     * @param nums the array containing elements to swap
+     * @param i the index of the first element
+     * @param j the index of the second element
+     */
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];

@@ -1,7 +1,17 @@
 package Array.String;
 
+/**
+ * Solution for LeetCode 75 - Increasing Triplet Subsequence
+ * Determines if there exists a triple of indices (i, j, k) such that i < j < k and nums[i] < nums[j] < nums[k].
+ */
 public class IncreasingTripletSubsequence {
 
+    /**
+     * Determines if there exists an increasing triplet subsequence.
+     * 
+     * @param nums the input array
+     * @return true if there exists an increasing triplet subsequence, false otherwise
+     */
     public boolean increasingTriplet(int[] nums) {
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;

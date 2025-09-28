@@ -1,7 +1,17 @@
 package Array.String;
 
+/**
+ * Solution for LeetCode 75 - String Compression
+ * Compresses a string by replacing consecutive duplicate characters with the character followed by its count.
+ */
 public class StringCompression {
 
+    /**
+     * Compresses a string in-place by replacing consecutive duplicate characters.
+     * 
+     * @param chars the character array to compress
+     * @return the new length of the compressed array
+     */
     public int compress(char[] chars) {
         int writeIndex = 0; 
         int readIndex = 0;  

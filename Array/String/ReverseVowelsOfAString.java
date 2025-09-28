@@ -1,7 +1,17 @@
 package Array.String;
 
+/**
+ * Solution for LeetCode 75 - Reverse Vowels of a String
+ * Reverses only the vowels in a string while keeping consonants in their original positions.
+ */
 public class ReverseVowelsOfAString {
 
+    /**
+     * Reverses only the vowels in a string.
+     * 
+     * @param s the input string
+     * @return string with vowels reversed and consonants in original positions
+     */
     public String reverseVowels(String s) {
         if (s == null || s.length() <= 1) return s;
         
@@ -30,6 +40,12 @@ public class ReverseVowelsOfAString {
         return new String(chars);
     }
     
+    /**
+     * Checks if a character is a vowel (case-insensitive).
+     * 
+     * @param c the character to check
+     * @return true if the character is a vowel, false otherwise
+     */
     private boolean isVowel(char c) {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
                c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
