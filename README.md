@@ -49,6 +49,7 @@ LeetCode75/
 │       ├── IncreasingTripletSubsequence.java
 │       └── StringCompression.java
 ├── TwoPointers/
+│   └── MoveZeroes.java
 ├── SlidingWindow/
 ├── Stack/
 ├── Queue/
@@ -96,6 +97,15 @@ javac ReverseWordsInAString.java && java ReverseWordsInAString
 javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
 javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
 javac StringCompression.java && java StringCompression
+```
+
+#### TwoPointers Solutions
+```bash
+# Navigate to TwoPointers directory
+cd TwoPointers/
+
+# Compile and run examples
+javac MoveZeroes.java && java MoveZeroes
 ```
 
 ### 🛠️ IDE Setup
@@ -186,6 +196,16 @@ javac StringCompression.java && java StringCompression
 - **Difficulty**: Medium
 - **Note**: Efficient in-place solution using read and write pointers to compress the string without extra space
 
+### Two Pointers Problems
+
+#### 1. Move Zeroes
+- **Problem**: Move all 0's to the end of the array while maintaining the relative order of non-zero elements
+- **Approach**: Two-pointer technique with in-place swapping
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Efficient single-pass solution using left and right pointers to swap non-zero elements with zeros
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -197,6 +217,7 @@ javac StringCompression.java && java StringCompression
 
 ## 🚀 Recent Updates
 
+- **Added Move Zeroes** solution with efficient two-pointer technique for in-place array manipulation
 - **Added String Compression** solution with efficient in-place two-pointer approach
 - **Added Increasing Triplet Subsequence** solution with greedy algorithm approach
 - **Added Product of Array Except Self** solution with optimized two-pass algorithm
