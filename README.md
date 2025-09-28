@@ -49,7 +49,8 @@ LeetCode75/
 │       ├── IncreasingTripletSubsequence.java
 │       └── StringCompression.java
 ├── TwoPointers/
-│   └── MoveZeroes.java
+│   ├── MoveZeroes.java
+│   └── IsSubsequence.java
 ├── SlidingWindow/
 ├── Stack/
 ├── Queue/
@@ -58,7 +59,9 @@ LeetCode75/
 ├── Graph/
 ├── DynamicProgramming/
 ├── BinarySearch/
-└── Backtracking/
+├── Backtracking/
+├── README.md
+└── WARP.md
 ```
 
 ## 🚀 Quick Start
@@ -121,6 +124,7 @@ cd TwoPointers/
 
 # Compile and run examples
 javac MoveZeroes.java && java MoveZeroes
+javac IsSubsequence.java && java IsSubsequence
 ```
 
 ## 💡 Solutions Overview
@@ -208,6 +212,14 @@ javac MoveZeroes.java && java MoveZeroes
 - **Difficulty**: Easy
 - **Note**: Efficient single-pass solution using left and right pointers to swap non-zero elements with zeros
 
+#### 2. Is Subsequence
+- **Problem**: Determine if string s is a subsequence of string t
+- **Approach**: Two-pointer technique with character matching
+- **Time Complexity**: O(n + m)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Simple and efficient solution using two pointers to traverse both strings simultaneously
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -216,9 +228,12 @@ javac MoveZeroes.java && java MoveZeroes
 - ✅ **Modern Java features** including Streams and functional programming
 - ✅ **Comprehensive test cases** with main methods
 - ✅ **Consistent coding style** and best practices
+- ✅ **WARP.md integration** for enhanced terminal development experience
 
 ## 🚀 Recent Updates
 
+- **Added WARP.md** configuration file for Warp terminal integration and development guidance
+- **Added Is Subsequence** solution with efficient two-pointer technique for string subsequence checking
 - **Added Move Zeroes** solution with efficient two-pointer technique for in-place array manipulation
 - **Added String Compression** solution with efficient in-place two-pointer approach
 - **Added Increasing Triplet Subsequence** solution with greedy algorithm approach
