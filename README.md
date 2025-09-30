@@ -51,7 +51,8 @@ LeetCode75/
 ├── TwoPointers/
 │   ├── MoveZeroes.java
 │   ├── IsSubsequence.java
-│   └── ContainerWithMostWater.java
+│   ├── ContainerWithMostWater.java
+│   └── MaxNumberOfKSumPairs.java
 ├── SlidingWindow/
 │   └── MaximumAverageSubarrayI.java
 ├── Stack/
@@ -128,6 +129,7 @@ cd TwoPointers/
 javac MoveZeroes.java && java MoveZeroes
 javac IsSubsequence.java && java IsSubsequence
 javac ContainerWithMostWater.java && java ContainerWithMostWater
+javac MaxNumberOfKSumPairs.java && java MaxNumberOfKSumPairs
 ```
 
 ### Sliding Window Solutions
@@ -250,6 +252,14 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 - **Difficulty**: Medium
 - **Note**: Optimal solution using two pointers to maximize area by moving the pointer with smaller height
 
+#### 4. Max Number of K-Sum Pairs
+- **Problem**: Find the maximum number of operations to remove pairs of numbers that sum to k
+- **Approach**: HashMap for frequency counting or two-pointer technique after sorting
+- **Time Complexity**: O(n) for HashMap approach, O(n log n) for two-pointer approach
+- **Space Complexity**: O(n) for HashMap approach, O(1) for two-pointer approach
+- **Difficulty**: Medium
+- **Note**: Two solutions provided - HashMap approach for better time complexity and two-pointer approach for better space complexity
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -262,6 +272,7 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 
 ## 🚀 Recent Updates
 
+- **Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
 - **Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
 - **Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
 - **Added WARP.md** configuration file for Warp terminal integration and development guidance
