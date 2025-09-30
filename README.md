@@ -55,7 +55,8 @@ LeetCode75/
 │   └── MaxNumberOfKSumPairs.java
 ├── SlidingWindow/
 │   ├── MaximumAverageSubarrayI.java
-│   └── MaximumNumberOfVowelsInASubstringOfGivenLength.java
+│   ├── MaximumNumberOfVowelsInASubstringOfGivenLength.java
+│   └── MaxConsecutiveOnesIII.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -141,6 +142,7 @@ cd SlidingWindow/
 # Compile and run examples
 javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberOfVowelsInASubstringOfGivenLength
+javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
 ```
 
 ## 💡 Solutions Overview
@@ -236,6 +238,14 @@ javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberO
 - **Difficulty**: Medium
 - **Note**: Efficient sliding window solution that maintains vowel count while moving the window, avoiding recounting for each position
 
+#### 3. Max Consecutive Ones III
+- **Problem**: Find the maximum number of consecutive 1's in a binary array if you can flip at most k 0's
+- **Approach**: Sliding window technique with zero counting and window shrinking
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Optimal sliding window solution that maintains a valid window with at most k zeros, efficiently expanding and shrinking the window
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -282,6 +292,7 @@ javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberO
 
 ## 🚀 Recent Updates
 
+- **Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
 - **Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
 - **Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
 - **Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
