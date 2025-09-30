@@ -1,5 +1,9 @@
 package SlidingWindow;
 
+/**
+ * Solution for LeetCode 75 - Maximum Average Subarray I
+ * Find a contiguous subarray whose length is equal to k that has the maximum average value.
+ */
 public class MaximumAverageSubarrayI {
 
     /**
