@@ -56,7 +56,8 @@ LeetCode75/
 ├── SlidingWindow/
 │   ├── MaximumAverageSubarrayI.java
 │   ├── MaximumNumberOfVowelsInASubstringOfGivenLength.java
-│   └── MaxConsecutiveOnesIII.java
+│   ├── MaxConsecutiveOnesIII.java
+│   └── LongestSubarrayOf1sAfterDeletingOneElement.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -143,6 +144,7 @@ cd SlidingWindow/
 javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberOfVowelsInASubstringOfGivenLength
 javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
+javac LongestSubarrayOf1sAfterDeletingOneElement.java && java LongestSubarrayOf1sAfterDeletingOneElement
 ```
 
 ## 💡 Solutions Overview
@@ -246,6 +248,14 @@ javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
 - **Difficulty**: Medium
 - **Note**: Optimal sliding window solution that maintains a valid window with at most k zeros, efficiently expanding and shrinking the window
 
+#### 4. Longest Subarray of 1's After Deleting One Element
+- **Problem**: Find the size of the longest subarray containing only 1's after deleting exactly one element
+- **Approach**: Sliding window technique maintaining at most one 0 in the window
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Efficient sliding window solution that finds the longest subarray with at most one zero, then subtracts 1 since we must delete exactly one element
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -292,6 +302,7 @@ javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
 
 ## 🚀 Recent Updates
 
+- **Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
 - **Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
 - **Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
 - **Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
