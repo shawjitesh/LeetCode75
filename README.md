@@ -50,7 +50,8 @@ LeetCode75/
 │       └── StringCompression.java
 ├── TwoPointers/
 │   ├── MoveZeroes.java
-│   └── IsSubsequence.java
+│   ├── IsSubsequence.java
+│   └── ContainerWithMostWater.java
 ├── SlidingWindow/
 │   └── MaximumAverageSubarrayI.java
 ├── Stack/
@@ -126,6 +127,7 @@ cd TwoPointers/
 # Compile and run examples
 javac MoveZeroes.java && java MoveZeroes
 javac IsSubsequence.java && java IsSubsequence
+javac ContainerWithMostWater.java && java ContainerWithMostWater
 ```
 
 ### Sliding Window Solutions
@@ -240,6 +242,14 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 - **Difficulty**: Easy
 - **Note**: Simple and efficient solution using two pointers to traverse both strings simultaneously
 
+#### 3. Container With Most Water
+- **Problem**: Find two lines that together with the x-axis form a container that holds the most water
+- **Approach**: Two-pointer technique starting from both ends and moving inward
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Optimal solution using two pointers to maximize area by moving the pointer with smaller height
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -252,6 +262,7 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 
 ## 🚀 Recent Updates
 
+- **Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
 - **Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
 - **Added WARP.md** configuration file for Warp terminal integration and development guidance
 - **Added Is Subsequence** solution with efficient two-pointer technique for string subsequence checking
