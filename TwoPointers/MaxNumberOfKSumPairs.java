@@ -1,5 +1,6 @@
 package TwoPointers;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -48,7 +49,7 @@ public class MaxNumberOfKSumPairs {
      */
     public int maxOperationsTwoPointers(int[] nums, int k) {
         // First sort the array
-        java.util.Arrays.sort(nums);
+        Arrays.sort(nums);
         
         int left = 0;
         int right = nums.length - 1;
