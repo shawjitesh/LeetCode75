@@ -54,7 +54,8 @@ LeetCode75/
 │   ├── ContainerWithMostWater.java
 │   └── MaxNumberOfKSumPairs.java
 ├── SlidingWindow/
-│   └── MaximumAverageSubarrayI.java
+│   ├── MaximumAverageSubarrayI.java
+│   └── MaximumNumberOfVowelsInASubstringOfGivenLength.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -139,6 +140,7 @@ cd SlidingWindow/
 
 # Compile and run examples
 javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
+javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberOfVowelsInASubstringOfGivenLength
 ```
 
 ## 💡 Solutions Overview
@@ -226,6 +228,14 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 - **Difficulty**: Easy
 - **Note**: Efficient single-pass solution using sliding window to avoid recalculating sums
 
+#### 2. Maximum Number of Vowels in a Substring of Given Length
+- **Problem**: Find the maximum number of vowel letters in any substring of length k
+- **Approach**: Sliding window technique with vowel counting optimization
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Medium
+- **Note**: Efficient sliding window solution that maintains vowel count while moving the window, avoiding recounting for each position
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -272,6 +282,7 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 
 ## 🚀 Recent Updates
 
+- **Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
 - **Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
 - **Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
 - **Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
