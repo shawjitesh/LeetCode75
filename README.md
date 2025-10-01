@@ -25,6 +25,7 @@ The LeetCode 75 study plan is a carefully selected set of 75 coding problems tha
 - **Array & String** manipulation
 - **Two Pointers** technique
 - **Sliding Window** problems
+- **Prefix Sum** techniques
 - **Stack** and **Queue** operations
 - **Linked List** algorithms
 - **Tree** traversals and manipulations
@@ -58,6 +59,8 @@ LeetCode75/
 │   ├── MaximumNumberOfVowelsInASubstringOfGivenLength.java
 │   ├── MaxConsecutiveOnesIII.java
 │   └── LongestSubarrayOf1sAfterDeletingOneElement.java
+├── PrefixSum/
+│   └── FindTheHighestAltitude.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -145,6 +148,15 @@ javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
 javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberOfVowelsInASubstringOfGivenLength
 javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
 javac LongestSubarrayOf1sAfterDeletingOneElement.java && java LongestSubarrayOf1sAfterDeletingOneElement
+```
+
+### Prefix Sum Solutions
+```bash
+# Navigate to PrefixSum directory
+cd PrefixSum/
+
+# Compile and run examples
+javac FindTheHighestAltitude.java && java FindTheHighestAltitude
 ```
 
 ## 💡 Solutions Overview
@@ -256,6 +268,16 @@ javac LongestSubarrayOf1sAfterDeletingOneElement.java && java LongestSubarrayOf1
 - **Difficulty**: Medium
 - **Note**: Efficient sliding window solution that finds the longest subarray with at most one zero, then subtracts 1 since we must delete exactly one element
 
+### Prefix Sum Problems
+
+#### 1. Find the Highest Altitude
+- **Problem**: Find the highest altitude reached during a journey given altitude gains
+- **Approach**: Prefix sum technique to track cumulative altitude changes
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Simple prefix sum solution that maintains running total of altitude changes and tracks the maximum altitude reached
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -302,6 +324,7 @@ javac LongestSubarrayOf1sAfterDeletingOneElement.java && java LongestSubarrayOf1
 
 ## 🚀 Recent Updates
 
+- **Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
 - **Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
 - **Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
 - **Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
