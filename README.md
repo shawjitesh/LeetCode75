@@ -67,7 +67,8 @@ LeetCode75/
 │   └── Set/
 │       ├── FindTheDifferenceOfTwoArrays.java
 │       ├── UniqueNumberOfOccurrences.java
-│       └── DetermineIfTwoStringsAreClose.java
+│       ├── DetermineIfTwoStringsAreClose.java
+│       └── EqualRowAndColumnPairs.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -176,6 +177,7 @@ cd HashMap/Set/
 javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
 javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
+javac EqualRowAndColumnPairs.java && java EqualRowAndColumnPairs
 ```
 
 ## 💡 Solutions Overview
@@ -331,6 +333,14 @@ javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
 - **Difficulty**: Medium
 - **Note**: Efficient solution using frequency maps to check same characters and frequency distributions
 
+#### 4. Equal Row and Column Pairs
+- **Problem**: Count the number of pairs (ri, cj) such that row ri and column cj are equal
+- **Approach**: HashMap counting for row and column patterns with multiplication
+- **Time Complexity**: O(n²) where n is the grid size
+- **Space Complexity**: O(n²)
+- **Difficulty**: Medium
+- **Note**: Optimal O(n²) solution using HashMap to count pattern frequencies and multiply matching counts
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -377,6 +387,7 @@ javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
 
 ## 🚀 Recent Updates
 
+- **Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
 - **Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
 - **Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
 - **Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
