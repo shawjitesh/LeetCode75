@@ -60,7 +60,8 @@ LeetCode75/
 │   ├── MaxConsecutiveOnesIII.java
 │   └── LongestSubarrayOf1sAfterDeletingOneElement.java
 ├── PrefixSum/
-│   └── FindTheHighestAltitude.java
+│   ├── FindTheHighestAltitude.java
+│   └── FindPivotIndex.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -157,6 +158,7 @@ cd PrefixSum/
 
 # Compile and run examples
 javac FindTheHighestAltitude.java && java FindTheHighestAltitude
+javac FindPivotIndex.java && java FindPivotIndex
 ```
 
 ## 💡 Solutions Overview
@@ -278,6 +280,14 @@ javac FindTheHighestAltitude.java && java FindTheHighestAltitude
 - **Difficulty**: Easy
 - **Note**: Simple prefix sum solution that maintains running total of altitude changes and tracks the maximum altitude reached
 
+#### 2. Find Pivot Index
+- **Problem**: Find the pivot index where the sum of elements on the left equals the sum on the right
+- **Approach**: Prefix sum technique with total sum calculation and left sum tracking
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+- **Difficulty**: Easy
+- **Note**: Efficient two-pass solution that first calculates total sum, then finds pivot by comparing left and right sums
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -324,6 +334,7 @@ javac FindTheHighestAltitude.java && java FindTheHighestAltitude
 
 ## 🚀 Recent Updates
 
+- **Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
 - **Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
 - **Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
 - **Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
