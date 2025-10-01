@@ -26,6 +26,7 @@ The LeetCode 75 study plan is a carefully selected set of 75 coding problems tha
 - **Two Pointers** technique
 - **Sliding Window** problems
 - **Prefix Sum** techniques
+- **HashMap/Set** data structures
 - **Stack** and **Queue** operations
 - **Linked List** algorithms
 - **Tree** traversals and manipulations
@@ -62,6 +63,9 @@ LeetCode75/
 ├── PrefixSum/
 │   ├── FindTheHighestAltitude.java
 │   └── FindPivotIndex.java
+├── HashMap/
+│   └── Set/
+│       └── FindTheDifferenceOfTwoArrays.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -159,6 +163,15 @@ cd PrefixSum/
 # Compile and run examples
 javac FindTheHighestAltitude.java && java FindTheHighestAltitude
 javac FindPivotIndex.java && java FindPivotIndex
+```
+
+### HashMap/Set Solutions
+```bash
+# Navigate to HashMap/Set directory
+cd HashMap/Set/
+
+# Compile and run examples
+javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 ```
 
 ## 💡 Solutions Overview
@@ -287,6 +300,16 @@ javac FindPivotIndex.java && java FindPivotIndex
 - **Space Complexity**: O(1)
 - **Difficulty**: Easy
 - **Note**: Efficient two-pass solution that first calculates total sum, then finds pivot by comparing left and right sums
+
+### HashMap/Set Problems
+
+#### 1. Find the Difference of Two Arrays
+- **Problem**: Find distinct integers that are present in one array but not in the other
+- **Approach**: HashSet for efficient lookups and duplicate removal
+- **Time Complexity**: O(n + m)
+- **Space Complexity**: O(n + m)
+- **Difficulty**: Easy
+- **Note**: Uses HashSet to convert arrays to unique elements, then performs set difference operations for efficient comparison
 
 ### Two Pointers Problems
 
