@@ -66,7 +66,8 @@ LeetCode75/
 ├── HashMap/
 │   └── Set/
 │       ├── FindTheDifferenceOfTwoArrays.java
-│       └── UniqueNumberOfOccurrences.java
+│       ├── UniqueNumberOfOccurrences.java
+│       └── DetermineIfTwoStringsAreClose.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -174,6 +175,7 @@ cd HashMap/Set/
 # Compile and run examples
 javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
+javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
 ```
 
 ## 💡 Solutions Overview
@@ -321,6 +323,14 @@ javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
 - **Difficulty**: Easy
 - **Note**: Efficient solution using HashMap to count frequencies and HashSet to verify all occurrence counts are unique
 
+#### 3. Determine if Two Strings Are Close
+- **Problem**: Determine if two strings are close based on swap and transform operations
+- **Approach**: HashMap with frequency counting and distribution comparison
+- **Time Complexity**: O(n + k) where n is string length, k is unique characters
+- **Space Complexity**: O(k)
+- **Difficulty**: Medium
+- **Note**: Efficient solution using frequency maps to check same characters and frequency distributions
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -367,6 +377,7 @@ javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
 
 ## 🚀 Recent Updates
 
+- **Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
 - **Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
 - **Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
 - **Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
