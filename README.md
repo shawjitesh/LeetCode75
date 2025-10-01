@@ -70,6 +70,7 @@ LeetCode75/
 │       ├── DetermineIfTwoStringsAreClose.java
 │       └── EqualRowAndColumnPairs.java
 ├── Stack/
+│   └── RemovingStarsFromAString.java
 ├── Queue/
 ├── LinkedList/
 ├── Tree/
@@ -178,6 +179,15 @@ javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
 javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
 javac EqualRowAndColumnPairs.java && java EqualRowAndColumnPairs
+```
+
+### Stack Solutions
+```bash
+# Navigate to Stack directory
+cd Stack/
+
+# Compile and run examples
+javac RemovingStarsFromAString.java && java RemovingStarsFromAString
 ```
 
 ## 💡 Solutions Overview
@@ -341,6 +351,16 @@ javac EqualRowAndColumnPairs.java && java EqualRowAndColumnPairs
 - **Difficulty**: Medium
 - **Note**: Optimal O(n²) solution using HashMap to count pattern frequencies and multiply matching counts
 
+### Stack Problems
+
+#### 1. Removing Stars From a String
+- **Problem**: Remove all stars from a string, where each star removes the closest non-star character to its left
+- **Approach**: Stack-based simulation of character removal operations
+- **Time Complexity**: O(n) where n is the length of the string
+- **Space Complexity**: O(n) for the stack
+- **Difficulty**: Medium
+- **Note**: Efficient stack-based solution that simulates the removal operation by pushing non-star characters and popping when encountering stars
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -387,6 +407,7 @@ javac EqualRowAndColumnPairs.java && java EqualRowAndColumnPairs
 
 ## 🚀 Recent Updates
 
+- **Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
 - **Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
 - **Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
 - **Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
