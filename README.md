@@ -70,7 +70,8 @@ LeetCode75/
 │       ├── DetermineIfTwoStringsAreClose.java
 │       └── EqualRowAndColumnPairs.java
 ├── Stack/
-│   └── RemovingStarsFromAString.java
+│   ├── RemovingStarsFromAString.java
+│   └── AsteroidCollision.java
 ├── Queue/
 ├── LinkedList/
 ├── Tree/
@@ -188,6 +189,7 @@ cd Stack/
 
 # Compile and run examples
 javac RemovingStarsFromAString.java && java RemovingStarsFromAString
+javac AsteroidCollision.java && java AsteroidCollision
 ```
 
 ## 💡 Solutions Overview
@@ -361,6 +363,14 @@ javac RemovingStarsFromAString.java && java RemovingStarsFromAString
 - **Difficulty**: Medium
 - **Note**: Efficient stack-based solution that simulates the removal operation by pushing non-star characters and popping when encountering stars
 
+#### 2. Asteroid Collision
+- **Problem**: Simulate asteroid collisions where positive values move right, negative move left, and smaller asteroids explode on collision
+- **Approach**: Stack-based simulation with optimized collision handling
+- **Time Complexity**: O(n) where n is the number of asteroids
+- **Space Complexity**: O(n) for the stack
+- **Difficulty**: Medium
+- **Note**: Optimized solution using stack to efficiently handle asteroid collisions with clean logic and minimal overhead
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -407,6 +417,7 @@ javac RemovingStarsFromAString.java && java RemovingStarsFromAString
 
 ## 🚀 Recent Updates
 
+- **Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
 - **Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
 - **Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
 - **Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
