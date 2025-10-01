@@ -65,7 +65,8 @@ LeetCode75/
 │   └── FindPivotIndex.java
 ├── HashMap/
 │   └── Set/
-│       └── FindTheDifferenceOfTwoArrays.java
+│       ├── FindTheDifferenceOfTwoArrays.java
+│       └── UniqueNumberOfOccurrences.java
 ├── Stack/
 ├── Queue/
 ├── LinkedList/
@@ -172,6 +173,7 @@ cd HashMap/Set/
 
 # Compile and run examples
 javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
+javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
 ```
 
 ## 💡 Solutions Overview
@@ -311,6 +313,14 @@ javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 - **Difficulty**: Easy
 - **Note**: Uses HashSet to convert arrays to unique elements, then performs set difference operations for efficient comparison
 
+#### 2. Unique Number of Occurrences
+- **Problem**: Determine if the number of occurrences of each value in the array is unique
+- **Approach**: HashMap for frequency counting and HashSet for uniqueness validation
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(n)
+- **Difficulty**: Easy
+- **Note**: Efficient solution using HashMap to count frequencies and HashSet to verify all occurrence counts are unique
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -357,6 +367,7 @@ javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
 
 ## 🚀 Recent Updates
 
+- **Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
 - **Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
 - **Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
 - **Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
