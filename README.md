@@ -77,7 +77,8 @@ LeetCode75/
 │   ├── NumberOfRecentCalls.java
 │   └── Dota2Senate.java
 ├── LinkedList/
-│   └── DeleteTheMiddleNodeOfALinkedList.java
+│   ├── DeleteTheMiddleNodeOfALinkedList.java
+│   └── OddEvenLinkedList.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -212,9 +213,15 @@ javac Dota2Senate.java && java Dota2Senate
 # Navigate to LinkedList directory
 cd LinkedList/
 
-# Compile and run examples
-javac DeleteTheMiddleNodeOfALinkedList.java && java LinkedList.DeleteTheMiddleNodeOfALinkedList
+# Compile all LinkedList files (includes shared ListNode class)
+javac *.java
+
+# Run examples
+java LinkedList.DeleteTheMiddleNodeOfALinkedList
+java LinkedList.OddEvenLinkedList
 ```
+
+**Note:** LinkedList solutions use a shared `ListNode` class (`ListNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with LinkedList problems.
 
 ## 💡 Solutions Overview
 
@@ -465,6 +472,14 @@ javac DeleteTheMiddleNodeOfALinkedList.java && java LinkedList.DeleteTheMiddleNo
 - **Difficulty**: Medium
 - **Note**: Optimal solution using slow and fast pointers to locate middle node in one pass, then delete it by updating previous node's next pointer
 
+#### 2. Odd Even Linked List
+- **Problem**: Group all odd-indexed nodes together followed by even-indexed nodes
+- **Approach**: Separate odd and even nodes into two lists, then concatenate them
+- **Time Complexity**: O(n) - single pass through the list
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Efficient solution that maintains two separate chains for odd and even positioned nodes, then links them together
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -477,6 +492,7 @@ javac DeleteTheMiddleNodeOfALinkedList.java && java LinkedList.DeleteTheMiddleNo
 
 ## 🚀 Recent Updates
 
+- **Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
 - **Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
 - **Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
 - **Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
