@@ -201,7 +201,7 @@ javac DecodeString.java && java DecodeString
 cd Queue/
 
 # Compile and run examples
-javac NumberOfRecentCalls.java && java NumberOfRecentCalls
+javac NumberOfRecentCalls.java && java RecentCounter
 ```
 
 ## 💡 Solutions Overview
