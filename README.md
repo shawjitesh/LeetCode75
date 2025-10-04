@@ -74,7 +74,8 @@ LeetCode75/
 │   ├── AsteroidCollision.java
 │   └── DecodeString.java
 ├── Queue/
-│   └── NumberOfRecentCalls.java
+│   ├── NumberOfRecentCalls.java
+│   └── Dota2Senate.java
 ├── LinkedList/
 ├── Tree/
 ├── Graph/
@@ -202,6 +203,7 @@ cd Queue/
 
 # Compile and run examples
 javac NumberOfRecentCalls.java && java RecentCounter
+javac Dota2Senate.java && java Dota2Senate
 ```
 
 ## 💡 Solutions Overview
@@ -401,6 +403,14 @@ javac NumberOfRecentCalls.java && java RecentCounter
 - **Difficulty**: Easy
 - **Note**: Efficient solution using queue to maintain sliding window of recent requests with automatic cleanup
 
+#### 2. Dota2 Senate
+- **Problem**: Predict which party (Radiant or Dire) will win the senate voting process
+- **Approach**: Queue-based simulation where senators ban opposing senators in order
+- **Time Complexity**: O(n) where n is the number of senators
+- **Space Complexity**: O(n) for storing senator indices in queues
+- **Difficulty**: Medium
+- **Note**: Efficient solution using two queues to simulate the voting process and determine the winner
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -447,6 +457,7 @@ javac NumberOfRecentCalls.java && java RecentCounter
 
 ## 🚀 Recent Updates
 
+- **Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
 - **Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
 - **Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
 - **Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
