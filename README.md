@@ -71,7 +71,8 @@ LeetCode75/
 │       └── EqualRowAndColumnPairs.java
 ├── Stack/
 │   ├── RemovingStarsFromAString.java
-│   └── AsteroidCollision.java
+│   ├── AsteroidCollision.java
+│   └── DecodeString.java
 ├── Queue/
 ├── LinkedList/
 ├── Tree/
@@ -190,6 +191,7 @@ cd Stack/
 # Compile and run examples
 javac RemovingStarsFromAString.java && java RemovingStarsFromAString
 javac AsteroidCollision.java && java AsteroidCollision
+javac DecodeString.java && java DecodeString
 ```
 
 ## 💡 Solutions Overview
@@ -371,6 +373,14 @@ javac AsteroidCollision.java && java AsteroidCollision
 - **Difficulty**: Medium
 - **Note**: Optimized solution using stack to efficiently handle asteroid collisions with clean logic and minimal overhead
 
+#### 3. Decode String
+- **Problem**: Decode a string containing encoded patterns like "3[a]2[bc]" into "aaabcbc"
+- **Approach**: Stack-based approach with separate stacks for strings and numbers
+- **Time Complexity**: O(n × m) where n is input length, m is maximum number
+- **Space Complexity**: O(n) for the stacks
+- **Difficulty**: Medium
+- **Note**: Efficient solution using two stacks to handle nested patterns and avoid expensive string insertions
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -417,6 +427,7 @@ javac AsteroidCollision.java && java AsteroidCollision
 
 ## 🚀 Recent Updates
 
+- **Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
 - **Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
 - **Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
 - **Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
