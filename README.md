@@ -77,6 +77,7 @@ LeetCode75/
 │   ├── NumberOfRecentCalls.java
 │   └── Dota2Senate.java
 ├── LinkedList/
+│   └── DeleteTheMiddleNodeOfALinkedList.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -204,6 +205,15 @@ cd Queue/
 # Compile and run examples
 javac NumberOfRecentCalls.java && java RecentCounter
 javac Dota2Senate.java && java Dota2Senate
+```
+
+### LinkedList Solutions
+```bash
+# Navigate to LinkedList directory
+cd LinkedList/
+
+# Compile and run examples
+javac DeleteTheMiddleNodeOfALinkedList.java && java LinkedList.DeleteTheMiddleNodeOfALinkedList
 ```
 
 ## 💡 Solutions Overview
@@ -445,6 +455,16 @@ javac Dota2Senate.java && java Dota2Senate
 - **Difficulty**: Medium
 - **Note**: Two solutions provided - HashMap approach for better time complexity and two-pointer approach for better space complexity
 
+### LinkedList Problems
+
+#### 1. Delete the Middle Node of a Linked List
+- **Problem**: Delete the middle node of a linked list given its head
+- **Approach**: Two-pointer technique (tortoise and hare) to find middle node efficiently
+- **Time Complexity**: O(n) - single pass through the list
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Optimal solution using slow and fast pointers to locate middle node in one pass, then delete it by updating previous node's next pointer
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -457,6 +477,7 @@ javac Dota2Senate.java && java Dota2Senate
 
 ## 🚀 Recent Updates
 
+- **Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
 - **Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
 - **Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
 - **Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
