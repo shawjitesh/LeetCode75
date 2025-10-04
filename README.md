@@ -74,6 +74,7 @@ LeetCode75/
 │   ├── AsteroidCollision.java
 │   └── DecodeString.java
 ├── Queue/
+│   └── NumberOfRecentCalls.java
 ├── LinkedList/
 ├── Tree/
 ├── Graph/
@@ -192,6 +193,15 @@ cd Stack/
 javac RemovingStarsFromAString.java && java RemovingStarsFromAString
 javac AsteroidCollision.java && java AsteroidCollision
 javac DecodeString.java && java DecodeString
+```
+
+### Queue Solutions
+```bash
+# Navigate to Queue directory
+cd Queue/
+
+# Compile and run examples
+javac NumberOfRecentCalls.java && java NumberOfRecentCalls
 ```
 
 ## 💡 Solutions Overview
@@ -381,6 +391,16 @@ javac DecodeString.java && java DecodeString
 - **Difficulty**: Medium
 - **Note**: Efficient solution using two stacks to handle nested patterns and avoid expensive string insertions
 
+### Queue Problems
+
+#### 1. Number of Recent Calls
+- **Problem**: Track the number of recent requests within the last 3000 milliseconds
+- **Approach**: Queue-based sliding window with automatic cleanup of old requests
+- **Time Complexity**: O(n) where n is the number of requests (amortized O(1) per ping)
+- **Space Complexity**: O(n) for storing request timestamps
+- **Difficulty**: Easy
+- **Note**: Efficient solution using queue to maintain sliding window of recent requests with automatic cleanup
+
 ### Two Pointers Problems
 
 #### 1. Move Zeroes
@@ -427,6 +447,7 @@ javac DecodeString.java && java DecodeString
 
 ## 🚀 Recent Updates
 
+- **Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
 - **Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
 - **Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
 - **Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
