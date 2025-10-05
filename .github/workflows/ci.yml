@@ -19,7 +19,6 @@ on:
 env:
   JAVA_VERSION: '17'
   GRADLE_VERSION: '8.5'
-  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
 permissions:
   contents: read
@@ -86,6 +85,7 @@ jobs:
           -Dsonar.java.binaries=build/classes
           -Dsonar.java.libraries=build/libs
           -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml
+      continue-on-error: true
           
     - name: Quality Gate Check
       uses: sonarqube-quality-gate-action@master

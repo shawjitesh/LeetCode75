@@ -15,10 +15,7 @@ on:
         - warning
         - critical
 
-env:
-  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
-  EMAIL_NOTIFICATIONS: ${{ secrets.EMAIL_NOTIFICATIONS }}
+# Environment variables will be set in individual steps to avoid context access warnings
 
 permissions:
   contents: read
@@ -182,15 +179,25 @@ jobs:
         fi
         
     - name: Send Slack notification
-      if: env.SLACK_WEBHOOK != ''
+      env:
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
       run: |
-        curl -X POST -H 'Content-type: application/json' \
-        --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
-        $SLACK_WEBHOOK
+        if [ -n "$SLACK_WEBHOOK" ] && [ "$SLACK_WEBHOOK" != "null" ]; then
+          curl -X POST -H 'Content-type: application/json' \
+          --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
+          $SLACK_WEBHOOK
+        else
+          echo "Slack webhook not configured, skipping notification"
+        fi
         
     - name: Send Teams notification
-      if: env.TEAMS_WEBHOOK != ''
+      env:
+        TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
       run: |
-        curl -X POST -H 'Content-type: application/json' \
-        --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
-        $TEAMS_WEBHOOK
+        if [ -n "$TEAMS_WEBHOOK" ] && [ "$TEAMS_WEBHOOK" != "null" ]; then
+          curl -X POST -H 'Content-type: application/json' \
+          --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
+          $TEAMS_WEBHOOK
+        else
+          echo "Teams webhook not configured, skipping notification"
+        fi
