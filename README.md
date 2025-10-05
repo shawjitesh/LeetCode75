@@ -78,6 +78,7 @@ LeetCode75/
 │   └── Dota2Senate.java
 ├── LinkedList/
 │   ├── DeleteTheMiddleNodeOfALinkedList.java
+│   ├── MaximumTwinSumOfALinkedList.java
 │   ├── OddEvenLinkedList.java
 │   └── ReverseLinkedList.java
 ├── Tree/
@@ -219,6 +220,7 @@ javac *.java
 
 # Run examples
 java LinkedList.DeleteTheMiddleNodeOfALinkedList
+java LinkedList.MaximumTwinSumOfALinkedList
 java LinkedList.OddEvenLinkedList
 java LinkedList.ReverseLinkedList
 ```
@@ -482,7 +484,15 @@ java LinkedList.ReverseLinkedList
 - **Difficulty**: Medium
 - **Note**: Efficient solution that maintains two separate chains for odd and even positioned nodes, then links them together
 
-#### 3. Reverse Linked List
+#### 3. Maximum Twin Sum of a Linked List
+- **Problem**: Find the maximum sum of twin pairs in a linked list (twin pairs: 0th with n-1th, 1st with n-2nd, etc.)
+- **Approach**: Tortoise and hare algorithm to find middle, reverse second half, then compare twin pairs
+- **Time Complexity**: O(n) - three passes through the list
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Optimized solution using slow/fast pointers to find middle efficiently, then reverse second half for twin pair comparison
+
+#### 4. Reverse Linked List
 - **Problem**: Reverse a singly linked list
 - **Approach**: Iterative approach using three pointers to reverse links
 - **Time Complexity**: O(n) - single pass through the list
@@ -502,6 +512,7 @@ java LinkedList.ReverseLinkedList
 
 ## 🚀 Recent Updates
 
+- **Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
 - **Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
 - **Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
 - **Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
