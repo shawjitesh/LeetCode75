@@ -81,6 +81,8 @@ LeetCode75/
 │   ├── MaximumTwinSumOfALinkedList.java
 │   ├── OddEvenLinkedList.java
 │   └── ReverseLinkedList.java
+├── BinaryTreeDFS/
+│   └── MaximumDepthOfBinaryTree.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -226,6 +228,20 @@ java LinkedList.ReverseLinkedList
 ```
 
 **Note:** LinkedList solutions use a shared `ListNode` class (`ListNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with LinkedList problems.
+
+### BinaryTree DFS Solutions
+```bash
+# Navigate to BinaryTreeDFS directory
+cd BinaryTreeDFS/
+
+# Compile all BinaryTree DFS files (includes shared TreeNode class)
+javac *.java
+
+# Run examples
+java BinaryTreeDFS.MaximumDepthOfBinaryTree
+```
+
+**Note:** BinaryTree DFS solutions use a shared `TreeNode` class (`TreeNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with BinaryTree problems.
 
 ## 💡 Solutions Overview
 
@@ -500,6 +516,32 @@ java LinkedList.ReverseLinkedList
 - **Difficulty**: Easy
 - **Note**: Classic iterative solution using prev, current, and next pointers to reverse the direction of links
 
+### BinaryTree DFS Problems
+
+#### 1. Maximum Depth of Binary Tree
+- **Problem**: Find the maximum depth (height) of a binary tree
+- **Approach**: Iterative stack-based DFS traversal tracking node depths
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (stack space)
+- **Difficulty**: Easy
+- **Note**: Efficient iterative solution using two stacks to track nodes and their corresponding depths, avoiding recursion
+
+## 📚 Good to Know
+
+### Shared Data Structures
+
+#### ListNode (LinkedList)
+```bash
+# Located in: LinkedList/ListNode.java
+# Used by all LinkedList problem solutions
+```
+
+#### TreeNode (BinaryTree DFS)
+```bash
+# Located in: BinaryTreeDFS/TreeNode.java
+# Used by all BinaryTree DFS problem solutions
+```
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -512,6 +554,7 @@ java LinkedList.ReverseLinkedList
 
 ## 🚀 Recent Updates
 
+- **Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
 - **Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
 - **Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
 - **Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
