@@ -78,7 +78,8 @@ LeetCode75/
 │   └── Dota2Senate.java
 ├── LinkedList/
 │   ├── DeleteTheMiddleNodeOfALinkedList.java
-│   └── OddEvenLinkedList.java
+│   ├── OddEvenLinkedList.java
+│   └── ReverseLinkedList.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -219,6 +220,7 @@ javac *.java
 # Run examples
 java LinkedList.DeleteTheMiddleNodeOfALinkedList
 java LinkedList.OddEvenLinkedList
+java LinkedList.ReverseLinkedList
 ```
 
 **Note:** LinkedList solutions use a shared `ListNode` class (`ListNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with LinkedList problems.
@@ -480,6 +482,14 @@ java LinkedList.OddEvenLinkedList
 - **Difficulty**: Medium
 - **Note**: Efficient solution that maintains two separate chains for odd and even positioned nodes, then links them together
 
+#### 3. Reverse Linked List
+- **Problem**: Reverse a singly linked list
+- **Approach**: Iterative approach using three pointers to reverse links
+- **Time Complexity**: O(n) - single pass through the list
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Easy
+- **Note**: Classic iterative solution using prev, current, and next pointers to reverse the direction of links
+
 ## 🎯 Key Features
 
 - ✅ **Clean, well-commented code** with detailed explanations
@@ -492,6 +502,7 @@ java LinkedList.OddEvenLinkedList
 
 ## 🚀 Recent Updates
 
+- **Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
 - **Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
 - **Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
 - **Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
