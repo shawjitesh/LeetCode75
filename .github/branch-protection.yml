@@ -1,0 +1,103 @@
+# Branch Protection Configuration
+# This file defines branch protection rules for the repository
+
+branches:
+  master:
+    # Require pull request reviews
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      require_last_push_approval: true
+    
+    # Require status checks to pass
+    required_status_checks:
+      strict: true
+      contexts:
+        - "Branch Protection"
+        - "Security Scan"
+        - "CodeQL"
+        - "Dependency Check"
+    
+    # Enforce restrictions
+    enforce_admins: true
+    required_linear_history: true
+    allow_force_pushes: false
+    allow_deletions: false
+    
+    # Restrict pushes
+    restrictions:
+      users: []  # No users can push directly
+      teams: []  # No teams can push directly
+    
+    # Additional protections
+    allow_squash_merge: true
+    allow_merge_commit: false
+    allow_rebase_merge: true
+    allow_auto_merge: false
+    
+  main:
+    # Same protection rules as master
+    required_pull_request_reviews:
+      required_approving_review_count: 1
+      dismiss_stale_reviews: true
+      require_code_owner_reviews: true
+      require_last_push_approval: true
+    
+    required_status_checks:
+      strict: true
+      contexts:
+        - "Branch Protection"
+        - "Security Scan"
+        - "CodeQL"
+        - "Dependency Check"
+    
+    enforce_admins: true
+    required_linear_history: true
+    allow_force_pushes: false
+    allow_deletions: false
+    
+    restrictions:
+      users: []
+      teams: []
+    
+    allow_squash_merge: true
+    allow_merge_commit: false
+    allow_rebase_merge: true
+    allow_auto_merge: false
+
+# Branch naming conventions
+branch_naming:
+  feature: "feature/*"
+  bugfix: "bugfix/*"
+  hotfix: "hotfix/*"
+  release: "release/*"
+  develop: "develop"
+
+# Protection rules for different branch types
+protection_rules:
+  feature_branches:
+    allow_force_pushes: true
+    allow_deletions: true
+    required_status_checks:
+      strict: false
+      contexts: []
+  
+  develop_branch:
+    allow_force_pushes: false
+    allow_deletions: false
+    required_status_checks:
+      strict: true
+      contexts:
+        - "Security Scan"
+        - "CodeQL"
+  
+  hotfix_branches:
+    allow_force_pushes: false
+    allow_deletions: false
+    required_status_checks:
+      strict: true
+      contexts:
+        - "Security Scan"
+        - "CodeQL"
+        - "Branch Protection"
