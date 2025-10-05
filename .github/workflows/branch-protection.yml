@@ -29,6 +29,8 @@ jobs:
           echo "Please use pull requests for changes to master branch."
           echo "Create a feature branch and submit a PR instead."
           exit 1
+        else
+          echo "✅ Valid workflow trigger - PR or non-master push"
         fi
         
     - name: Validate commit messages
