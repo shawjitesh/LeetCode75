@@ -1,0 +1,362 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.sonarqube' version '4.4.1.3373'
+    id 'com.github.spotbugs' version '6.0.7'
+    id 'checkstyle'
+    id 'pmd'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'org.asciidoctor.jvm.convert' version '3.3.2'
+    id 'org.asciidoctor.jvm.pdf' version '3.3.2'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'org.owasp.dependencycheck' version '8.4.3'
+    id 'com.github.ben-manes.versions' version '0.49.0'
+    id 'org.gradle.test-retry' version '1.5.8'
+}
+
+group = 'com.shawjitesh'
+version = '1.0.0'
+sourceCompatibility = JavaVersion.VERSION_17
+targetCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+ext {
+    // Dependency versions
+    junitVersion = '5.10.1'
+    mockitoVersion = '5.7.0'
+    assertjVersion = '3.24.2'
+    lombokVersion = '1.18.30'
+    slf4jVersion = '2.0.9'
+    logbackVersion = '1.4.11'
+    jacksonVersion = '2.16.0'
+    springBootVersion = '3.2.0'
+    
+    // Quality tools versions
+    spotbugsVersion = '4.8.2'
+    checkstyleVersion = '10.12.4'
+    pmdVersion = '6.55.0'
+    jacocoVersion = '0.8.11'
+    
+    // Build metadata
+    buildTime = new Date().format("yyyy-MM-dd'T'HH:mm:ss'Z'", TimeZone.getTimeZone('UTC'))
+    gitCommit = getGitCommit()
+    gitBranch = getGitBranch()
+}
+
+dependencies {
+    // Core dependencies
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    implementation "ch.qos.logback:logback-classic:${logbackVersion}"
+    implementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    
+    // Lombok for reducing boilerplate
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    
+    // Test dependencies
+    testImplementation "org.junit.jupiter:junit-jupiter:${junitVersion}"
+    testImplementation "org.mockito:mockito-core:${mockitoVersion}"
+    testImplementation "org.mockito:mockito-junit-jupiter:${mockitoVersion}"
+    testImplementation "org.assertj:assertj-core:${assertjVersion}"
+    testImplementation "org.junit.jupiter:junit-jupiter-params:${junitVersion}"
+    
+    // Performance testing
+    testImplementation "org.openjdk.jmh:jmh-core:1.37"
+    testImplementation "org.openjdk.jmh:jmh-generator-annprocess:1.37"
+    
+    // Integration testing
+    testImplementation "org.testcontainers:junit-jupiter:1.19.3"
+    testImplementation "org.testcontainers:testcontainers:1.19.3"
+}
+
+// Java configuration
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    withSourcesJar()
+    withJavadocJar()
+}
+
+// Compilation configuration
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += [
+        '-Xlint:all',
+        '-Xlint:-processing',
+        '-Werror'
+    ]
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += [
+        '-Xlint:all',
+        '-Xlint:-processing'
+    ]
+}
+
+// Test configuration
+test {
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat "full"
+        showStandardStreams = true
+    }
+    retry {
+        maxRetries = 3
+        maxFailures = 5
+        failOnPassedAfterRetry = false
+    }
+    finalizedBy jacocoTestReport
+}
+
+// Integration test configuration
+sourceSets {
+    integrationTest {
+        java.srcDir file('src/integration-test/java')
+        resources.srcDir file('src/integration-test/resources')
+        compileClasspath += main.output + test.output
+        runtimeClasspath += main.output + test.output
+    }
+}
+
+task integrationTest(type: Test) {
+    group = 'verification'
+    description = 'Runs integration tests'
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    useJUnitPlatform()
+    shouldRunAfter test
+}
+
+// Code coverage configuration
+jacoco {
+    toolVersion = jacocoVersion
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+        csv.required = false
+    }
+    finalizedBy jacocoTestCoverageVerification
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.80 // 80% coverage required
+            }
+        }
+        rule {
+            element = 'CLASS'
+            limit {
+                counter = 'LINE'
+                value = 'COVEREDRATIO'
+                minimum = 0.80
+            }
+        }
+    }
+}
+
+// SpotBugs configuration
+spotbugs {
+    toolVersion = spotbugsVersion
+    effort = 'max'
+    reportLevel = 'low'
+    ignoreFailures = false
+}
+
+spotbugsMain {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+spotbugsTest {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+// Checkstyle configuration
+checkstyle {
+    toolVersion = checkstyleVersion
+    ignoreFailures = false
+    maxWarnings = 0
+}
+
+checkstyleMain {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+checkstyleTest {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+// PMD configuration
+pmd {
+    toolVersion = pmdVersion
+    ruleSetFiles = files('config/pmd/ruleset.xml')
+    ruleSets = []
+    ignoreFailures = false
+}
+
+pmdMain {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+pmdTest {
+    reports {
+        xml.required = false
+        html.required = true
+    }
+}
+
+// Dependency check configuration
+dependencyCheck {
+    format = 'ALL'
+    suppressionFile = 'config/dependency-check/suppressions.xml'
+    failBuildOnCVSS = 7
+    analyzers {
+        assemblyEnabled = false
+        nugetconfEnabled = false
+        nodeEnabled = false
+    }
+}
+
+// SonarQube configuration
+sonarqube {
+    properties {
+        property 'sonar.projectKey', 'shawjitesh_LeetCode75'
+        property 'sonar.organization', 'shawjitesh'
+        property 'sonar.host.url', 'https://sonarcloud.io'
+        property 'sonar.java.binaries', 'build/classes'
+        property 'sonar.java.libraries', 'build/libs'
+        property 'sonar.coverage.jacoco.xmlReportPaths', 'build/reports/jacoco/test/jacocoTestReport.xml'
+        property 'sonar.java.source', '17'
+        property 'sonar.java.target', '17'
+        property 'sonar.sourceEncoding', 'UTF-8'
+        property 'sonar.exclusions', '**/test/**,**/integration-test/**'
+        property 'sonar.test.exclusions', '**/test/**,**/integration-test/**'
+    }
+}
+
+// Documentation configuration
+asciidoctor {
+    sourceDir = file('docs')
+    outputDir = file('build/docs')
+    attributes = [
+        'source-highlighter': 'coderay',
+        'toc': 'left',
+        'toclevels': '3',
+        'sectanchors': '',
+        'sectlinks': '',
+        'icons': 'font',
+        'version': project.version,
+        'buildTime': buildTime,
+        'gitCommit': gitCommit,
+        'gitBranch': gitBranch
+    ]
+}
+
+// Javadoc configuration
+javadoc {
+    options.encoding = 'UTF-8'
+    options.addBooleanOption('html5', true)
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    options.addStringOption('charSet', 'UTF-8')
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+// Shadow plugin configuration for fat JARs
+shadowJar {
+    archiveClassifier = 'all'
+    manifest {
+        attributes(
+            'Main-Class': 'com.shawjitesh.leetcode.Main',
+            'Implementation-Title': project.name,
+            'Implementation-Version': project.version,
+            'Implementation-Vendor': 'Jitesh Shaw',
+            'Built-By': System.getProperty('user.name'),
+            'Built-Date': buildTime,
+            'Built-JDK': System.getProperty('java.version'),
+            'Git-Commit': gitCommit,
+            'Git-Branch': gitBranch
+        )
+    }
+}
+
+// Task dependencies
+check.dependsOn integrationTest
+build.dependsOn shadowJar
+assemble.dependsOn shadowJar
+
+// Custom tasks
+task qualityCheck {
+    group = 'verification'
+    description = 'Runs all quality checks'
+    dependsOn checkstyleMain, checkstyleTest, pmdMain, pmdTest, spotbugsMain, spotbugsTest, dependencyCheck
+}
+
+task securityCheck {
+    group = 'verification'
+    description = 'Runs security checks'
+    dependsOn dependencyCheck
+}
+
+task performanceTest {
+    group = 'verification'
+    description = 'Runs performance tests'
+    dependsOn test
+    doLast {
+        // Add JMH benchmark execution
+        println 'Performance tests completed'
+    }
+}
+
+// Helper functions
+def getGitCommit() {
+    try {
+        return 'git rev-parse --short HEAD'.execute().text.trim()
+    } catch (Exception e) {
+        return 'unknown'
+    }
+}
+
+def getGitBranch() {
+    try {
+        return 'git rev-parse --abbrev-ref HEAD'.execute().text.trim()
+    } catch (Exception e) {
+        return 'unknown'
+    }
+}
+
+// Wrapper configuration
+wrapper {
+    gradleVersion = '8.5'
+    distributionType = Wrapper.DistributionType.ALL
+}

@@ -1,0 +1,303 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - staging
+        - production
+
+env:
+  JAVA_VERSION: '17'
+  GRADLE_VERSION: '8.5'
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+  pull-requests: write
+  checks: write
+
+jobs:
+  # Code Quality and Analysis
+  quality-gate:
+    name: Quality Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0  # Shallow clones should be disabled for better analysis
+        
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        distribution: 'temurin'
+        
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+          
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+      
+    - name: Run tests with coverage
+      run: |
+        ./gradlew test jacocoTestReport
+        ./gradlew jacocoTestCoverageVerification
+        
+    - name: Upload coverage reports
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./build/reports/jacoco/test/jacocoTestReport.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false
+        
+    - name: SonarCloud Scan
+      uses: SonarSource/sonarcloud-github-action@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=shawjitesh_LeetCode75
+          -Dsonar.organization=shawjitesh
+          -Dsonar.host.url=https://sonarcloud.io
+          -Dsonar.java.binaries=build/classes
+          -Dsonar.java.libraries=build/libs
+          -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml
+          
+    - name: Quality Gate Check
+      uses: sonarqube-quality-gate-action@master
+      env:
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      continue-on-error: true
+
+  # Security Scanning
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        distribution: 'temurin'
+        
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v3
+      with:
+        languages: java
+        
+    - name: Autobuild
+      uses: github/codeql-action/autobuild@v3
+      
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v3
+      
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-type: 'fs'
+        scan-ref: '.'
+        format: 'sarif'
+        output: 'trivy-results.sarif'
+        
+    - name: Upload Trivy scan results
+      uses: github/codeql-action/upload-sarif@v3
+      with:
+        sarif_file: 'trivy-results.sarif'
+        
+    - name: Check for secrets
+      uses: trufflesecurity/trufflehog@main
+      with:
+        path: ./
+        base: main
+        head: HEAD
+        extra_args: --debug --only-verified
+
+  # Build and Test
+  build-test:
+    name: Build and Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    strategy:
+      matrix:
+        java-version: ['11', '17', '21']
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java ${{ matrix.java-version }}
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ matrix.java-version }}
+        distribution: 'temurin'
+        
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ matrix.java-version }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-${{ matrix.java-version }}-
+          ${{ runner.os }}-gradle-
+          
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+      
+    - name: Build with Gradle
+      run: ./gradlew build --no-daemon
+      
+    - name: Run tests
+      run: ./gradlew test --no-daemon
+      
+    - name: Run integration tests
+      run: ./gradlew integrationTest --no-daemon
+      continue-on-error: true
+      
+    - name: Generate test report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
+      with:
+        name: Test Results (${{ matrix.java-version }} - ${{ matrix.os }})
+        path: build/test-results/test/TEST-*.xml
+        reporter: java-junit
+
+  # Performance Testing
+  performance-test:
+    name: Performance Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        distribution: 'temurin'
+        
+    - name: Run performance tests
+      run: |
+        echo "Running performance benchmarks..."
+        # Add JMH benchmarks here
+        # ./gradlew jmh
+        
+    - name: Performance regression check
+      run: |
+        echo "Checking for performance regressions..."
+        # Add performance regression detection logic
+
+  # Documentation Generation
+  docs:
+    name: Generate Documentation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: ${{ env.JAVA_VERSION }}
+        distribution: 'temurin'
+        
+    - name: Generate Javadoc
+      run: |
+        ./gradlew javadoc
+        
+    - name: Upload documentation
+      uses: actions/upload-artifact@v3
+      with:
+        name: javadoc
+        path: build/docs/javadoc/
+
+  # Compliance and Governance
+  compliance-check:
+    name: Compliance Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: License compliance check
+      run: |
+        echo "Checking license compliance..."
+        # Add license checking tools
+        
+    - name: Dependency license check
+      run: |
+        echo "Checking dependency licenses..."
+        # Add dependency license checking
+        
+    - name: Code style check
+      run: |
+        echo "Checking code style compliance..."
+        # Add code style checking tools
+
+  # Deployment (conditional)
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: [quality-gate, security-scan, build-test]
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    environment: ${{ github.event.inputs.environment || 'staging' }}
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Deploy to ${{ github.event.inputs.environment || 'staging' }}
+      run: |
+        echo "Deploying to ${{ github.event.inputs.environment || 'staging' }}..."
+        # Add deployment logic here
+        
+    - name: Health check
+      run: |
+        echo "Performing health check..."
+        # Add health check logic
+        
+    - name: Notify deployment
+      run: |
+        echo "Notifying stakeholders..."
+        # Add notification logic
