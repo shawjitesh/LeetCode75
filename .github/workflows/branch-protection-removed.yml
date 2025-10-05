@@ -1,9 +1,0 @@
-# Branch Protection Workflow - REMOVED
-# This workflow was causing issues and has been temporarily removed
-# It can be re-added later once the basic setup is working properly
-
-# The original branch protection workflow has been disabled to resolve PR failures
-# Future improvements can include:
-# - Simplified branch protection rules
-# - Better error handling
-# - Non-blocking security checks
