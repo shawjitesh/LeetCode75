@@ -84,7 +84,8 @@ LeetCode75/
 │   └── ReverseLinkedList.java
 ├── BinaryTreeDFS/
 │   ├── MaximumDepthOfBinaryTree.java
-│   └── LeafSimilarTrees.java
+│   ├── LeafSimilarTrees.java
+│   └── CountGoodNodesInBinaryTree.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -247,6 +248,7 @@ javac *.java
 # Run examples
 java BinaryTreeDFS.MaximumDepthOfBinaryTree
 java BinaryTreeDFS.LeafSimilarTrees
+java BinaryTreeDFS.CountGoodNodesInBinaryTree
 ```
 
 **Note:** BinaryTree DFS solutions use a shared `TreeNode` class (`TreeNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with BinaryTree problems.
@@ -507,6 +509,13 @@ java BinaryTreeDFS.LeafSimilarTrees
 - **Space Complexity**: O(n + m) - for storing leaf values from both trees
 - **Difficulty**: Easy
 - **Note**: Efficient solution using DFS to collect leaf values in order, then comparing the sequences using equals() method
+#### 3. Count Good Nodes in Binary Tree
+- **Problem**: Count nodes where the path from root to that node contains no nodes with value greater than the current node
+- **Approach**: DFS traversal tracking maximum value seen in path from root
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
+- **Difficulty**: Medium
+- **Note**: Efficient DFS solution that tracks the maximum value in the path and counts nodes that are greater than or equal to this maximum
 
 ## 📚 Good to Know
 
@@ -536,6 +545,7 @@ java BinaryTreeDFS.LeafSimilarTrees
 
 ## 🚀 Recent Updates
 
+- **Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
 - **Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
 - **Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
 - **Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
