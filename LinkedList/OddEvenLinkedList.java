@@ -1,5 +1,9 @@
 package LinkedList;
 
+/**
+ * Solution for LeetCode 75 - Odd Even Linked List
+ * Groups all odd-indexed nodes together followed by even-indexed nodes using node separation technique.
+ */
 public class OddEvenLinkedList {
 
     /**

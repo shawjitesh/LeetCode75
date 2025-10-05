@@ -4,6 +4,11 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Solution for LeetCode 75 - Max Number of K-Sum Pairs
+ * Find the maximum number of operations to remove pairs of numbers that sum to k.
+ * Provides both HashMap and two-pointer approaches for different trade-offs.
+ */
 public class MaxNumberOfKSumPairs {
 
     /**

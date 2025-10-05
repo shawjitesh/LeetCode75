@@ -1,5 +1,9 @@
 package SlidingWindow;
 
+/**
+ * Solution for LeetCode 75 - Maximum Number of Vowels in a Substring of Given Length
+ * Find the maximum number of vowel letters in any substring of length k using sliding window technique.
+ */
 public class MaximumNumberOfVowelsInASubstringOfGivenLength {
 
     public int maxVowels(String s, int k) {

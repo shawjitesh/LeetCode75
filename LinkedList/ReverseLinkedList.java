@@ -1,5 +1,9 @@
 package LinkedList;
 
+/**
+ * Solution for LeetCode 75 - Reverse Linked List
+ * Reverses a singly linked list using iterative approach with three-pointer technique.
+ */
 public class ReverseLinkedList {
 
     /**

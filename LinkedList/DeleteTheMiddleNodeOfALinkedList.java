@@ -1,5 +1,9 @@
 package LinkedList;
 
+/**
+ * Solution for LeetCode 75 - Delete the Middle Node of a Linked List
+ * Deletes the middle node of a linked list using the tortoise and hare (two-pointer) technique.
+ */
 public class DeleteTheMiddleNodeOfALinkedList {
 
     /**
