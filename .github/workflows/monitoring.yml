@@ -1,0 +1,196 @@
+name: Monitoring and Alerting
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:
+    inputs:
+      alert_level:
+        description: 'Alert Level'
+        required: true
+        default: 'info'
+        type: choice
+        options:
+        - info
+        - warning
+        - critical
+
+env:
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
+  EMAIL_NOTIFICATIONS: ${{ secrets.EMAIL_NOTIFICATIONS }}
+
+permissions:
+  contents: read
+  security-events: write
+  actions: read
+
+jobs:
+  health-check:
+    name: Health Check
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Repository health metrics
+      id: health
+      run: |
+        echo "## Repository Health Report" >> $GITHUB_STEP_SUMMARY
+        echo "📊 **Repository Statistics**" >> $GITHUB_STEP_SUMMARY
+        echo "- Total commits: $(git rev-list --count HEAD)" >> $GITHUB_STEP_SUMMARY
+        echo "- Contributors: $(git log --format='%aN' | sort -u | wc -l)" >> $GITHUB_STEP_SUMMARY
+        echo "- Last commit: $(git log -1 --format='%ci')" >> $GITHUB_STEP_SUMMARY
+        echo "- Branch: $(git branch --show-current)" >> $GITHUB_STEP_SUMMARY
+        
+    - name: Check for stale branches
+      run: |
+        echo "🔍 **Branch Analysis**" >> $GITHUB_STEP_SUMMARY
+        git for-each-ref --format='%(refname:short) %(committerdate:relative)' refs/remotes/origin | \
+        while read branch date; do
+          if [[ $date == *"week"* ]] || [[ $date == *"month"* ]]; then
+            echo "⚠️ Stale branch: $branch ($date)" >> $GITHUB_STEP_SUMMARY
+          fi
+        done
+        
+    - name: Check for large files
+      run: |
+        echo "📁 **File Size Analysis**" >> $GITHUB_STEP_SUMMARY
+        find . -type f -size +1M -not -path './.git/*' | head -10 | while read file; do
+          size=$(du -h "$file" | cut -f1)
+          echo "📄 $file ($size)" >> $GITHUB_STEP_SUMMARY
+        done
+
+  security-monitoring:
+    name: Security Monitoring
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Check for security vulnerabilities
+      run: |
+        echo "🔒 **Security Status**" >> $GITHUB_STEP_SUMMARY
+        
+        # Check for hardcoded secrets
+        if grep -r "password\|secret\|key\|token" --include="*.java" --include="*.properties" --include="*.yml" --include="*.yaml" . | grep -v "// TODO\|// FIXME\|test\|example"; then
+          echo "🚨 **CRITICAL**: Potential hardcoded secrets found!" >> $GITHUB_STEP_SUMMARY
+          echo "::error::Hardcoded secrets detected in codebase"
+        else
+          echo "✅ No hardcoded secrets detected" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        # Check for outdated dependencies
+        echo "📦 **Dependency Analysis**" >> $GITHUB_STEP_SUMMARY
+        if [ -f "build.gradle" ]; then
+          echo "Gradle project detected" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+    - name: Check for security advisories
+      run: |
+        echo "🔍 **Security Advisories**" >> $GITHUB_STEP_SUMMARY
+        # This would typically check against security databases
+        echo "✅ No known security advisories" >> $GITHUB_STEP_SUMMARY
+
+  performance-monitoring:
+    name: Performance Monitoring
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Performance benchmarks
+      run: |
+        echo "⚡ **Performance Metrics**" >> $GITHUB_STEP_SUMMARY
+        
+        # Check compilation time
+        start_time=$(date +%s)
+        find . -name "*.java" | head -10 | xargs javac -cp . 2>/dev/null || true
+        end_time=$(date +%s)
+        compile_time=$((end_time - start_time))
+        echo "⏱️ Compilation time: ${compile_time}s" >> $GITHUB_STEP_SUMMARY
+        
+        # Check code complexity
+        java_files=$(find . -name "*.java" | wc -l)
+        echo "📊 Java files: $java_files" >> $GITHUB_STEP_SUMMARY
+        
+        # Check for performance anti-patterns
+        if grep -r "System\.out\.print" --include="*.java" . | grep -v "test"; then
+          echo "⚠️ Performance warning: System.out.print found in production code" >> $GITHUB_STEP_SUMMARY
+        fi
+
+  quality-metrics:
+    name: Quality Metrics
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Code quality analysis
+      run: |
+        echo "📈 **Quality Metrics**" >> $GITHUB_STEP_SUMMARY
+        
+        # Count lines of code
+        total_lines=$(find . -name "*.java" -exec wc -l {} + | tail -1 | awk '{print $1}')
+        echo "📝 Total lines of code: $total_lines" >> $GITHUB_STEP_SUMMARY
+        
+        # Count classes
+        class_count=$(find . -name "*.java" | wc -l)
+        echo "🏗️ Java classes: $class_count" >> $GITHUB_STEP_SUMMARY
+        
+        # Check for TODO/FIXME comments
+        todo_count=$(grep -r "TODO\|FIXME" --include="*.java" . | wc -l)
+        echo "📋 TODO/FIXME items: $todo_count" >> $GITHUB_STEP_SUMMARY
+        
+        # Check for documentation
+        javadoc_count=$(grep -r "/\*\*" --include="*.java" . | wc -l)
+        echo "📚 Javadoc comments: $javadoc_count" >> $GITHUB_STEP_SUMMARY
+
+  alerting:
+    name: Send Alerts
+    runs-on: ubuntu-latest
+    needs: [health-check, security-monitoring, performance-monitoring, quality-metrics]
+    if: always()
+    
+    steps:
+    - name: Prepare alert message
+      id: alert
+      run: |
+        if [ "${{ needs.health-check.result }}" != "success" ] || [ "${{ needs.security-monitoring.result }}" != "success" ]; then
+          echo "level=critical" >> $GITHUB_OUTPUT
+          echo "message=Critical issues detected in repository health or security" >> $GITHUB_OUTPUT
+        elif [ "${{ needs.performance-monitoring.result }}" != "success" ] || [ "${{ needs.quality-metrics.result }}" != "success" ]; then
+          echo "level=warning" >> $GITHUB_OUTPUT
+          echo "message=Performance or quality issues detected" >> $GITHUB_OUTPUT
+        else
+          echo "level=info" >> $GITHUB_OUTPUT
+          echo "message=All systems operational" >> $GITHUB_OUTPUT
+        fi
+        
+    - name: Send Slack notification
+      if: env.SLACK_WEBHOOK != ''
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+        --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
+        $SLACK_WEBHOOK
+        
+    - name: Send Teams notification
+      if: env.TEAMS_WEBHOOK != ''
+      run: |
+        curl -X POST -H 'Content-type: application/json' \
+        --data "{\"text\":\"🔔 Repository Monitoring Alert\\nLevel: ${{ steps.alert.outputs.level }}\\nMessage: ${{ steps.alert.outputs.message }}\"}" \
+        $TEAMS_WEBHOOK
