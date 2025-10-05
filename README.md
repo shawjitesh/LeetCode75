@@ -83,7 +83,8 @@ LeetCode75/
 │   ├── OddEvenLinkedList.java
 │   └── ReverseLinkedList.java
 ├── BinaryTreeDFS/
-│   └── MaximumDepthOfBinaryTree.java
+│   ├── MaximumDepthOfBinaryTree.java
+│   └── LeafSimilarTrees.java
 ├── Tree/
 ├── Graph/
 ├── DynamicProgramming/
@@ -245,6 +246,7 @@ javac *.java
 
 # Run examples
 java BinaryTreeDFS.MaximumDepthOfBinaryTree
+java BinaryTreeDFS.LeafSimilarTrees
 ```
 
 **Note:** BinaryTree DFS solutions use a shared `TreeNode` class (`TreeNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with BinaryTree problems.
@@ -498,6 +500,13 @@ java BinaryTreeDFS.MaximumDepthOfBinaryTree
 - **Space Complexity**: O(h) - where h is the height of the tree (stack space)
 - **Difficulty**: Easy
 - **Note**: Efficient iterative solution using two stacks to track nodes and their corresponding depths, avoiding recursion
+#### 2. Leaf-Similar Trees
+- **Problem**: Determine if two binary trees are leaf-similar (have the same leaf value sequence)
+- **Approach**: DFS traversal to collect leaf values from both trees, then compare sequences
+- **Time Complexity**: O(n + m) - where n and m are the number of nodes in each tree
+- **Space Complexity**: O(n + m) - for storing leaf values from both trees
+- **Difficulty**: Easy
+- **Note**: Efficient solution using DFS to collect leaf values in order, then comparing the sequences using equals() method
 
 ## 📚 Good to Know
 
@@ -527,6 +536,7 @@ java BinaryTreeDFS.MaximumDepthOfBinaryTree
 
 ## 🚀 Recent Updates
 
+- **Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
 - **Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
 - **Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
 - **Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
