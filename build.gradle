@@ -29,7 +29,7 @@ ext {
     junitVersion = '5.10.1'
     mockitoVersion = '5.7.0'
     assertjVersion = '3.24.2'
-    lombokVersion = '1.18.30'
+    lombokVersion = '1.18.42'
     slf4jVersion = '2.0.9'
     logbackVersion = '1.4.11'
     jacksonVersion = '2.16.0'
