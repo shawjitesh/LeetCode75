@@ -1,0 +1,54 @@
+name: Dependency Submission
+
+on:
+  push:
+    branches: [ main, master, develop ]
+  pull_request:
+    branches: [ main, master, develop ]
+  schedule:
+    # Run dependency submission daily at 3 AM UTC
+    - cron: '0 3 * * *'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  dependency-submission:
+    name: Submit Dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Java
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+          
+    - name: Make gradlew executable
+      run: chmod +x gradlew
+      
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
+        
+    - name: Validate Gradle Wrapper
+      uses: gradle/actions/wrapper-validation@v4
+      
+    - name: Submit dependencies
+      uses: gradle/actions/dependency-submission@v4

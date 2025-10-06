@@ -56,8 +56,13 @@ jobs:
         restore-keys: |
           ${{ runner.os }}-gradle-
           
-    - name: Make gradlew executable
-      run: chmod +x gradlew
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
+        
+    - name: Validate Gradle Wrapper
+      uses: gradle/actions/wrapper-validation@v4
       
     - name: Run tests with coverage
       run: |
@@ -175,8 +180,13 @@ jobs:
           ${{ runner.os }}-gradle-${{ matrix.java-version }}-
           ${{ runner.os }}-gradle-
           
-    - name: Make gradlew executable
-      run: chmod +x gradlew
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
+        
+    - name: Validate Gradle Wrapper
+      uses: gradle/actions/wrapper-validation@v4
       
     - name: Build with Gradle
       run: ./gradlew build --no-daemon
@@ -239,6 +249,14 @@ jobs:
       with:
         java-version: ${{ env.JAVA_VERSION }}
         distribution: 'temurin'
+        
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
+        
+    - name: Validate Gradle Wrapper
+      uses: gradle/actions/wrapper-validation@v4
         
     - name: Generate Javadoc
       run: |

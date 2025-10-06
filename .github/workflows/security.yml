@@ -29,6 +29,14 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: '8.5'
+        
+    - name: Validate Gradle Wrapper
+      uses: gradle/actions/wrapper-validation@v4
+        
     - name: Compile Java files
       run: |
         echo "Compiling Java files..."
