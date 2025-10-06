@@ -69,8 +69,8 @@ dependencies {
     testImplementation "org.openjdk.jmh:jmh-generator-annprocess:1.37"
     
     // Integration testing
-    testImplementation "org.testcontainers:junit-jupiter:1.19.3"
-    testImplementation "org.testcontainers:testcontainers:1.19.3"
+    testImplementation "org.testcontainers:junit-jupiter:1.21.3"
+    testImplementation "org.testcontainers:testcontainers:1.21.3"
 }
 
 // Java configuration
