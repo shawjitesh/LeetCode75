@@ -171,8 +171,6 @@ jacocoTestCoverageVerification {
 // SpotBugs configuration
 spotbugs {
     toolVersion = spotbugsVersion
-    effort = com.github.spotbugs.snom.Effort.MAX
-    reportLevel = com.github.spotbugs.snom.Confidence.LOW
     ignoreFailures = false
 }
 
