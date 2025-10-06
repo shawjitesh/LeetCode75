@@ -31,7 +31,7 @@ ext {
     assertjVersion = '3.24.2'
     lombokVersion = '1.18.30'
     slf4jVersion = '2.0.9'
-    logbackVersion = '1.4.11'
+    logbackVersion = '1.4.12'
     jacksonVersion = '2.16.0'
     springBootVersion = '3.2.0'
     
