@@ -91,7 +91,8 @@ LeetCode75/
 │               ├── TreeNode.java
 │               ├── MaximumDepthOfBinaryTree.java
 │               ├── LeafSimilarTrees.java
-│               └── CountGoodNodesInBinaryTree.java
+│               ├── CountGoodNodesInBinaryTree.java
+│               └── PathSumIII.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -244,6 +245,7 @@ mvn exec:java -Dexec.mainClass="LinkedList.ReverseLinkedList"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.MaximumDepthOfBinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LeafSimilarTrees"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.CountGoodNodesInBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.PathSumIII"
 ```
 
 ### Alternative: Run from IDE
@@ -533,6 +535,13 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
 - **Difficulty**: Medium
 - **Note**: Efficient DFS solution that tracks the maximum value in the path and counts nodes that are greater than or equal to this maximum
+#### 4. Path Sum III
+- **Problem**: Find the number of paths where the sum of values along the path equals targetSum (path doesn't need to start/end at root or leaf)
+- **Approach**: Iterative stack-based DFS traversal with path sum tracking
+- **Time Complexity**: O(n²) - visits each node and explores all paths from each node
+- **Space Complexity**: O(h) - where h is the height of the tree (stack space)
+- **Difficulty**: Medium
+- **Note**: Efficient iterative solution using two stacks to track nodes and their corresponding path sums, avoiding recursion while maintaining O(h) space complexity
 
 ## 📚 Good to Know
 
@@ -584,6 +593,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **🔄 Migrated to Maven Project Structure** - Converted from Gradle to Maven for better Java project management and standardization
 - **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
 - **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
+- **✅ Added Path Sum III** solution with efficient O(n²) iterative stack-based DFS approach for counting paths with target sum
 - **✅ Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
 - **✅ Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
 - **✅ Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
