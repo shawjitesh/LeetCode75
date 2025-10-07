@@ -40,66 +40,75 @@ The LeetCode 75 study plan is a carefully selected set of 75 coding problems tha
 
 ```text
 LeetCode75/
-├── Array/
-│   └── String/
-│       ├── MergeStringsAlternately.java
-│       ├── GreatestCommonDivisorOfStrings.java
-│       ├── KidsWithTheGreatestNumberOfCandies.java
-│       ├── CanPlaceFlowers.java
-│       ├── ReverseVowelsOfAString.java
-│       ├── ReverseWordsInAString.java
-│       ├── ProductOfArrayExceptSelf.java
-│       ├── IncreasingTripletSubsequence.java
-│       └── StringCompression.java
-├── TwoPointers/
-│   ├── MoveZeroes.java
-│   ├── IsSubsequence.java
-│   ├── ContainerWithMostWater.java
-│   └── MaxNumberOfKSumPairs.java
-├── SlidingWindow/
-│   ├── MaximumAverageSubarrayI.java
-│   ├── MaximumNumberOfVowelsInASubstringOfGivenLength.java
-│   ├── MaxConsecutiveOnesIII.java
-│   └── LongestSubarrayOf1sAfterDeletingOneElement.java
-├── PrefixSum/
-│   ├── FindTheHighestAltitude.java
-│   └── FindPivotIndex.java
-├── HashMap/
-│   └── Set/
-│       ├── FindTheDifferenceOfTwoArrays.java
-│       ├── UniqueNumberOfOccurrences.java
-│       ├── DetermineIfTwoStringsAreClose.java
-│       └── EqualRowAndColumnPairs.java
-├── Stack/
-│   ├── RemovingStarsFromAString.java
-│   ├── AsteroidCollision.java
-│   └── DecodeString.java
-├── Queue/
-│   ├── NumberOfRecentCalls.java
-│   └── Dota2Senate.java
-├── LinkedList/
-│   ├── DeleteTheMiddleNodeOfALinkedList.java
-│   ├── MaximumTwinSumOfALinkedList.java
-│   ├── OddEvenLinkedList.java
-│   └── ReverseLinkedList.java
-├── BinaryTreeDFS/
-│   ├── MaximumDepthOfBinaryTree.java
-│   ├── LeafSimilarTrees.java
-│   └── CountGoodNodesInBinaryTree.java
-├── Tree/
-├── Graph/
-├── DynamicProgramming/
-├── BinarySearch/
-├── Backtracking/
+├── pom.xml                          # Maven project configuration
+├── src/
+│   └── main/
+│       └── java/
+│           ├── Array/
+│           │   └── String/
+│           │       ├── MergeStringsAlternately.java
+│           │       ├── GreatestCommonDivisorOfStrings.java
+│           │       ├── KidsWithTheGreatestNumberOfCandies.java
+│           │       ├── CanPlaceFlowers.java
+│           │       ├── ReverseVowelsOfAString.java
+│           │       ├── ReverseWordsInAString.java
+│           │       ├── ProductOfArrayExceptSelf.java
+│           │       ├── IncreasingTripletSubsequence.java
+│           │       └── StringCompression.java
+│           ├── TwoPointers/
+│           │   ├── MoveZeroes.java
+│           │   ├── IsSubsequence.java
+│           │   ├── ContainerWithMostWater.java
+│           │   └── MaxNumberOfKSumPairs.java
+│           ├── SlidingWindow/
+│           │   ├── MaximumAverageSubarrayI.java
+│           │   ├── MaximumNumberOfVowelsInASubstringOfGivenLength.java
+│           │   ├── MaxConsecutiveOnesIII.java
+│           │   └── LongestSubarrayOf1sAfterDeletingOneElement.java
+│           ├── PrefixSum/
+│           │   ├── FindTheHighestAltitude.java
+│           │   └── FindPivotIndex.java
+│           ├── HashMap/
+│           │   └── Set/
+│           │       ├── FindTheDifferenceOfTwoArrays.java
+│           │       ├── UniqueNumberOfOccurrences.java
+│           │       ├── DetermineIfTwoStringsAreClose.java
+│           │       └── EqualRowAndColumnPairs.java
+│           ├── Stack/
+│           │   ├── RemovingStarsFromAString.java
+│           │   ├── AsteroidCollision.java
+│           │   └── DecodeString.java
+│           ├── Queue/
+│           │   ├── NumberOfRecentCalls.java
+│           │   └── Dota2Senate.java
+│           ├── LinkedList/
+│           │   ├── ListNode.java
+│           │   ├── DeleteTheMiddleNodeOfALinkedList.java
+│           │   ├── MaximumTwinSumOfALinkedList.java
+│           │   ├── OddEvenLinkedList.java
+│           │   └── ReverseLinkedList.java
+│           └── BinaryTreeDFS/
+│               ├── TreeNode.java
+│               ├── MaximumDepthOfBinaryTree.java
+│               ├── LeafSimilarTrees.java
+│               └── CountGoodNodesInBinaryTree.java
+├── target/                          # Maven build output directory
+├── docs/                           # Documentation
 ├── README.md
-└── WARP.md
+├── WARP.md
+├── WIKI.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── LICENSE
+└── SECURITY.md
 ```
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- **Java 8 or higher** installed on your system
+- **Java 21 or higher** installed on your system
+- **Maven 3.6 or higher** for building and managing dependencies
 - **Git** for cloning the repository
 - **IDE** of your choice (IntelliJ IDEA, Eclipse, VS Code, etc.)
 
@@ -112,11 +121,15 @@ git clone https://github.com/shawjitesh/LeetCode75.git
 cd LeetCode75
 ```
 
-#### 2. Verify Java Installation
+#### 2. Verify Java and Maven Installation
 
 ```bash
+# Check Java version (should be 21 or higher)
 java -version
 javac -version
+
+# Check Maven version (should be 3.6 or higher)
+mvn -version
 ```
 
 ### 🛠️ IDE Setup
@@ -125,133 +138,130 @@ javac -version
 
 1. Open IntelliJ IDEA
 2. Select "Open" and navigate to the cloned repository
-3. IntelliJ will automatically detect the Java project structure
-4. Configure JDK if prompted
+3. IntelliJ will automatically detect the Maven project structure
+4. Configure JDK 21 if prompted
+5. Wait for Maven to download dependencies and index the project
+6. Use the Maven tool window to build and run the project
 
 #### VS Code
 
 1. Install the "Extension Pack for Java" by Microsoft
-2. Open the repository folder in VS Code
-3. VS Code will automatically configure the Java environment
+2. Install the "Maven for Java" extension for better Maven support
+3. Open the repository folder in VS Code
+4. VS Code will automatically configure the Java environment and detect Maven
+5. Use the Command Palette (Ctrl+Shift+P) to run Maven commands
 
-## 🚀 Run Solutions
+## 🚀 Build and Run Solutions
 
-### Array & String Solutions
+### Build the Project
+
 ```bash
-# Navigate to Array/String directory
-cd Array/String/
+# From the project root directory, build the entire project
+mvn clean compile
 
-# Compile and run examples
-javac MergeStringsAlternately.java && java MergeStringsAlternately
-javac GreatestCommonDivisorOfStrings.java && java GreatestCommonDivisorOfStrings
-javac KidsWithTheGreatestNumberOfCandies.java && java KidsWithTheGreatestNumberOfCandies
-javac CanPlaceFlowers.java && java CanPlaceFlowers
-javac ReverseVowelsOfAString.java && java ReverseVowelsOfAString
-javac ReverseWordsInAString.java && java ReverseWordsInAString
-javac ProductOfArrayExceptSelf.java && java ProductOfArrayExceptSelf
-javac IncreasingTripletSubsequence.java && java IncreasingTripletSubsequence
-javac StringCompression.java && java StringCompression
+# Or build and package the project
+mvn clean package
 ```
 
-### Two Pointers Solutions
-```bash
-# Navigate to TwoPointers directory
-cd TwoPointers/
+### Run Individual Solutions
 
-# Compile and run examples
-javac MoveZeroes.java && java MoveZeroes
-javac IsSubsequence.java && java IsSubsequence
-javac ContainerWithMostWater.java && java ContainerWithMostWater
-javac MaxNumberOfKSumPairs.java && java MaxNumberOfKSumPairs
+You can run any solution directly using Maven's exec plugin. Here are examples for different categories:
+
+#### Array & String Solutions
+```bash
+# Run from project root directory
+mvn exec:java -Dexec.mainClass="Array.String.MergeStringsAlternately"
+mvn exec:java -Dexec.mainClass="Array.String.GreatestCommonDivisorOfStrings"
+mvn exec:java -Dexec.mainClass="Array.String.KidsWithTheGreatestNumberOfCandies"
+mvn exec:java -Dexec.mainClass="Array.String.CanPlaceFlowers"
+mvn exec:java -Dexec.mainClass="Array.String.ReverseVowelsOfAString"
+mvn exec:java -Dexec.mainClass="Array.String.ReverseWordsInAString"
+mvn exec:java -Dexec.mainClass="Array.String.ProductOfArrayExceptSelf"
+mvn exec:java -Dexec.mainClass="Array.String.IncreasingTripletSubsequence"
+mvn exec:java -Dexec.mainClass="Array.String.StringCompression"
 ```
 
-### Sliding Window Solutions
+#### Two Pointers Solutions
 ```bash
-# Navigate to SlidingWindow directory
-cd SlidingWindow/
-
-# Compile and run examples
-javac MaximumAverageSubarrayI.java && java MaximumAverageSubarrayI
-javac MaximumNumberOfVowelsInASubstringOfGivenLength.java && java MaximumNumberOfVowelsInASubstringOfGivenLength
-javac MaxConsecutiveOnesIII.java && java MaxConsecutiveOnesIII
-javac LongestSubarrayOf1sAfterDeletingOneElement.java && java LongestSubarrayOf1sAfterDeletingOneElement
+mvn exec:java -Dexec.mainClass="TwoPointers.MoveZeroes"
+mvn exec:java -Dexec.mainClass="TwoPointers.IsSubsequence"
+mvn exec:java -Dexec.mainClass="TwoPointers.ContainerWithMostWater"
+mvn exec:java -Dexec.mainClass="TwoPointers.MaxNumberOfKSumPairs"
 ```
 
-### Prefix Sum Solutions
+#### Sliding Window Solutions
 ```bash
-# Navigate to PrefixSum directory
-cd PrefixSum/
-
-# Compile and run examples
-javac FindTheHighestAltitude.java && java FindTheHighestAltitude
-javac FindPivotIndex.java && java FindPivotIndex
+mvn exec:java -Dexec.mainClass="SlidingWindow.MaximumAverageSubarrayI"
+mvn exec:java -Dexec.mainClass="SlidingWindow.MaximumNumberOfVowelsInASubstringOfGivenLength"
+mvn exec:java -Dexec.mainClass="SlidingWindow.MaxConsecutiveOnesIII"
+mvn exec:java -Dexec.mainClass="SlidingWindow.LongestSubarrayOf1sAfterDeletingOneElement"
 ```
 
-### HashMap/Set Solutions
+#### Prefix Sum Solutions
 ```bash
-# Navigate to HashMap/Set directory
-cd HashMap/Set/
-
-# Compile and run examples
-javac FindTheDifferenceOfTwoArrays.java && java FindTheDifferenceOfTwoArrays
-javac UniqueNumberOfOccurrences.java && java UniqueNumberOfOccurrences
-javac DetermineIfTwoStringsAreClose.java && java DetermineIfTwoStringsAreClose
-javac EqualRowAndColumnPairs.java && java EqualRowAndColumnPairs
+mvn exec:java -Dexec.mainClass="PrefixSum.FindTheHighestAltitude"
+mvn exec:java -Dexec.mainClass="PrefixSum.FindPivotIndex"
 ```
 
-### Stack Solutions
+#### HashMap/Set Solutions
 ```bash
-# Navigate to Stack directory
-cd Stack/
-
-# Compile and run examples
-javac RemovingStarsFromAString.java && java RemovingStarsFromAString
-javac AsteroidCollision.java && java AsteroidCollision
-javac DecodeString.java && java DecodeString
+mvn exec:java -Dexec.mainClass="HashMap.Set.FindTheDifferenceOfTwoArrays"
+mvn exec:java -Dexec.mainClass="HashMap.Set.UniqueNumberOfOccurrences"
+mvn exec:java -Dexec.mainClass="HashMap.Set.DetermineIfTwoStringsAreClose"
+mvn exec:java -Dexec.mainClass="HashMap.Set.EqualRowAndColumnPairs"
 ```
 
-### Queue Solutions
+#### Stack Solutions
 ```bash
-# Navigate to Queue directory
-cd Queue/
-
-# Compile and run examples
-javac NumberOfRecentCalls.java && java RecentCounter
-javac Dota2Senate.java && java Dota2Senate
+mvn exec:java -Dexec.mainClass="Stack.RemovingStarsFromAString"
+mvn exec:java -Dexec.mainClass="Stack.AsteroidCollision"
+mvn exec:java -Dexec.mainClass="Stack.DecodeString"
 ```
 
-### LinkedList Solutions
+#### Queue Solutions
 ```bash
-# Navigate to LinkedList directory
-cd LinkedList/
-
-# Compile all LinkedList files (includes shared ListNode class)
-javac *.java
-
-# Run examples
-java LinkedList.DeleteTheMiddleNodeOfALinkedList
-java LinkedList.MaximumTwinSumOfALinkedList
-java LinkedList.OddEvenLinkedList
-java LinkedList.ReverseLinkedList
+mvn exec:java -Dexec.mainClass="Queue.RecentCounter"
+mvn exec:java -Dexec.mainClass="Queue.Dota2Senate"
 ```
 
-**Note:** LinkedList solutions use a shared `ListNode` class (`ListNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with LinkedList problems.
-
-### BinaryTree DFS Solutions
+#### LinkedList Solutions
 ```bash
-# Navigate to BinaryTreeDFS directory
-cd BinaryTreeDFS/
-
-# Compile all BinaryTree DFS files (includes shared TreeNode class)
-javac *.java
-
-# Run examples
-java BinaryTreeDFS.MaximumDepthOfBinaryTree
-java BinaryTreeDFS.LeafSimilarTrees
-java BinaryTreeDFS.CountGoodNodesInBinaryTree
+mvn exec:java -Dexec.mainClass="LinkedList.DeleteTheMiddleNodeOfALinkedList"
+mvn exec:java -Dexec.mainClass="LinkedList.MaximumTwinSumOfALinkedList"
+mvn exec:java -Dexec.mainClass="LinkedList.OddEvenLinkedList"
+mvn exec:java -Dexec.mainClass="LinkedList.ReverseLinkedList"
 ```
 
-**Note:** BinaryTree DFS solutions use a shared `TreeNode` class (`TreeNode.java`) to avoid compilation conflicts. Always compile all files together using `javac *.java` when working with BinaryTree problems.
+#### BinaryTree DFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.MaximumDepthOfBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LeafSimilarTrees"
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.CountGoodNodesInBinaryTree"
+```
+
+### Alternative: Run from IDE
+
+You can also run the solutions directly from your IDE:
+
+1. **IntelliJ IDEA**: Right-click on any Java file and select "Run 'ClassName'"
+2. **VS Code**: Use the Java extension to run individual files
+3. **Eclipse**: Right-click on the class and select "Run As" → "Java Application"
+
+### Quick Build Commands
+
+```bash
+# Clean and compile
+mvn clean compile
+
+# Run tests (if any are added)
+mvn test
+
+# Generate JAR file
+mvn clean package
+
+# Skip tests during build
+mvn clean package -DskipTests
+```
 
 ## 💡 Solutions Overview
 
@@ -519,19 +529,35 @@ java BinaryTreeDFS.CountGoodNodesInBinaryTree
 
 ## 📚 Good to Know
 
+### Project Structure
+
+This is a **Maven-based Java project** with the following characteristics:
+- **Java Version**: Java 21 (LTS)
+- **Build Tool**: Apache Maven 3.6+
+- **Project Layout**: Standard Maven directory structure
+- **Package Structure**: Organized by algorithm categories
+
 ### Shared Data Structures
 
 #### ListNode (LinkedList)
 ```bash
-# Located in: LinkedList/ListNode.java
+# Located in: src/main/java/LinkedList/ListNode.java
 # Used by all LinkedList problem solutions
 ```
 
 #### TreeNode (BinaryTree DFS)
 ```bash
-# Located in: BinaryTreeDFS/TreeNode.java
+# Located in: src/main/java/BinaryTreeDFS/TreeNode.java
 # Used by all BinaryTree DFS problem solutions
 ```
+
+### Maven Configuration
+
+The project uses a minimal Maven configuration optimized for LeetCode solutions:
+- **Compiler**: Java 21 with UTF-8 encoding
+- **Packaging**: JAR format
+- **Dependencies**: None (pure Java solutions)
+- **Plugins**: Standard Maven compiler plugin
 
 ## 🎯 Key Features
 
@@ -545,38 +571,41 @@ java BinaryTreeDFS.CountGoodNodesInBinaryTree
 
 ## 🚀 Recent Updates
 
-- **Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
-- **Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
-- **Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
-- **Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
-- **Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
-- **Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
-- **Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
-- **Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
-- **Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
-- **Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
-- **Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
-- **Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
-- **Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
-- **Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
-- **Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
-- **Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
-- **Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
-- **Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
-- **Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
-- **Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
-- **Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
-- **Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
-- **Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
-- **Added WARP.md** configuration file for Warp terminal integration and development guidance
-- **Added Is Subsequence** solution with efficient two-pointer technique for string subsequence checking
-- **Added Move Zeroes** solution with efficient two-pointer technique for in-place array manipulation
-- **Added String Compression** solution with efficient in-place two-pointer approach
-- **Added Increasing Triplet Subsequence** solution with greedy algorithm approach
-- **Added Product of Array Except Self** solution with optimized two-pass algorithm
-- **Added Kids With the Greatest Number of Candies** solution with stream-based implementation
-- **Refactored Greatest Common Divisor of Strings** to use Java Streams
-- **Enhanced README** with better structure and comprehensive documentation
+- **🔄 Migrated to Maven Project Structure** - Converted from Gradle to Maven for better Java project management and standardization
+- **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
+- **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
+- **✅ Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
+- **✅ Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
+- **✅ Added Maximum Depth of Binary Tree** solution with efficient O(n) iterative stack-based DFS approach for finding tree height
+- **✅ Added Maximum Twin Sum of a Linked List** solution with optimized O(n) approach using tortoise and hare algorithm for efficient twin pair calculation
+- **✅ Added Reverse Linked List** solution with efficient O(n) iterative approach using three-pointer technique for reversing linked list
+- **✅ Added Odd Even Linked List** solution with efficient O(n) node separation technique for grouping odd and even positioned nodes
+- **✅ Added Delete the Middle Node of a Linked List** solution with optimal O(n) two-pointer technique for efficient middle node deletion
+- **✅ Added Dota2 Senate** solution with efficient O(n) queue-based simulation approach for predicting senate voting winner
+- **✅ Added Number of Recent Calls** solution with efficient O(n) queue-based sliding window approach for tracking recent requests
+- **✅ Added Decode String** solution with optimized O(n × m) stack-based approach for handling nested encoded patterns
+- **✅ Added Asteroid Collision** solution with optimized O(n) stack-based approach for collision simulation
+- **✅ Added Removing Stars From a String** solution with efficient O(n) stack-based approach for character removal simulation
+- **✅ Added Equal Row and Column Pairs** solution with optimal O(n²) HashMap counting approach for matrix pattern matching
+- **✅ Added Determine if Two Strings Are Close** solution with HashMap frequency counting approach for efficient string transformation validation
+- **✅ Added Unique Number of Occurrences** solution with HashMap and HashSet approach for efficient frequency uniqueness validation
+- **✅ Added Find Pivot Index** solution with efficient prefix sum technique for finding balance point in array
+- **✅ Added Find the Highest Altitude** solution with efficient prefix sum technique for tracking cumulative altitude changes
+- **✅ Added Longest Subarray of 1's After Deleting One Element** solution with efficient sliding window technique for finding longest subarray after mandatory deletion
+- **✅ Added Max Consecutive Ones III** solution with efficient sliding window technique for binary array optimization with zero flipping constraint
+- **✅ Added Maximum Number of Vowels in a Substring of Given Length** solution with efficient sliding window technique for vowel counting optimization
+- **✅ Added Max Number of K-Sum Pairs** solution with both HashMap and two-pointer approaches for maximum flexibility
+- **✅ Added Container With Most Water** solution with optimal two-pointer technique for maximum area calculation
+- **✅ Added Maximum Average Subarray I** solution with efficient sliding window technique for subarray optimization
+- **✅ Added WARP.md** configuration file for Warp terminal integration and development guidance
+- **✅ Added Is Subsequence** solution with efficient two-pointer technique for string subsequence checking
+- **✅ Added Move Zeroes** solution with efficient two-pointer technique for in-place array manipulation
+- **✅ Added String Compression** solution with efficient in-place two-pointer approach
+- **✅ Added Increasing Triplet Subsequence** solution with greedy algorithm approach
+- **✅ Added Product of Array Except Self** solution with optimized two-pass algorithm
+- **✅ Added Kids With the Greatest Number of Candies** solution with stream-based implementation
+- **✅ Refactored Greatest Common Divisor of Strings** to use Java Streams
+- **✅ Enhanced README** with better structure and comprehensive documentation
 
 ## 🤝 Contributing
 
@@ -593,6 +622,8 @@ While this is a personal learning repository, suggestions and improvements are w
 - [LeetCode Official Website](https://leetcode.com/)
 - [Java Documentation](https://docs.oracle.com/en/java/)
 - [Java Streams Tutorial](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+- [Maven Documentation](https://maven.apache.org/guides/)
 
 ## 🏆 Goals
 
