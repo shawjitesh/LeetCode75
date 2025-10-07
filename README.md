@@ -92,7 +92,8 @@ LeetCode75/
 │               ├── MaximumDepthOfBinaryTree.java
 │               ├── LeafSimilarTrees.java
 │               ├── CountGoodNodesInBinaryTree.java
-│               └── PathSumIII.java
+│               ├── PathSumIII.java
+│               └── LongestZigZagPathInABinaryTree.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -246,6 +247,7 @@ mvn exec:java -Dexec.mainClass="BinaryTreeDFS.MaximumDepthOfBinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LeafSimilarTrees"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.CountGoodNodesInBinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.PathSumIII"
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LongestZigZagPathInABinaryTree"
 ```
 
 ### Alternative: Run from IDE
@@ -542,6 +544,13 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(h) - where h is the height of the tree (stack space)
 - **Difficulty**: Medium
 - **Note**: Efficient iterative solution using two stacks to track nodes and their corresponding path sums, avoiding recursion while maintaining O(h) space complexity
+#### 5. Longest ZigZag Path in a Binary Tree
+- **Problem**: Find the length of the longest zigzag path in a binary tree (alternating left-right directions)
+- **Approach**: DFS traversal tracking direction and path length for zigzag patterns
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
+- **Difficulty**: Medium
+- **Note**: Efficient DFS solution that tracks zigzag direction and explores both left and right starting directions to find maximum zigzag path length
 
 ## 📚 Good to Know
 
@@ -593,6 +602,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **🔄 Migrated to Maven Project Structure** - Converted from Gradle to Maven for better Java project management and standardization
 - **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
 - **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
+- **✅ Added Longest ZigZag Path in a Binary Tree** solution with efficient O(n) DFS approach for finding maximum zigzag path length
 - **✅ Added Path Sum III** solution with efficient O(n²) iterative stack-based DFS approach for counting paths with target sum
 - **✅ Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
 - **✅ Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
