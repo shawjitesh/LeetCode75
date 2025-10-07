@@ -93,7 +93,8 @@ LeetCode75/
 │               ├── LeafSimilarTrees.java
 │               ├── CountGoodNodesInBinaryTree.java
 │               ├── PathSumIII.java
-│               └── LongestZigZagPathInABinaryTree.java
+│               ├── LongestZigZagPathInABinaryTree.java
+│               └── LowestCommonAncestorOfABinaryTree.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -248,6 +249,7 @@ mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LeafSimilarTrees"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.CountGoodNodesInBinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.PathSumIII"
 mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LongestZigZagPathInABinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LowestCommonAncestorOfABinaryTree"
 ```
 
 ### Alternative: Run from IDE
@@ -551,6 +553,13 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
 - **Difficulty**: Medium
 - **Note**: Efficient DFS solution that tracks zigzag direction and explores both left and right starting directions to find maximum zigzag path length
+#### 6. Lowest Common Ancestor of a Binary Tree
+- **Problem**: Find the lowest common ancestor (LCA) of two given nodes in a binary tree
+- **Approach**: Recursive DFS traversal with post-order processing to detect LCA
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
+- **Difficulty**: Medium
+- **Note**: Elegant recursive solution that uses post-order traversal to find the first node where both target nodes are found in different subtrees. Handles edge cases where one node is descendant of the other
 
 ## 📚 Good to Know
 
@@ -603,6 +612,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
 - **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
 - **✅ Added Longest ZigZag Path in a Binary Tree** solution with efficient O(n) DFS approach for finding maximum zigzag path length
+- **✅ Added Lowest Common Ancestor of a Binary Tree** solution with efficient O(n) recursive DFS approach for finding LCA of two nodes
 - **✅ Added Path Sum III** solution with efficient O(n²) iterative stack-based DFS approach for counting paths with target sum
 - **✅ Added Count Good Nodes in Binary Tree** solution with efficient O(n) DFS approach for tracking maximum values in paths
 - **✅ Added Leaf-Similar Trees** solution with efficient O(n + m) DFS approach for comparing tree leaf sequences
