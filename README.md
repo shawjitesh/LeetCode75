@@ -93,14 +93,7 @@ LeetCode75/
 │               ├── LeafSimilarTrees.java
 │               └── CountGoodNodesInBinaryTree.java
 ├── target/                          # Maven build output directory
-├── .github/                         # GitHub workflows and templates
-│   ├── workflows/
-│   │   ├── ci.yml                   # Continuous Integration
-│   │   └── monitoring.yml           # Repository monitoring
-│   └── ISSUE_TEMPLATE/
-│       ├── bug_report.md
-│       ├── feature_request.md
-│       └── solution_request.md
+├── docs/                           # Documentation
 ├── README.md
 ├── WARP.md
 ├── WIKI.md
@@ -578,9 +571,6 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
-- **🧹 Repository Cleanup** - Removed docs folder and simplified GitHub workflows by removing security and dependency submission components
-- **⚡ Simplified CI/CD** - Streamlined GitHub Actions workflows to focus on core functionality (CI and monitoring) without security scanning overhead
-- **📁 Updated Structure** - Cleaned up repository structure by removing unnecessary documentation and security configurations
 - **🔄 Migrated to Maven Project Structure** - Converted from Gradle to Maven for better Java project management and standardization
 - **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
 - **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
