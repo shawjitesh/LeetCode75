@@ -137,8 +137,9 @@ Icon?
 *.sublime-project
 *.sublime-workspace
 
-# Maven (if used)
+# Maven
 target/
+bin/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
