@@ -1,4 +1,6 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
+
+import BinaryTree.TreeNode;
 
 /**
  * Solution for Longest ZigZag Path in a Binary Tree problem.

@@ -1,4 +1,6 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
+
+import BinaryTree.TreeNode;
 
 /**
  * Solution for LeetCode 236: Lowest Common Ancestor of a Binary Tree

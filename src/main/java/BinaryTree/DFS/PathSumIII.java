@@ -1,6 +1,8 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
 
 import java.util.*;
+
+import BinaryTree.TreeNode;
 
 /**
  * LeetCode 437: Path Sum III

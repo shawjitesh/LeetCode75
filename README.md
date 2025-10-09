@@ -87,14 +87,17 @@ LeetCode75/
 │           │   ├── MaximumTwinSumOfALinkedList.java
 │           │   ├── OddEvenLinkedList.java
 │           │   └── ReverseLinkedList.java
-│           └── BinaryTreeDFS/
+│           └── BinaryTree/
 │               ├── TreeNode.java
-│               ├── MaximumDepthOfBinaryTree.java
-│               ├── LeafSimilarTrees.java
-│               ├── CountGoodNodesInBinaryTree.java
-│               ├── PathSumIII.java
-│               ├── LongestZigZagPathInABinaryTree.java
-│               └── LowestCommonAncestorOfABinaryTree.java
+│               ├── DFS/
+│               │   ├── MaximumDepthOfBinaryTree.java
+│               │   ├── LeafSimilarTrees.java
+│               │   ├── CountGoodNodesInBinaryTree.java
+│               │   ├── PathSumIII.java
+│               │   ├── LongestZigZagPathInABinaryTree.java
+│               │   └── LowestCommonAncestorOfABinaryTree.java
+│               └── BFS/
+│                   └── BinaryTreeRightSideView.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -244,12 +247,17 @@ mvn exec:java -Dexec.mainClass="LinkedList.ReverseLinkedList"
 
 #### BinaryTree DFS Solutions
 ```bash
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.MaximumDepthOfBinaryTree"
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LeafSimilarTrees"
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.CountGoodNodesInBinaryTree"
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.PathSumIII"
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LongestZigZagPathInABinaryTree"
-mvn exec:java -Dexec.mainClass="BinaryTreeDFS.LowestCommonAncestorOfABinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.MaximumDepthOfBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LeafSimilarTrees"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.CountGoodNodesInBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.PathSumIII"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LongestZigZagPathInABinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree"
+```
+
+#### BinaryTree BFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
 ```
 
 ### Alternative: Run from IDE
@@ -561,6 +569,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Elegant recursive solution that uses post-order traversal to find the first node where both target nodes are found in different subtrees. Handles edge cases where one node is descendant of the other
 
+### BinaryTree BFS Problems
+#### 1. Binary Tree Right Side View
+- **Problem**: Given the root of a binary tree, return the values of the nodes visible from the right side (top to bottom)
+- **Approach**: BFS level-order traversal, capturing the rightmost node at each level
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution using queue to process nodes level by level, adding the last node (rightmost) of each level to the result
+
 ## 📚 Good to Know
 
 ### Project Structure
@@ -579,10 +596,10 @@ This is a **Maven-based Java project** with the following characteristics:
 # Used by all LinkedList problem solutions
 ```
 
-#### TreeNode (BinaryTree DFS)
+#### TreeNode (BinaryTree)
 ```bash
-# Located in: src/main/java/BinaryTreeDFS/TreeNode.java
-# Used by all BinaryTree DFS problem solutions
+# Located in: src/main/java/BinaryTree/TreeNode.java
+# Used by all BinaryTree DFS and BFS problem solutions
 ```
 
 ### Maven Configuration
@@ -605,6 +622,9 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🌳 BinaryTree Reorganization** - Restructured BinaryTree solutions into separate DFS and BFS directories for better organization and clarity
+- **🆕 Added BinaryTree BFS Solution** - Added Binary Tree Right Side View solution with efficient BFS level-order traversal approach
+- **📁 Improved Project Structure** - Moved TreeNode.java to the main BinaryTree directory to be shared between DFS and BFS solutions
 - **🧹 Repository Cleanup** - Removed docs folder and simplified GitHub workflows by removing security and dependency submission components
 - **⚡ Simplified CI/CD** - Streamlined GitHub Actions workflows to focus on core functionality (CI and monitoring) without security scanning overhead
 - **📁 Updated Structure** - Cleaned up repository structure by removing unnecessary documentation and security configurations
