@@ -1,4 +1,6 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
+
+import BinaryTree.TreeNode;
 
 /**
  * LeetCode 1448: Count Good Nodes in Binary Tree

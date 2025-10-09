@@ -1,6 +1,8 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
 
 import java.util.*;
+
+import BinaryTree.TreeNode;
 
 /**
  * Solution for Maximum Depth of Binary Tree problem.

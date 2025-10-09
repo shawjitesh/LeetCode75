@@ -1,7 +1,9 @@
-package BinaryTreeDFS;
+package BinaryTree.DFS;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import BinaryTree.TreeNode;
 
 /**
  * LeetCode 872: Leaf-Similar Trees
