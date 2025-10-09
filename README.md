@@ -97,7 +97,8 @@ LeetCode75/
 │               │   ├── LongestZigZagPathInABinaryTree.java
 │               │   └── LowestCommonAncestorOfABinaryTree.java
 │               └── BFS/
-│                   └── BinaryTreeRightSideView.java
+│                   ├── BinaryTreeRightSideView.java
+│                   └── MaximumLevelSumOfABinaryTree.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -258,6 +259,7 @@ mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree
 #### BinaryTree BFS Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
+mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 ```
 
 ### Alternative: Run from IDE
@@ -577,6 +579,14 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution using queue to process nodes level by level, adding the last node (rightmost) of each level to the result
+
+#### 2. Maximum Level Sum of a Binary Tree
+- **Problem**: Find the smallest level (1-indexed) where the sum of all node values at that level is maximal
+- **Approach**: BFS level-order traversal, calculating sum for each level and tracking the maximum
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
 ## 📚 Good to Know
 
