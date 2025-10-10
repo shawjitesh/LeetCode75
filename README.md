@@ -103,6 +103,16 @@ LeetCode75/
 │               └── BFS/
 │                   ├── BinaryTreeRightSideView.java
 │                   └── MaximumLevelSumOfABinaryTree.java
+│               ├── DFS/
+│               │   ├── MaximumDepthOfBinaryTree.java
+│               │   ├── LeafSimilarTrees.java
+│               │   ├── CountGoodNodesInBinaryTree.java
+│               │   ├── PathSumIII.java
+│               │   ├── LongestZigZagPathInABinaryTree.java
+│               │   └── LowestCommonAncestorOfABinaryTree.java
+│               └── BFS/
+│                   ├── BinaryTreeRightSideView.java
+│                   └── MaximumLevelSumOfABinaryTree.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -258,6 +268,18 @@ mvn exec:java -Dexec.mainClass="BinarySearchTree.DeleteNodeInABST"
 
 #### BinaryTree DFS Solutions
 ```bash
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.MaximumDepthOfBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LeafSimilarTrees"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.CountGoodNodesInBinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.PathSumIII"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LongestZigZagPathInABinaryTree"
+mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree"
+```
+
+#### BinaryTree BFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
+mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTree.DFS.MaximumDepthOfBinaryTree"
 mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LeafSimilarTrees"
 mvn exec:java -Dexec.mainClass="BinaryTree.DFS.CountGoodNodesInBinaryTree"
@@ -614,6 +636,44 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
+#### 4. Path Sum III
+- **Problem**: Find the number of paths where the sum of values along the path equals targetSum (path doesn't need to start/end at root or leaf)
+- **Approach**: Iterative stack-based DFS traversal with path sum tracking
+- **Time Complexity**: O(n²) - visits each node and explores all paths from each node
+- **Space Complexity**: O(h) - where h is the height of the tree (stack space)
+- **Difficulty**: Medium
+- **Note**: Efficient iterative solution using two stacks to track nodes and their corresponding path sums, avoiding recursion while maintaining O(h) space complexity
+#### 5. Longest ZigZag Path in a Binary Tree
+- **Problem**: Find the length of the longest zigzag path in a binary tree (alternating left-right directions)
+- **Approach**: DFS traversal tracking direction and path length for zigzag patterns
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
+- **Difficulty**: Medium
+- **Note**: Efficient DFS solution that tracks zigzag direction and explores both left and right starting directions to find maximum zigzag path length
+#### 6. Lowest Common Ancestor of a Binary Tree
+- **Problem**: Find the lowest common ancestor (LCA) of two given nodes in a binary tree
+- **Approach**: Recursive DFS traversal with post-order processing to detect LCA
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(h) - where h is the height of the tree (recursion stack)
+- **Difficulty**: Medium
+- **Note**: Elegant recursive solution that uses post-order traversal to find the first node where both target nodes are found in different subtrees. Handles edge cases where one node is descendant of the other
+
+### BinaryTree BFS Problems
+#### 1. Binary Tree Right Side View
+- **Problem**: Given the root of a binary tree, return the values of the nodes visible from the right side (top to bottom)
+- **Approach**: BFS level-order traversal, capturing the rightmost node at each level
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution using queue to process nodes level by level, adding the last node (rightmost) of each level to the result
+
+#### 2. Maximum Level Sum of a Binary Tree
+- **Problem**: Find the smallest level (1-indexed) where the sum of all node values at that level is maximal
+- **Approach**: BFS level-order traversal, calculating sum for each level and tracking the maximum
+- **Time Complexity**: O(n) - visits each node once
+- **Space Complexity**: O(w) - where w is the maximum width of the tree (queue space)
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
 ## 📚 Good to Know
 
@@ -641,6 +701,8 @@ This is a **Maven-based Java project** with the following characteristics:
 
 #### TreeNode (BinaryTree)
 ```bash
+# Located in: src/main/java/BinaryTree/TreeNode.java
+# Used by all BinaryTree DFS and BFS problem solutions
 # Located in: src/main/java/BinaryTree/TreeNode.java
 # Used by all BinaryTree DFS and BFS problem solutions
 ```
@@ -675,6 +737,9 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **🔄 Migrated to Maven Project Structure** - Converted from Gradle to Maven for better Java project management and standardization
 - **📦 Updated Build System** - All solutions now use Maven for compilation and execution with Java 21 support
 - **📚 Enhanced Documentation** - Updated README with comprehensive Maven build instructions and project structure
+- **✅ Added Longest ZigZag Path in a Binary Tree** solution with efficient O(n) DFS approach for finding maximum zigzag path length
+- **✅ Added Lowest Common Ancestor of a Binary Tree** solution with efficient O(n) recursive DFS approach for finding LCA of two nodes
+- **✅ Added Path Sum III** solution with efficient O(n²) iterative stack-based DFS approach for counting paths with target sum
 - **✅ Added Longest ZigZag Path in a Binary Tree** solution with efficient O(n) DFS approach for finding maximum zigzag path length
 - **✅ Added Lowest Common Ancestor of a Binary Tree** solution with efficient O(n) recursive DFS approach for finding LCA of two nodes
 - **✅ Added Path Sum III** solution with efficient O(n²) iterative stack-based DFS approach for counting paths with target sum
