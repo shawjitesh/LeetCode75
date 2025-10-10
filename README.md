@@ -89,7 +89,8 @@ LeetCode75/
 │           │   └── ReverseLinkedList.java
 │           ├── BinarySearchTree/
 │           │   ├── TreeNode.java
-│           │   └── SearchInABinarySearchTree.java
+│           │   ├── SearchInABinarySearchTree.java
+│           │   └── DeleteNodeInABST.java
 │           └── BinaryTree/
 │               ├── TreeNode.java
 │               ├── DFS/
@@ -252,6 +253,7 @@ mvn exec:java -Dexec.mainClass="LinkedList.ReverseLinkedList"
 #### BinarySearchTree Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="BinarySearchTree.SearchInABinarySearchTree"
+mvn exec:java -Dexec.mainClass="BinarySearchTree.DeleteNodeInABST"
 ```
 
 #### BinaryTree DFS Solutions
@@ -544,6 +546,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient iterative solution that leverages BST property to navigate directly to the target without visiting unnecessary nodes
 
+#### 2. Delete Node in a BST
+- **Problem**: Delete a node with a given key from a Binary Search Tree while maintaining BST property
+- **Approach**: Iterative deletion handling four cases: leaf node, single child, and two children using inorder successor
+- **Time Complexity**: O(h) where h is the height of the tree - traverses to find node and successor
+- **Space Complexity**: O(1) - constant space using iterative approach
+- **Difficulty**: Medium
+- **Note**: Comprehensive iterative solution that handles all deletion cases while maintaining BST properties using inorder successor for nodes with two children
+
 ### BinaryTree DFS Problems
 #### 1. Maximum Depth of Binary Tree
 - **Problem**: Find the maximum depth (height) of a binary tree
@@ -655,7 +665,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
-- **🌲 Added BinarySearchTree Implementation** - Added Search in a Binary Search Tree solution with efficient O(log n) iterative approach
+- **🌲 Enhanced BinarySearchTree Implementation** - Added Delete Node in a BST solution with comprehensive O(h) iterative approach handling all deletion cases
 - **🌳 BinaryTree Reorganization** - Restructured BinaryTree solutions into separate DFS and BFS directories for better organization and clarity
 - **🆕 Added BinaryTree BFS Solution** - Added Binary Tree Right Side View solution with efficient BFS level-order traversal approach
 - **📁 Improved Project Structure** - Moved TreeNode.java to the main BinaryTree directory to be shared between DFS and BFS solutions
