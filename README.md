@@ -91,18 +91,21 @@ LeetCode75/
 │           │   ├── TreeNode.java
 │           │   ├── SearchInABinarySearchTree.java
 │           │   └── DeleteNodeInABST.java
-│           └── BinaryTree/
-│               ├── TreeNode.java
-│               ├── DFS/
-│               │   ├── MaximumDepthOfBinaryTree.java
-│               │   ├── LeafSimilarTrees.java
-│               │   ├── CountGoodNodesInBinaryTree.java
-│               │   ├── PathSumIII.java
-│               │   ├── LongestZigZagPathInABinaryTree.java
-│               │   └── LowestCommonAncestorOfABinaryTree.java
-│               └── BFS/
-│                   ├── BinaryTreeRightSideView.java
-│                   └── MaximumLevelSumOfABinaryTree.java
+│           ├── BinaryTree/
+│           │   ├── TreeNode.java
+│           │   ├── DFS/
+│           │   │   ├── MaximumDepthOfBinaryTree.java
+│           │   │   ├── LeafSimilarTrees.java
+│           │   │   ├── CountGoodNodesInBinaryTree.java
+│           │   │   ├── PathSumIII.java
+│           │   │   ├── LongestZigZagPathInABinaryTree.java
+│           │   │   └── LowestCommonAncestorOfABinaryTree.java
+│           │   └── BFS/
+│           │       ├── BinaryTreeRightSideView.java
+│           │       └── MaximumLevelSumOfABinaryTree.java
+│           └── Backtracking/
+│               ├── CombinationSumIII.java
+│               └── LetterCombinationsOfAPhoneNumber.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -270,6 +273,12 @@ mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree
 ```bash
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
+```
+
+#### Backtracking Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Backtracking.CombinationSumIII"
+mvn exec:java -Dexec.mainClass="Backtracking.LetterCombinationsOfAPhoneNumber"
 ```
 
 ### Alternative: Run from IDE
@@ -615,6 +624,23 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
+### Backtracking Problems
+#### 1. Combination Sum III
+- **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
+- **Approach**: Recursive backtracking with constraint satisfaction
+- **Time Complexity**: O(C(9,k) × k) - where C(9,k) is combinations of k from 9
+- **Space Complexity**: O(k) for recursion + O(C(9,k) × k) for results
+- **Difficulty**: Medium
+- **Note**: Efficient backtracking solution that explores all valid combinations while avoiding duplicates through systematic ordering
+
+#### 2. Letter Combinations of a Phone Number
+- **Problem**: Given a string containing digits from 2-9, return all possible letter combinations that the number could represent on a telephone keypad
+- **Approach**: Recursive backtracking with phone keypad mapping
+- **Time Complexity**: O(4^n × n) - where n is the length of digits, 4^n combinations, O(n) to build each string
+- **Space Complexity**: O(n) - recursion stack depth
+- **Difficulty**: Medium
+- **Note**: Efficient recursive backtracking solution that systematically explores all possible letter combinations using the classic choose-explore-unchoose pattern
+
 ## 📚 Good to Know
 
 ### Project Structure
@@ -665,6 +691,8 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🔄 Added Combination Sum III** - Added Combination Sum III solution with efficient O(C(9,k) × k) backtracking approach for finding all valid combinations of k numbers that sum to n
+- **🔄 Added Backtracking Solutions** - Added Letter Combinations of a Phone Number solution with efficient O(4^n × n) recursive backtracking approach for generating all possible letter combinations
 - **🌲 Enhanced BinarySearchTree Implementation** - Added Delete Node in a BST solution with comprehensive O(h) iterative approach handling all deletion cases
 - **🌳 BinaryTree Reorganization** - Restructured BinaryTree solutions into separate DFS and BFS directories for better organization and clarity
 - **🆕 Added BinaryTree BFS Solution** - Added Binary Tree Right Side View solution with efficient BFS level-order traversal approach

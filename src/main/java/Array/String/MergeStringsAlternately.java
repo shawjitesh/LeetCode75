@@ -1,8 +1,5 @@
 package Array.String;
 
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-
 /**
  * Solution for LeetCode 75 - Merge Strings Alternately
  * Merges two strings by adding letters in alternating order.
@@ -17,11 +14,19 @@ public class MergeStringsAlternately {
      * @return the merged string with alternating characters
      */
     public String mergeAlternately(String word1, String word2) {
-        return IntStream.range(0, Math.max(word1.length(), word2.length()))
-            .mapToObj(i -> 
-                (i < word1.length() ? String.valueOf(word1.charAt(i)) : "") +
-                (i < word2.length() ? String.valueOf(word2.charAt(i)) : ""))
-            .collect(Collectors.joining());
+        StringBuilder result = new StringBuilder();
+        int maxLength = Math.max(word1.length(), word2.length());
+        
+        for (int i = 0; i < maxLength; i++) {
+            if (i < word1.length()) {
+                result.append(word1.charAt(i));
+            }
+            if (i < word2.length()) {
+                result.append(word2.charAt(i));
+            }
+        }
+        
+        return result.toString();
     }
     
     public static void main(String[] args) {
