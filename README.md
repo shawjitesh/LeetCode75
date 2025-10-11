@@ -103,6 +103,9 @@ LeetCode75/
 │           │   └── BFS/
 │           │       ├── BinaryTreeRightSideView.java
 │           │       └── MaximumLevelSumOfABinaryTree.java
+│           ├── Graphs/
+│           │   └── BFS/
+│           │       └── NearestExitFromEntranceInMaze.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -273,6 +276,11 @@ mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree
 ```bash
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
+```
+
+#### Graphs BFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Graphs.BFS.NearestExitFromEntranceInMaze"
 ```
 
 #### Backtracking Solutions
@@ -624,6 +632,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
+### Graphs BFS Problems
+#### 1. Nearest Exit from Entrance in Maze
+- **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
+- **Approach**: Breadth-First Search (BFS) for shortest path in unweighted grid
+- **Time Complexity**: O(m × n) - where m and n are maze dimensions
+- **Space Complexity**: O(m × n) - for BFS queue in worst case
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution that explores level by level to guarantee finding shortest path to nearest exit
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -691,6 +708,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Nearest Exit from Entrance in Maze** - Added maze navigation solution with efficient O(m × n) BFS approach for finding shortest path to nearest exit
 - **🔄 Added Combination Sum III** - Added Combination Sum III solution with efficient O(C(9,k) × k) backtracking approach for finding all valid combinations of k numbers that sum to n
 - **🔄 Added Backtracking Solutions** - Added Letter Combinations of a Phone Number solution with efficient O(4^n × n) recursive backtracking approach for generating all possible letter combinations
 - **🌲 Enhanced BinarySearchTree Implementation** - Added Delete Node in a BST solution with comprehensive O(h) iterative approach handling all deletion cases
