@@ -105,7 +105,8 @@ LeetCode75/
 │           │       └── MaximumLevelSumOfABinaryTree.java
 │           ├── Graphs/
 │           │   └── BFS/
-│           │       └── NearestExitFromEntranceInMaze.java
+│           │       ├── NearestExitFromEntranceInMaze.java
+│           │       └── RottingOranges.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -281,6 +282,7 @@ mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 #### Graphs BFS Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="Graphs.BFS.NearestExitFromEntranceInMaze"
+mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 ```
 
 #### Backtracking Solutions
@@ -641,6 +643,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that explores level by level to guarantee finding shortest path to nearest exit
 
+#### 2. Rotting Oranges
+- **Problem**: Find minimum time for all fresh oranges to rot when fresh oranges adjacent to rotten ones become rotten every minute
+- **Approach**: BFS simulation of rotting process with time tracking
+- **Time Complexity**: O(m × n) - where m and n are grid dimensions
+- **Space Complexity**: O(m × n) - for BFS queue in worst case
+- **Difficulty**: Medium
+- **Note**: Efficient BFS solution that simulates minute-by-minute rotting process and returns -1 if some oranges can never rot
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -708,6 +718,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Rotting Oranges** - Added rotting oranges simulation solution with efficient O(m × n) BFS approach for tracking minimum time until all oranges rot
 - **🆕 Added Nearest Exit from Entrance in Maze** - Added maze navigation solution with efficient O(m × n) BFS approach for finding shortest path to nearest exit
 - **🔄 Added Combination Sum III** - Added Combination Sum III solution with efficient O(C(9,k) × k) backtracking approach for finding all valid combinations of k numbers that sum to n
 - **🔄 Added Backtracking Solutions** - Added Letter Combinations of a Phone Number solution with efficient O(4^n × n) recursive backtracking approach for generating all possible letter combinations
