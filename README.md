@@ -87,6 +87,10 @@ LeetCode75/
 │           │   ├── MaximumTwinSumOfALinkedList.java
 │           │   ├── OddEvenLinkedList.java
 │           │   └── ReverseLinkedList.java
+│           ├── BinarySearchTree/
+│           │   ├── TreeNode.java
+│           │   ├── SearchInABinarySearchTree.java
+│           │   └── DeleteNodeInABST.java
 │           └── BinaryTree/
 │               ├── TreeNode.java
 │               ├── DFS/
@@ -244,6 +248,12 @@ mvn exec:java -Dexec.mainClass="LinkedList.DeleteTheMiddleNodeOfALinkedList"
 mvn exec:java -Dexec.mainClass="LinkedList.MaximumTwinSumOfALinkedList"
 mvn exec:java -Dexec.mainClass="LinkedList.OddEvenLinkedList"
 mvn exec:java -Dexec.mainClass="LinkedList.ReverseLinkedList"
+```
+
+#### BinarySearchTree Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinarySearchTree.SearchInABinarySearchTree"
+mvn exec:java -Dexec.mainClass="BinarySearchTree.DeleteNodeInABST"
 ```
 
 #### BinaryTree DFS Solutions
@@ -527,6 +537,23 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Classic iterative solution using prev, current, and next pointers to reverse the direction of links
 
+### BinarySearchTree Problems
+#### 1. Search in a Binary Search Tree
+- **Problem**: Search for a node with a given value in a Binary Search Tree
+- **Approach**: Iterative traversal using BST property (left < root < right)
+- **Time Complexity**: O(log n) average, O(n) worst case - eliminates half the tree at each step
+- **Space Complexity**: O(1) - constant space using iterative approach
+- **Difficulty**: Easy
+- **Note**: Efficient iterative solution that leverages BST property to navigate directly to the target without visiting unnecessary nodes
+
+#### 2. Delete Node in a BST
+- **Problem**: Delete a node with a given key from a Binary Search Tree while maintaining BST property
+- **Approach**: Iterative deletion handling four cases: leaf node, single child, and two children using inorder successor
+- **Time Complexity**: O(h) where h is the height of the tree - traverses to find node and successor
+- **Space Complexity**: O(1) - constant space using iterative approach
+- **Difficulty**: Medium
+- **Note**: Comprehensive iterative solution that handles all deletion cases while maintaining BST properties using inorder successor for nodes with two children
+
 ### BinaryTree DFS Problems
 #### 1. Maximum Depth of Binary Tree
 - **Problem**: Find the maximum depth (height) of a binary tree
@@ -606,6 +633,12 @@ This is a **Maven-based Java project** with the following characteristics:
 # Used by all LinkedList problem solutions
 ```
 
+#### TreeNode (BinarySearchTree)
+```bash
+# Located in: src/main/java/BinarySearchTree/TreeNode.java
+# Used by all BinarySearchTree problem solutions
+```
+
 #### TreeNode (BinaryTree)
 ```bash
 # Located in: src/main/java/BinaryTree/TreeNode.java
@@ -632,6 +665,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🌲 Enhanced BinarySearchTree Implementation** - Added Delete Node in a BST solution with comprehensive O(h) iterative approach handling all deletion cases
 - **🌳 BinaryTree Reorganization** - Restructured BinaryTree solutions into separate DFS and BFS directories for better organization and clarity
 - **🆕 Added BinaryTree BFS Solution** - Added Binary Tree Right Side View solution with efficient BFS level-order traversal approach
 - **📁 Improved Project Structure** - Moved TreeNode.java to the main BinaryTree directory to be shared between DFS and BFS solutions
