@@ -110,6 +110,8 @@ LeetCode75/
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
+│           ├── BinarySearch/
+│           │   └── GuessNumberHigherOrLower.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -292,6 +294,11 @@ mvn exec:java -Dexec.mainClass="Graphs.DFS.NumberOfProvinces"
 ```bash
 mvn exec:java -Dexec.mainClass="Graphs.BFS.NearestExitFromEntranceInMaze"
 mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
+```
+
+#### BinarySearch Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
 ```
 
 #### Backtracking Solutions
@@ -677,6 +684,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that simulates minute-by-minute rotting process and returns -1 if some oranges can never rot
 
+### BinarySearch Problems
+#### 1. Guess Number Higher or Lower
+- **Problem**: Find the picked number using binary search with a guess API that returns -1 (higher), 1 (lower), or 0 (correct)
+- **Approach**: Binary search with mid calculation and API integration
+- **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Easy
+- **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -744,6 +760,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Guess Number Higher or Lower** - Added binary search solution with efficient O(log n) approach for finding the picked number using the guess API
 - **🆕 Added Number of Provinces** - Added number of provinces solution with efficient O(n²) iterative DFS approach for finding connected components in adjacency matrix
 - **🆕 Added Keys and Rooms** - Added keys and rooms solution with efficient O(V + E) iterative DFS approach for determining room accessibility starting from room 0
 - **🆕 Added Rotting Oranges** - Added rotting oranges simulation solution with efficient O(m × n) BFS approach for tracking minimum time until all oranges rot
