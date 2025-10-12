@@ -14,7 +14,7 @@ class RecentCounter {
     /**
      * Initializes the RecentCounter with an empty queue.
      */
-    public RecentCounter() {
+    private RecentCounter() {
         this.requests = new LinkedList<>();
     }
     
@@ -25,7 +25,7 @@ class RecentCounter {
      * @param t the timestamp of the new request
      * @return the number of recent requests in the last 3000ms
      */
-    public int ping(int t) {
+    private int ping(int t) {
         // Add the new request timestamp
         this.requests.add(t);
         

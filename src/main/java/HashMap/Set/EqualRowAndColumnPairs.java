@@ -22,7 +22,7 @@ public class EqualRowAndColumnPairs {
      * @param grid n x n integer matrix
      * @return number of pairs (ri, cj) where row ri equals column cj
      */
-    public int equalPairs(int[][] grid) {
+    private int equalPairs(int[][] grid) {
         Map<String, Integer> rowCount = new HashMap<>();
         Map<String, Integer> colCount = new HashMap<>();
 

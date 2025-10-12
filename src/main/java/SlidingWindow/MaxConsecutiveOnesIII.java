@@ -13,7 +13,7 @@ public class MaxConsecutiveOnesIII {
      * @param k maximum number of zeros that can be flipped
      * @return maximum length of consecutive 1's after flipping at most k zeros
      */
-    public int longestOnes(int[] nums, int k) {
+    private int longestOnes(int[] nums, int k) {
         int left = 0, right = 0;  // Sliding window pointers
         int maxOnesLength = 0, zeroesCount = 0;  // Track max length and zeros in current window
         

@@ -24,7 +24,7 @@ public class AsteroidCollision {
      * @param asteroids array representing asteroids with positive/negative values for direction
      * @return array of surviving asteroids after all collisions
      */
-    public int[] asteroidCollision(int[] asteroids) {
+    private int[] asteroidCollision(int[] asteroids) {
         Stack<Integer> stack = new Stack<>();
         
         for (int asteroid : asteroids) {

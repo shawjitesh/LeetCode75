@@ -13,7 +13,7 @@ public class CountGoodNodesInBinaryTree {
      * @param root the root of the binary tree
      * @return the number of good nodes
      */
-    public int goodNodes(TreeNode root) {
+    private int goodNodes(TreeNode root) {
         return dfs(root, root.val);
     }
     

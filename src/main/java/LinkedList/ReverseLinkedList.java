@@ -12,7 +12,7 @@ public class ReverseLinkedList {
      * @param head the head of the linked list to reverse
      * @return the head of the reversed linked list
      */
-    public ListNode reverseList(ListNode head) {
+    private ListNode reverseList(ListNode head) {
         ListNode prev = null;    // Previous node (starts as null)
         ListNode current = head; // Current node being processed
         

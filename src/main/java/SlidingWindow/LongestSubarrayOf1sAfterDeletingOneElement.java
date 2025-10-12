@@ -12,7 +12,7 @@ public class LongestSubarrayOf1sAfterDeletingOneElement {
      * @param nums binary array of 0s and 1s
      * @return length of longest subarray of 1's after deleting one element
      */
-    public int longestSubarray(int[] nums) {
+    private int longestSubarray(int[] nums) {
         int left = 0, right = 0;
         int maxLength = 0, zeroCount = 0;
         

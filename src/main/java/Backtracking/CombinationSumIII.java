@@ -22,7 +22,7 @@ public class CombinationSumIII {
      * @param n target sum
      * @return list of all valid combinations
      */
-    public List<List<Integer>> combinationSum3(int k, int n) {
+    private List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> result = new ArrayList<>();
         List<Integer> current = new ArrayList<>();
         backtrack(result, current, k, n, 1);

@@ -25,7 +25,7 @@ public class PathSumIII {
      * Iterative approach using stack to simulate recursive calls.
      * Uses a stack to keep track of nodes to process and their target sums.
      */
-    public int pathSum(TreeNode root, int targetSum) {
+    private int pathSum(TreeNode root, int targetSum) {
         if (root == null) {
             return 0;
         }

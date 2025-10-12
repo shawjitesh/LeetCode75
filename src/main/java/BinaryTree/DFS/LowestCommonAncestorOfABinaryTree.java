@@ -22,7 +22,7 @@ public class LowestCommonAncestorOfABinaryTree {
      * @param q the second target node
      * @return the lowest common ancestor of p and q, or null if not found
      */
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    private TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         // Base case: if root is null or if we found one of the target nodes
         if (root == null || root == p || root == q) {
             return root;

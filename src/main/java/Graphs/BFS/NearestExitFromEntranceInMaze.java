@@ -15,7 +15,7 @@ public class NearestExitFromEntranceInMaze {
      * @param entrance Starting position [row, col]
      * @return minimum steps to nearest exit, or -1 if no exit exists
      */
-    public int nearestExit(char[][] maze, int[] entrance) {
+    private int nearestExit(char[][] maze, int[] entrance) {
         int m = maze.length;
         int n = maze[0].length;
         

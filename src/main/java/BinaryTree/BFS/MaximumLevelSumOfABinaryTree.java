@@ -19,7 +19,7 @@ public class MaximumLevelSumOfABinaryTree {
      * @param root the root of the binary tree
      * @return the smallest level number (1-indexed) with maximum sum
      */
-    public int maxLevelSum(TreeNode root) {
+    private int maxLevelSum(TreeNode root) {
         int maxSumLevel = 0;
         if (root == null) {
             return maxSumLevel;

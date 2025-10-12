@@ -12,7 +12,7 @@ public class ReverseWordsInAString {
      * @param s the input string
      * @return string with words in reversed order
      */
-    public String reverseWords(String s) {
+    private String reverseWords(String s) {
         String[] words = s.split(" ");
         StringBuilder result = new StringBuilder();
         for (int i = words.length - 1; i >= 0; i--) {

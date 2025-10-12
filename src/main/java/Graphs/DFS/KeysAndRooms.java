@@ -20,7 +20,7 @@ public class KeysAndRooms {
      * @param rooms List of rooms, where each room contains a list of keys (room numbers)
      * @return true if all rooms can be visited, false otherwise
      */
-    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+    private boolean canVisitAllRooms(List<List<Integer>> rooms) {
         int n = rooms.size();
         boolean[] visited = new boolean[n]; // Track visited rooms
         Stack<Integer> stack = new Stack<>(); // Stack for iterative DFS

@@ -17,7 +17,7 @@ public class UniqueNumberOfOccurrences {
      * @param arr array of integers to check for unique occurrence counts
      * @return true if all occurrence counts are unique, false otherwise
      */
-    public boolean uniqueOccurrences(int[] arr) {
+    private boolean uniqueOccurrences(int[] arr) {
         // Count frequency of each number using HashMap
         Map<Integer, Integer> frequencyMap = new HashMap<>();
         for (int num : arr) {

@@ -19,7 +19,7 @@ public class MaxNumberOfKSumPairs {
      * @param k the target sum
      * @return maximum number of operations possible
      */
-    public int maxOperations(int[] nums, int k) {
+    private int maxOperations(int[] nums, int k) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
         int operations = 0;
         
@@ -52,7 +52,7 @@ public class MaxNumberOfKSumPairs {
      * Time complexity: O(n log n) due to sorting
      * Space complexity: O(1) excluding input array
      */
-    public int maxOperationsTwoPointers(int[] nums, int k) {
+    private int maxOperationsTwoPointers(int[] nums, int k) {
         // First sort the array
         Arrays.sort(nums);
         

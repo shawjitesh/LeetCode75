@@ -12,7 +12,7 @@ public class ReverseVowelsOfAString {
      * @param s the input string
      * @return string with vowels reversed and consonants in original positions
      */
-    public String reverseVowels(String s) {
+    private String reverseVowels(String s) {
         if (s == null || s.length() <= 1) return s;
         
         char[] chars = s.toCharArray();

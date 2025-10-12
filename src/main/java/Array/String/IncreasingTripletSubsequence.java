@@ -12,7 +12,7 @@ public class IncreasingTripletSubsequence {
      * @param nums the input array
      * @return true if there exists an increasing triplet subsequence, false otherwise
      */
-    public boolean increasingTriplet(int[] nums) {
+    private boolean increasingTriplet(int[] nums) {
         int first = Integer.MAX_VALUE;
         int second = Integer.MAX_VALUE;
         

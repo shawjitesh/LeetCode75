@@ -24,7 +24,7 @@ public class DetermineIfTwoStringsAreClose {
      * @param word2 Second string
      * @return true if strings are close, false otherwise
      */
-    public boolean closeStrings(String word1, String word2) {
+    private boolean closeStrings(String word1, String word2) {
         // Different lengths cannot be made equal
         if (word1.length() != word2.length()) return false;
 

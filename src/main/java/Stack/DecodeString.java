@@ -14,7 +14,7 @@ public class DecodeString {
      * @param s the encoded string containing patterns like "k[encoded_string]"
      * @return the decoded string
      */
-    public String decodeString(String s) {
+    private String decodeString(String s) {
         Stack<String> stringStack = new Stack<>();
         Stack<Integer> numStack = new Stack<>();
         StringBuilder currentString = new StringBuilder();

@@ -17,7 +17,7 @@ public class KidsWithTheGreatestNumberOfCandies {
      * @param extraCandies the number of extra candies to add
      * @return list of boolean values indicating if each kid can have the greatest number of candies
      */
-    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+    private List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
         return Arrays.stream(candies)
             .mapToObj(candy -> candy + extraCandies >= Arrays.stream(candies).max().getAsInt())
             .collect(Collectors.toList());

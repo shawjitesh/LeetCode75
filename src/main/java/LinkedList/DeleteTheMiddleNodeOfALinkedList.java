@@ -12,7 +12,7 @@ public class DeleteTheMiddleNodeOfALinkedList {
      * @param head the head of the linked list
      * @return the head of the modified linked list, or null if list has 0 or 1 nodes
      */
-    public ListNode deleteMiddle(ListNode head) {
+    private ListNode deleteMiddle(ListNode head) {
         // Edge case: empty list or single node
         if (head == null || head.next == null) {
             return null;

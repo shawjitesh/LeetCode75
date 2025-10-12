@@ -13,7 +13,7 @@ public class MaximumAverageSubarrayI {
      * @param k the length of the subarray
      * @return the maximum average value
      */
-    public double findMaxAverage(int[] nums, int k) {
+    private double findMaxAverage(int[] nums, int k) {
         // Calculate sum of first window
         long currentSum = 0;
         for (int i = 0; i < k; i++) {

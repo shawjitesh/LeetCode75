@@ -17,7 +17,7 @@ public class LeafSimilarTrees {
      * @param root2 the root of the second binary tree
      * @return true if both trees have the same leaf value sequence, false otherwise
      */
-    public boolean leafSimilar(TreeNode root1, TreeNode root2) {
+    private boolean leafSimilar(TreeNode root1, TreeNode root2) {
         // Get leaf sequences for both trees
         List<Integer> leaves1 = new ArrayList<>();
         List<Integer> leaves2 = new ArrayList<>();

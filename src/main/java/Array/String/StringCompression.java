@@ -12,7 +12,7 @@ public class StringCompression {
      * @param chars the character array to compress
      * @return the new length of the compressed array
      */
-    public int compress(char[] chars) {
+    private int compress(char[] chars) {
         int writeIndex = 0; 
         int readIndex = 0;  
         

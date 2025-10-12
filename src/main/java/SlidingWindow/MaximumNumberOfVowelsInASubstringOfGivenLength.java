@@ -6,7 +6,7 @@ package SlidingWindow;
  */
 public class MaximumNumberOfVowelsInASubstringOfGivenLength {
 
-    public int maxVowels(String s, int k) {
+    private int maxVowels(String s, int k) {
         // Count vowels in the first window of size k
         int currentVowels = 0;
         for (int i = 0; i < k; i++) {
@@ -35,7 +35,7 @@ public class MaximumNumberOfVowelsInASubstringOfGivenLength {
     }
 
     // Helper method to check if a character is a vowel
-    boolean isVowel(char c) {
+    private boolean isVowel(char c) {
         return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
     }
 

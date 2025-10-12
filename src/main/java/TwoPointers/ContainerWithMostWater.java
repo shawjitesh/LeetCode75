@@ -13,7 +13,7 @@ public class ContainerWithMostWater {
      * @param height array of integers representing the height of each vertical line
      * @return the maximum area of water that can be contained
      */
-    public int maxArea(int[] height) {
+    private int maxArea(int[] height) {
         int maxArea = 0;
         int left = 0;  // Left pointer starting from beginning
         int right = height.length - 1;  // Right pointer starting from end
