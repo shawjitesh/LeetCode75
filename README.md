@@ -105,7 +105,8 @@ LeetCode75/
 │           │       └── MaximumLevelSumOfABinaryTree.java
 │           ├── Graphs/
 │           │   ├── DFS/
-│           │   │   └── KeysAndRooms.java
+│           │   │   ├── KeysAndRooms.java
+│           │   │   └── NumberOfProvinces.java
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
@@ -284,6 +285,7 @@ mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 #### Graphs DFS Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="Graphs.DFS.KeysAndRooms"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.NumberOfProvinces"
 ```
 
 #### Graphs BFS Solutions
@@ -650,6 +652,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient iterative DFS solution that simulates recursive traversal using explicit stack, avoiding potential stack overflow issues
 
+#### 2. Number of Provinces
+- **Problem**: Find the number of connected components in an undirected graph represented by an adjacency matrix
+- **Approach**: Iterative DFS using explicit stack to explore connected components
+- **Time Complexity**: O(n²) - where n is the number of cities
+- **Space Complexity**: O(n) - for visited array and stack
+- **Difficulty**: Medium
+- **Note**: Efficient iterative DFS solution that finds all connected components by marking visited cities and counting separate provinces
+
 ### Graphs BFS Problems
 #### 1. Nearest Exit from Entrance in Maze
 - **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
@@ -734,6 +744,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Number of Provinces** - Added number of provinces solution with efficient O(n²) iterative DFS approach for finding connected components in adjacency matrix
 - **🆕 Added Keys and Rooms** - Added keys and rooms solution with efficient O(V + E) iterative DFS approach for determining room accessibility starting from room 0
 - **🆕 Added Rotting Oranges** - Added rotting oranges simulation solution with efficient O(m × n) BFS approach for tracking minimum time until all oranges rot
 - **🆕 Added Nearest Exit from Entrance in Maze** - Added maze navigation solution with efficient O(m × n) BFS approach for finding shortest path to nearest exit
