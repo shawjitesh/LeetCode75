@@ -104,6 +104,8 @@ LeetCode75/
 │           │       ├── BinaryTreeRightSideView.java
 │           │       └── MaximumLevelSumOfABinaryTree.java
 │           ├── Graphs/
+│           │   ├── DFS/
+│           │   │   └── KeysAndRooms.java
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
@@ -277,6 +279,11 @@ mvn exec:java -Dexec.mainClass="BinaryTree.DFS.LowestCommonAncestorOfABinaryTree
 ```bash
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
+```
+
+#### Graphs DFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Graphs.DFS.KeysAndRooms"
 ```
 
 #### Graphs BFS Solutions
@@ -634,6 +641,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
+### Graphs DFS Problems
+#### 1. Keys and Rooms
+- **Problem**: Determine if all rooms can be visited starting from room 0, where each room contains keys to other rooms
+- **Approach**: Iterative DFS using stack to traverse all accessible rooms from room 0
+- **Time Complexity**: O(V + E) - where V is number of rooms and E is total number of keys
+- **Space Complexity**: O(V) - for visited array and stack
+- **Difficulty**: Medium
+- **Note**: Efficient iterative DFS solution that simulates recursive traversal using explicit stack, avoiding potential stack overflow issues
+
 ### Graphs BFS Problems
 #### 1. Nearest Exit from Entrance in Maze
 - **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
@@ -718,6 +734,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Keys and Rooms** - Added keys and rooms solution with efficient O(V + E) iterative DFS approach for determining room accessibility starting from room 0
 - **🆕 Added Rotting Oranges** - Added rotting oranges simulation solution with efficient O(m × n) BFS approach for tracking minimum time until all oranges rot
 - **🆕 Added Nearest Exit from Entrance in Maze** - Added maze navigation solution with efficient O(m × n) BFS approach for finding shortest path to nearest exit
 - **🔄 Added Combination Sum III** - Added Combination Sum III solution with efficient O(C(9,k) × k) backtracking approach for finding all valid combinations of k numbers that sum to n
