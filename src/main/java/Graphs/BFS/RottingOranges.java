@@ -15,7 +15,7 @@ public class RottingOranges {
      * @param grid 2D array where 0=empty, 1=fresh orange, 2=rotten orange
      * @return minimum minutes to rot all oranges, or -1 if impossible
      */
-    public int orangesRotting(int[][] grid) {
+    private int orangesRotting(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
         

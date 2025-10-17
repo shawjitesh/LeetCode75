@@ -13,7 +13,7 @@ public class GreatestCommonDivisorOfStrings {
      * @param str2 the second string
      * @return the largest string that divides both input strings, or empty string if none exists
      */
-    public String gcdOfStrings(String str1, String str2) {
+    private String gcdOfStrings(String str1, String str2) {
         if (!str1.concat(str2).equals(str2.concat(str1))) {
             return "";
         }

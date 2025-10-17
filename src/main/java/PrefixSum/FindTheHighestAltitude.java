@@ -12,7 +12,7 @@ public class FindTheHighestAltitude {
      * @param gain array of altitude gains/losses at each point
      * @return the highest altitude reached during the journey
      */
-    public int largestAltitude(int[] gain) {
+    private int largestAltitude(int[] gain) {
         int maxAltitude = 0;  // Track the highest altitude seen so far
         int currentAltitude = 0;  // Current altitude (starts at 0)
 

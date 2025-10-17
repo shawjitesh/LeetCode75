@@ -13,7 +13,7 @@ public class MergeStringsAlternately {
      * @param word2 the second string to merge
      * @return the merged string with alternating characters
      */
-    public String mergeAlternately(String word1, String word2) {
+    private String mergeAlternately(String word1, String word2) {
         StringBuilder result = new StringBuilder();
         int maxLength = Math.max(word1.length(), word2.length());
         

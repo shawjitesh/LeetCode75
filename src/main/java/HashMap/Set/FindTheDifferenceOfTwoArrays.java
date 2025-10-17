@@ -18,7 +18,7 @@ public class FindTheDifferenceOfTwoArrays {
      * @param nums2 second array of integers
      * @return list containing two lists - [elements unique to nums1, elements unique to nums2]
      */
-    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+    private List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
         Set<Integer> set1 = new HashSet<>();  // Unique elements from nums1
         Set<Integer> set2 = new HashSet<>();  // Unique elements from nums2
         List<List<Integer>> result = new ArrayList<>();

@@ -21,7 +21,7 @@ public class BinaryTreeRightSideView {
      * @param root the root of the binary tree
      * @return list of node values visible from the right side (top to bottom)
      */
-    public List<Integer> rightSideView(TreeNode root) {
+    private List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
         if (root == null) {
             return result;

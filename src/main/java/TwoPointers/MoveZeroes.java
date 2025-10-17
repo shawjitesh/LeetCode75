@@ -11,7 +11,7 @@ public class MoveZeroes {
      * 
      * @param nums the input array to modify in-place
      */
-    public void moveZeroes(int[] nums) {
+    private void moveZeroes(int[] nums) {
         int n = nums.length;
         int left = 0;
         int right = 0;

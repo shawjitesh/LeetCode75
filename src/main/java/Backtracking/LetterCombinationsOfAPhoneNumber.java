@@ -31,7 +31,7 @@ public class LetterCombinationsOfAPhoneNumber {
      * @param digits String containing digits 2-9
      * @return List of all possible letter combinations
      */
-    public List<String> letterCombinations(String digits) {
+    private List<String> letterCombinations(String digits) {
         List<String> result = new ArrayList<>();
         
         if (digits == null || digits.length() == 0) {

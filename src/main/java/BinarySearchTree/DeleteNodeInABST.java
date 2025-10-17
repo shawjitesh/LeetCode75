@@ -22,7 +22,7 @@ public class DeleteNodeInABST {
      * @param key the value of the node to delete
      * @return the root of the modified BST
      */
-    public TreeNode deleteNode(TreeNode root, int key) {
+    private TreeNode deleteNode(TreeNode root, int key) {
         // Handle empty tree case
         if (root == null) {
             return null;

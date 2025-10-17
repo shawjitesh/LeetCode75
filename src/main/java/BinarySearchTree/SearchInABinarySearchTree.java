@@ -10,7 +10,7 @@ public class SearchInABinarySearchTree {
      * @param val the value to search for
      * @return the node containing the value, or null if not found
      */
-    public TreeNode searchBST(TreeNode root, int val) {
+    private TreeNode searchBST(TreeNode root, int val) {
         if (root == null) {
             return null;
         }

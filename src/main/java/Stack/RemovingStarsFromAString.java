@@ -21,7 +21,7 @@ public class RemovingStarsFromAString {
      * @param s input string containing stars and characters
      * @return string with all stars removed and characters popped as per operation rules
      */
-    public String removeStars(String s) {
+    private String removeStars(String s) {
         Stack<Character> stack = new Stack<>();
         
         // Process each character in the string

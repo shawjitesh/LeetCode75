@@ -17,7 +17,7 @@ public class LongestZigZagPathInABinaryTree {
      * @param root the root of the binary tree
      * @return the length of the longest zigzag path
      */
-    public int longestZigZag(TreeNode root) {
+    private int longestZigZag(TreeNode root) {
         dfs(root, true, 0);  // Start with direction = left (true)
         dfs(root, false, 0); // Start with direction = right (false)
         return pathLength; 

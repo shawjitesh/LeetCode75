@@ -104,9 +104,19 @@ LeetCode75/
 │           │       ├── BinaryTreeRightSideView.java
 │           │       └── MaximumLevelSumOfABinaryTree.java
 │           ├── Graphs/
+│           │   ├── DFS/
+│           │   │   ├── KeysAndRooms.java
+│           │   │   ├── NumberOfProvinces.java
+│           │   │   ├── ReorderRoutesToMakeAllPathsLeadToTheCityZero.java
+│           │   │   └── EvaluateDivision.java
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
+│           ├── BinarySearch/
+│           │   └── GuessNumberHigherOrLower.java
+│           ├── Heap/
+│           │   └── PriorityQueue/
+│           │       └── KthLargestElementInAnArray.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -279,10 +289,28 @@ mvn exec:java -Dexec.mainClass="BinaryTree.BFS.BinaryTreeRightSideView"
 mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 ```
 
+#### Graphs DFS Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Graphs.DFS.KeysAndRooms"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.NumberOfProvinces"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.ReorderRoutesToMakeAllPathsLeadToTheCityZero"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.EvaluateDivision"
+```
+
 #### Graphs BFS Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="Graphs.BFS.NearestExitFromEntranceInMaze"
 mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
+```
+
+#### BinarySearch Solutions
+```bash
+mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
+```
+
+#### Heap/PriorityQueue Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 ```
 
 #### Backtracking Solutions
@@ -634,6 +662,39 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that processes each level completely, calculates level sum, and updates the maximum sum level. Returns the smallest level number when multiple levels have the same maximum sum
 
+### Graphs DFS Problems
+#### 1. Keys and Rooms
+- **Problem**: Determine if all rooms can be visited starting from room 0, where each room contains keys to other rooms
+- **Approach**: Iterative DFS using stack to traverse all accessible rooms from room 0
+- **Time Complexity**: O(V + E) - where V is number of rooms and E is total number of keys
+- **Space Complexity**: O(V) - for visited array and stack
+- **Difficulty**: Medium
+- **Note**: Efficient iterative DFS solution that simulates recursive traversal using explicit stack, avoiding potential stack overflow issues
+
+#### 2. Number of Provinces
+- **Problem**: Find the number of connected components in an undirected graph represented by an adjacency matrix
+- **Approach**: Iterative DFS using explicit stack to explore connected components
+- **Time Complexity**: O(n²) - where n is the number of cities
+- **Space Complexity**: O(n) - for visited array and stack
+- **Difficulty**: Medium
+- **Note**: Efficient iterative DFS solution that finds all connected components by marking visited cities and counting separate provinces
+
+#### 3. Reorder Routes to Make All Paths Lead to the City Zero
+- **Problem**: Find the minimum number of edge reversals needed so all paths lead to city 0
+- **Approach**: Build bidirectional graph and use DFS from city 0 to count edges pointing away
+- **Time Complexity**: O(n) - where n is the number of cities
+- **Space Complexity**: O(n) - for adjacency list and visited array
+- **Difficulty**: Medium
+- **Note**: Efficient DFS solution that builds bidirectional graph and counts edges pointing away from city 0 during traversal
+
+#### 4. Evaluate Division
+- **Problem**: Evaluate division queries given a set of equations and their values
+- **Approach**: Build weighted directed graph and use DFS to find division paths
+- **Time Complexity**: O(M × N) - where M is number of equations, N is number of queries
+- **Space Complexity**: O(M) - for graph storage
+- **Difficulty**: Medium
+- **Note**: Efficient graph-based solution that uses DFS to find paths between variables and multiply weights along the path
+
 ### Graphs BFS Problems
 #### 1. Nearest Exit from Entrance in Maze
 - **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
@@ -650,6 +711,24 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(m × n) - for BFS queue in worst case
 - **Difficulty**: Medium
 - **Note**: Efficient BFS solution that simulates minute-by-minute rotting process and returns -1 if some oranges can never rot
+
+### BinarySearch Problems
+#### 1. Guess Number Higher or Lower
+- **Problem**: Find the picked number using binary search with a guess API that returns -1 (higher), 1 (lower), or 0 (correct)
+- **Approach**: Binary search with mid calculation and API integration
+- **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Easy
+- **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
+
+### Heap/PriorityQueue Problems
+#### 1. Kth Largest Element in an Array
+- **Problem**: Find the kth largest element in an unsorted array
+- **Approach**: Min heap to maintain k largest elements
+- **Time Complexity**: O(n log k) - where n is array length, k is the position
+- **Space Complexity**: O(k) - for the min heap
+- **Difficulty**: Medium
+- **Note**: Efficient solution using min heap to track k largest elements, automatically maintaining the kth largest at the root
 
 ### Backtracking Problems
 #### 1. Combination Sum III
@@ -718,6 +797,12 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
+- **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
+- **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
+- **🆕 Added Guess Number Higher or Lower** - Added binary search solution with efficient O(log n) approach for finding the picked number using the guess API
+- **🆕 Added Number of Provinces** - Added number of provinces solution with efficient O(n²) iterative DFS approach for finding connected components in adjacency matrix
+- **🆕 Added Keys and Rooms** - Added keys and rooms solution with efficient O(V + E) iterative DFS approach for determining room accessibility starting from room 0
 - **🆕 Added Rotting Oranges** - Added rotting oranges simulation solution with efficient O(m × n) BFS approach for tracking minimum time until all oranges rot
 - **🆕 Added Nearest Exit from Entrance in Maze** - Added maze navigation solution with efficient O(m × n) BFS approach for finding shortest path to nearest exit
 - **🔄 Added Combination Sum III** - Added Combination Sum III solution with efficient O(C(9,k) × k) backtracking approach for finding all valid combinations of k numbers that sum to n

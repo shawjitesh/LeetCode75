@@ -12,7 +12,7 @@ public class FindPivotIndex {
      * @param nums array of integers
      * @return the leftmost pivot index, or -1 if no pivot exists
      */
-    public int pivotIndex(int[] nums) {
+    private int pivotIndex(int[] nums) {
         int totalSum = 0;  // Total sum of all elements
         int leftSum = 0;   // Running sum of elements to the left
         

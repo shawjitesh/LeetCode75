@@ -14,7 +14,7 @@ public class ProductOfArrayExceptSelf {
      * @param nums the input array
      * @return array where each element is the product of all other elements
      */
-    public int[] productExceptSelf(int[] nums) {
+    private int[] productExceptSelf(int[] nums) {
         int[] result = new int[nums.length];
         int left = 1;
         int right = 1;

@@ -13,7 +13,7 @@ public class MaximumTwinSumOfALinkedList {
      * @param head the head of the linked list
      * @return the maximum sum of twin pairs
      */
-    public int pairSum(ListNode head) {
+    private int pairSum(ListNode head) {
         // Find middle using tortoise and hare algorithm
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {

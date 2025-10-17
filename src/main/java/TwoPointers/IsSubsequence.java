@@ -15,7 +15,7 @@ public class IsSubsequence {
      * @param t the target string to check against
      * @return true if s is a subsequence of t, false otherwise
      */
-    public boolean isSubsequence(String s, String t) {
+    private boolean isSubsequence(String s, String t) {
         int i = 0, j = 0;
         while (i < s.length() && j < t.length()) {
             if (s.charAt(i) == t.charAt(j)) {

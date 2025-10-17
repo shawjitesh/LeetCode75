@@ -16,7 +16,7 @@ public class Dota2Senate {
      * @param senate string containing 'R' (Radiant) and 'D' (Dire) senators
      * @return "Radiant" or "Dire" based on which party wins
      */
-    public String predictPartyVictory(String senate) {
+    private String predictPartyVictory(String senate) {
         Queue<Integer> radiantQueue = new LinkedList<>();
         Queue<Integer> direQueue = new LinkedList<>();
         

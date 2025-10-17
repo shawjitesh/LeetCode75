@@ -17,7 +17,7 @@ public class MaximumDepthOfBinaryTree {
      * @param root the root of the binary tree
      * @return the maximum depth of the tree
      */
-    public int maxDepth(TreeNode root) {
+    private int maxDepth(TreeNode root) {
         if (root == null) return 0;
         
         // Use two stacks to track nodes and their depths

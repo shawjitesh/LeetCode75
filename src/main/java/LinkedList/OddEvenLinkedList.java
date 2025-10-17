@@ -12,7 +12,7 @@ public class OddEvenLinkedList {
      * @param head the head of the linked list
      * @return the head of the modified linked list with odd nodes followed by even nodes
      */
-    public ListNode oddEvenList(ListNode head) {
+    private ListNode oddEvenList(ListNode head) {
         // Edge case: empty list or single node
         if (head == null || head.next == null) {
             return head;
