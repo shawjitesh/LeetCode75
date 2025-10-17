@@ -113,7 +113,8 @@ LeetCode75/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
 │           ├── BinarySearch/
-│           │   └── GuessNumberHigherOrLower.java
+│           │   ├── GuessNumberHigherOrLower.java
+│           │   └── SuccessfulPairsOfSpellsAndPotions.java
 │           ├── Heap/
 │           │   └── PriorityQueue/
 │           │       ├── KthLargestElementInAnArray.java
@@ -307,6 +308,7 @@ mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 #### BinarySearch Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
+mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```
 
 #### Heap/PriorityQueue Solutions
@@ -723,6 +725,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
 
+#### 2. Successful Pairs of Spells and Potions
+- **Problem**: Find the number of successful pairs for each spell where spell * potion >= success
+- **Approach**: Sort potions and use binary search to find first successful potion for each spell
+- **Time Complexity**: O(m log n) - where m is number of spells, n is number of potions
+- **Space Complexity**: O(1) - excluding output array
+- **Difficulty**: Medium
+- **Note**: Efficient solution using binary search on sorted potions to find the threshold for each spell, avoiding O(m*n) brute force approach
+
 ### Heap/PriorityQueue Problems
 #### 1. Kth Largest Element in an Array
 - **Problem**: Find the kth largest element in an unsorted array
@@ -807,6 +817,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
 - **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
