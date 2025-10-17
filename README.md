@@ -107,7 +107,8 @@ LeetCode75/
 │           │   ├── DFS/
 │           │   │   ├── KeysAndRooms.java
 │           │   │   ├── NumberOfProvinces.java
-│           │   │   └── ReorderRoutesToMakeAllPathsLeadToTheCityZero.java
+│           │   │   ├── ReorderRoutesToMakeAllPathsLeadToTheCityZero.java
+│           │   │   └── EvaluateDivision.java
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
@@ -290,6 +291,7 @@ mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 mvn exec:java -Dexec.mainClass="Graphs.DFS.KeysAndRooms"
 mvn exec:java -Dexec.mainClass="Graphs.DFS.NumberOfProvinces"
 mvn exec:java -Dexec.mainClass="Graphs.DFS.ReorderRoutesToMakeAllPathsLeadToTheCityZero"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.EvaluateDivision"
 ```
 
 #### Graphs BFS Solutions
@@ -677,6 +679,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient DFS solution that builds bidirectional graph and counts edges pointing away from city 0 during traversal
 
+#### 4. Evaluate Division
+- **Problem**: Evaluate division queries given a set of equations and their values
+- **Approach**: Build weighted directed graph and use DFS to find division paths
+- **Time Complexity**: O(M × N) - where M is number of equations, N is number of queries
+- **Space Complexity**: O(M) - for graph storage
+- **Difficulty**: Medium
+- **Note**: Efficient graph-based solution that uses DFS to find paths between variables and multiply weights along the path
+
 ### Graphs BFS Problems
 #### 1. Nearest Exit from Entrance in Maze
 - **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
@@ -770,6 +780,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
 - **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
 - **🆕 Added Guess Number Higher or Lower** - Added binary search solution with efficient O(log n) approach for finding the picked number using the guess API
 - **🆕 Added Number of Provinces** - Added number of provinces solution with efficient O(n²) iterative DFS approach for finding connected components in adjacency matrix
