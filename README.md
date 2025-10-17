@@ -106,7 +106,8 @@ LeetCode75/
 │           ├── Graphs/
 │           │   ├── DFS/
 │           │   │   ├── KeysAndRooms.java
-│           │   │   └── NumberOfProvinces.java
+│           │   │   ├── NumberOfProvinces.java
+│           │   │   └── ReorderRoutesToMakeAllPathsLeadToTheCityZero.java
 │           │   └── BFS/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
@@ -288,6 +289,7 @@ mvn exec:java -Dexec.mainClass="BinaryTree.BFS.MaximumLevelSumOfABinaryTree"
 ```bash
 mvn exec:java -Dexec.mainClass="Graphs.DFS.KeysAndRooms"
 mvn exec:java -Dexec.mainClass="Graphs.DFS.NumberOfProvinces"
+mvn exec:java -Dexec.mainClass="Graphs.DFS.ReorderRoutesToMakeAllPathsLeadToTheCityZero"
 ```
 
 #### Graphs BFS Solutions
@@ -667,6 +669,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient iterative DFS solution that finds all connected components by marking visited cities and counting separate provinces
 
+#### 3. Reorder Routes to Make All Paths Lead to the City Zero
+- **Problem**: Find the minimum number of edge reversals needed so all paths lead to city 0
+- **Approach**: Build bidirectional graph and use DFS from city 0 to count edges pointing away
+- **Time Complexity**: O(n) - where n is the number of cities
+- **Space Complexity**: O(n) - for adjacency list and visited array
+- **Difficulty**: Medium
+- **Note**: Efficient DFS solution that builds bidirectional graph and counts edges pointing away from city 0 during traversal
+
 ### Graphs BFS Problems
 #### 1. Nearest Exit from Entrance in Maze
 - **Problem**: Find the shortest path from entrance to nearest border cell (exit) in a maze
@@ -760,6 +770,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
 - **🆕 Added Guess Number Higher or Lower** - Added binary search solution with efficient O(log n) approach for finding the picked number using the guess API
 - **🆕 Added Number of Provinces** - Added number of provinces solution with efficient O(n²) iterative DFS approach for finding connected components in adjacency matrix
 - **🆕 Added Keys and Rooms** - Added keys and rooms solution with efficient O(V + E) iterative DFS approach for determining room accessibility starting from room 0
