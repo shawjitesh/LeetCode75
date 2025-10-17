@@ -116,7 +116,8 @@ LeetCode75/
 │           │   └── GuessNumberHigherOrLower.java
 │           ├── Heap/
 │           │   └── PriorityQueue/
-│           │       └── KthLargestElementInAnArray.java
+│           │       ├── KthLargestElementInAnArray.java
+│           │       └── SmallestNumberInInfiniteSet.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -311,6 +312,7 @@ mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
 #### Heap/PriorityQueue Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 ```
 
 #### Backtracking Solutions
@@ -730,6 +732,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient solution using min heap to track k largest elements, automatically maintaining the kth largest at the root
 
+#### 2. Smallest Number in Infinite Set
+- **Problem**: Implement a data structure that manages an infinite set of positive integers with popSmallest() and addBack() operations
+- **Approach**: Priority queue for added-back numbers with current smallest tracking
+- **Time Complexity**: O(log n) for popSmallest() and addBack() - where n is number of added-back elements
+- **Space Complexity**: O(n) - for storing added-back numbers
+- **Difficulty**: Medium
+- **Note**: Efficient solution using priority queue to handle numbers that were removed and added back, while tracking the current smallest available number from the infinite sequence
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -797,6 +807,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
 - **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
 - **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
