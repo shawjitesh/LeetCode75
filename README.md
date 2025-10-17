@@ -114,6 +114,9 @@ LeetCode75/
 │           │       └── RottingOranges.java
 │           ├── BinarySearch/
 │           │   └── GuessNumberHigherOrLower.java
+│           ├── Heap/
+│           │   └── PriorityQueue/
+│           │       └── KthLargestElementInAnArray.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -303,6 +306,11 @@ mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 #### BinarySearch Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
+```
+
+#### Heap/PriorityQueue Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 ```
 
 #### Backtracking Solutions
@@ -713,6 +721,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
 
+### Heap/PriorityQueue Problems
+#### 1. Kth Largest Element in an Array
+- **Problem**: Find the kth largest element in an unsorted array
+- **Approach**: Min heap to maintain k largest elements
+- **Time Complexity**: O(n log k) - where n is array length, k is the position
+- **Space Complexity**: O(k) - for the min heap
+- **Difficulty**: Medium
+- **Note**: Efficient solution using min heap to track k largest elements, automatically maintaining the kth largest at the root
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -780,6 +797,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
 - **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
 - **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
 - **🆕 Added Guess Number Higher or Lower** - Added binary search solution with efficient O(log n) approach for finding the picked number using the guess API
