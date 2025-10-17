@@ -9,11 +9,11 @@ public class GuessNumberHigherOrLower {
     // Pre-defined API method (simulated)
     private int pick; // The number to be guessed
     
-    public GuessNumberHigherOrLower() {
+    private GuessNumberHigherOrLower() {
         this.pick = 6; // Default pick value
     }
     
-    public GuessNumberHigherOrLower(int pick) {
+    private GuessNumberHigherOrLower(int pick) {
         this.pick = pick;
     }
     
@@ -33,7 +33,7 @@ public class GuessNumberHigherOrLower {
      * @param n the upper bound of the number range [1, n]
      * @return the picked number
      */
-    public int guessNumber(int n) {
+    private int guessNumber(int n) {
         int left = 1;
         int right = n;
         
