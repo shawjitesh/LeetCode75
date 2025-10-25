@@ -113,10 +113,14 @@ LeetCode75/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
 │           ├── BinarySearch/
-│           │   └── GuessNumberHigherOrLower.java
+│           │   ├── FindPeakElement.java
+│           │   ├── GuessNumberHigherOrLower.java
+│           │   ├── KokoEatingBananas.java
+│           │   └── SuccessfulPairsOfSpellsAndPotions.java
 │           ├── Heap/
 │           │   └── PriorityQueue/
-│           │       └── KthLargestElementInAnArray.java
+│           │       ├── KthLargestElementInAnArray.java
+│           │       └── SmallestNumberInInfiniteSet.java
 │           └── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -305,12 +309,16 @@ mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 
 #### BinarySearch Solutions
 ```bash
+mvn exec:java -Dexec.mainClass="BinarySearch.FindPeakElement"
 mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
+mvn exec:java -Dexec.mainClass="BinarySearch.KokoEatingBananas"
+mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```
 
 #### Heap/PriorityQueue Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 ```
 
 #### Backtracking Solutions
@@ -713,13 +721,37 @@ mvn clean package -DskipTests
 - **Note**: Efficient BFS solution that simulates minute-by-minute rotting process and returns -1 if some oranges can never rot
 
 ### BinarySearch Problems
-#### 1. Guess Number Higher or Lower
+#### 1. Find Peak Element
+- **Problem**: Find a peak element in an array (element greater than its neighbors)
+- **Approach**: Binary search comparing with right neighbor to determine search direction
+- **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Efficient binary search solution that compares with right neighbor to determine if peak is in left or right half
+
+#### 2. Guess Number Higher or Lower
 - **Problem**: Find the picked number using binary search with a guess API that returns -1 (higher), 1 (lower), or 0 (correct)
 - **Approach**: Binary search with mid calculation and API integration
 - **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
 - **Space Complexity**: O(1) - constant extra space
 - **Difficulty**: Easy
 - **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
+
+#### 3. Koko Eating Bananas
+- **Problem**: Find minimum eating speed k such that Koko can eat all bananas within h hours
+- **Approach**: Binary search on eating speed with time validation
+- **Time Complexity**: O(n log m) - where n is number of piles, m is maximum pile size
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Efficient binary search solution that finds minimum speed by testing if all bananas can be eaten within time limit
+
+#### 4. Successful Pairs of Spells and Potions
+- **Problem**: Find the number of successful pairs for each spell where spell * potion >= success
+- **Approach**: Sort potions and use binary search to find first successful potion for each spell
+- **Time Complexity**: O(m log n) - where m is number of spells, n is number of potions
+- **Space Complexity**: O(1) - excluding output array
+- **Difficulty**: Medium
+- **Note**: Efficient solution using binary search on sorted potions to find the threshold for each spell, avoiding O(m*n) brute force approach
 
 ### Heap/PriorityQueue Problems
 #### 1. Kth Largest Element in an Array
@@ -729,6 +761,14 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(k) - for the min heap
 - **Difficulty**: Medium
 - **Note**: Efficient solution using min heap to track k largest elements, automatically maintaining the kth largest at the root
+
+#### 2. Smallest Number in Infinite Set
+- **Problem**: Implement a data structure that manages an infinite set of positive integers with popSmallest() and addBack() operations
+- **Approach**: Priority queue for added-back numbers with current smallest tracking
+- **Time Complexity**: O(log n) for popSmallest() and addBack() - where n is number of added-back elements
+- **Space Complexity**: O(n) - for storing added-back numbers
+- **Difficulty**: Medium
+- **Note**: Efficient solution using priority queue to handle numbers that were removed and added back, while tracking the current smallest available number from the infinite sequence
 
 ### Backtracking Problems
 #### 1. Combination Sum III
@@ -797,6 +837,9 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
+- **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
+- **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
 - **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
 - **🆕 Added Reorder Routes to Make All Paths Lead to the City Zero** - Added graph DFS solution with efficient O(n) approach for finding minimum edge reversals needed to make all paths lead to city 0
