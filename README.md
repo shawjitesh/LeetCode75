@@ -121,9 +121,12 @@ LeetCode75/
 │           │   └── PriorityQueue/
 │           │       ├── KthLargestElementInAnArray.java
 │           │       └── SmallestNumberInInfiniteSet.java
-│           └── Backtracking/
+│           ├── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
+│           └── DP/
+│               └── OneDimensional/
+│                   └── NthTribonacciNumber.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -319,6 +322,11 @@ mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```bash
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
+```
+
+#### Dynamic Programming Solutions
+```bash
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
 ```
 
 #### Backtracking Solutions
@@ -770,6 +778,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient solution using priority queue to handle numbers that were removed and added back, while tracking the current smallest available number from the infinite sequence
 
+### Dynamic Programming Problems
+#### 1. Nth Tribonacci Number
+- **Problem**: Calculate the nth tribonacci number where T(n) = T(n-1) + T(n-2) + T(n-3)
+- **Approach**: Dynamic programming with bottom-up approach using array
+- **Time Complexity**: O(n) - single pass through array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Easy
+- **Note**: Efficient DP solution that builds tribonacci numbers iteratively using previous three values
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -837,6 +854,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
