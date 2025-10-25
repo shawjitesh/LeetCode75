@@ -115,6 +115,7 @@ LeetCode75/
 │           ├── BinarySearch/
 │           │   ├── FindPeakElement.java
 │           │   ├── GuessNumberHigherOrLower.java
+│           │   ├── KokoEatingBananas.java
 │           │   └── SuccessfulPairsOfSpellsAndPotions.java
 │           ├── Heap/
 │           │   └── PriorityQueue/
@@ -310,6 +311,7 @@ mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 ```bash
 mvn exec:java -Dexec.mainClass="BinarySearch.FindPeakElement"
 mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
+mvn exec:java -Dexec.mainClass="BinarySearch.KokoEatingBananas"
 mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```
 
@@ -735,7 +737,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
 
-#### 3. Successful Pairs of Spells and Potions
+#### 3. Koko Eating Bananas
+- **Problem**: Find minimum eating speed k such that Koko can eat all bananas within h hours
+- **Approach**: Binary search on eating speed with time validation
+- **Time Complexity**: O(n log m) - where n is number of piles, m is maximum pile size
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Efficient binary search solution that finds minimum speed by testing if all bananas can be eaten within time limit
+
+#### 4. Successful Pairs of Spells and Potions
 - **Problem**: Find the number of successful pairs for each spell where spell * potion >= success
 - **Approach**: Sort potions and use binary search to find first successful potion for each spell
 - **Time Complexity**: O(m log n) - where m is number of spells, n is number of potions
