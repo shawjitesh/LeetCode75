@@ -126,6 +126,8 @@ LeetCode75/
 │               └── LetterCombinationsOfAPhoneNumber.java
 │           └── DP/
 │               └── OneDimensional/
+│                   ├── HouseRobber.java
+│                   ├── MinCostClimbingStairs.java
 │                   └── NthTribonacciNumber.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
@@ -328,6 +330,7 @@ mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 ```bash
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.HouseRobber"
 ```
 
 #### Backtracking Solutions
@@ -796,6 +799,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient DP solution that makes optimal decisions at each step by choosing minimum cost path
 
+#### 3. House Robber
+- **Problem**: Find maximum money that can be robbed from houses without robbing adjacent houses
+- **Approach**: Dynamic programming with optimal substructure
+- **Time Complexity**: O(n) - single pass through houses array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Medium
+- **Note**: Classic DP problem where we choose between robbing current house + best from i-2 houses, or skipping current house
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -863,6 +874,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added House Robber** - Added dynamic programming solution with efficient O(n) approach for finding maximum money that can be robbed without robbing adjacent houses using optimal substructure
 - **🆕 Added Min Cost Climbing Stairs** - Added dynamic programming solution with efficient O(1) space approach for finding minimum cost to reach top of staircase using space-optimized DP
 - **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
