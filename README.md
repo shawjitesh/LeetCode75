@@ -113,6 +113,7 @@ LeetCode75/
 │           │       ├── NearestExitFromEntranceInMaze.java
 │           │       └── RottingOranges.java
 │           ├── BinarySearch/
+│           │   ├── FindPeakElement.java
 │           │   ├── GuessNumberHigherOrLower.java
 │           │   └── SuccessfulPairsOfSpellsAndPotions.java
 │           ├── Heap/
@@ -307,6 +308,7 @@ mvn exec:java -Dexec.mainClass="Graphs.BFS.RottingOranges"
 
 #### BinarySearch Solutions
 ```bash
+mvn exec:java -Dexec.mainClass="BinarySearch.FindPeakElement"
 mvn exec:java -Dexec.mainClass="BinarySearch.GuessNumberHigherOrLower"
 mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```
@@ -717,7 +719,15 @@ mvn clean package -DskipTests
 - **Note**: Efficient BFS solution that simulates minute-by-minute rotting process and returns -1 if some oranges can never rot
 
 ### BinarySearch Problems
-#### 1. Guess Number Higher or Lower
+#### 1. Find Peak Element
+- **Problem**: Find a peak element in an array (element greater than its neighbors)
+- **Approach**: Binary search comparing with right neighbor to determine search direction
+- **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
+- **Space Complexity**: O(1) - constant extra space
+- **Difficulty**: Medium
+- **Note**: Efficient binary search solution that compares with right neighbor to determine if peak is in left or right half
+
+#### 2. Guess Number Higher or Lower
 - **Problem**: Find the picked number using binary search with a guess API that returns -1 (higher), 1 (lower), or 0 (correct)
 - **Approach**: Binary search with mid calculation and API integration
 - **Time Complexity**: O(log n) - binary search eliminates half the search space each iteration
@@ -725,7 +735,7 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient binary search solution that uses the guess API to determine search direction and avoid integer overflow with mid calculation
 
-#### 2. Successful Pairs of Spells and Potions
+#### 3. Successful Pairs of Spells and Potions
 - **Problem**: Find the number of successful pairs for each spell where spell * potion >= success
 - **Approach**: Sort potions and use binary search to find first successful potion for each spell
 - **Time Complexity**: O(m log n) - where m is number of spells, n is number of potions
@@ -817,6 +827,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
