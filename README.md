@@ -121,9 +121,15 @@ LeetCode75/
 │           │   └── PriorityQueue/
 │           │       ├── KthLargestElementInAnArray.java
 │           │       └── SmallestNumberInInfiniteSet.java
-│           └── Backtracking/
+│           ├── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
+│           └── DP/
+│               └── OneDimensional/
+│                   ├── DominoAndTrominoTiling.java
+│                   ├── HouseRobber.java
+│                   ├── MinCostClimbingStairs.java
+│                   └── NthTribonacciNumber.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -319,6 +325,14 @@ mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```bash
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
+```
+
+#### Dynamic Programming Solutions
+```bash
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.HouseRobber"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
 ```
 
 #### Backtracking Solutions
@@ -770,6 +784,39 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient solution using priority queue to handle numbers that were removed and added back, while tracking the current smallest available number from the infinite sequence
 
+### Dynamic Programming Problems
+#### 1. Nth Tribonacci Number
+- **Problem**: Calculate the nth tribonacci number where T(n) = T(n-1) + T(n-2) + T(n-3)
+- **Approach**: Dynamic programming with bottom-up approach using array
+- **Time Complexity**: O(n) - single pass through array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Easy
+- **Note**: Efficient DP solution that builds tribonacci numbers iteratively using previous three values
+
+#### 2. Min Cost Climbing Stairs
+- **Problem**: Find minimum cost to reach top of staircase where you can climb 1 or 2 steps, starting from step 0 or 1
+- **Approach**: Space-optimized dynamic programming using only previous two values
+- **Time Complexity**: O(n) - single pass through cost array
+- **Space Complexity**: O(1) - only using two variables for optimization
+- **Difficulty**: Easy
+- **Note**: Efficient DP solution that makes optimal decisions at each step by choosing minimum cost path
+
+#### 3. House Robber
+- **Problem**: Find maximum money that can be robbed from houses without robbing adjacent houses
+- **Approach**: Dynamic programming with optimal substructure
+- **Time Complexity**: O(n) - single pass through houses array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Medium
+- **Note**: Classic DP problem where we choose between robbing current house + best from i-2 houses, or skipping current house
+
+#### 4. Domino and Tromino Tiling
+- **Problem**: Count the number of ways to tile a 2×n board using 2×1 dominoes and L-shaped trominoes (rotatable)
+- **Approach**: Dynamic programming with optimized recurrence relation
+- **Time Complexity**: O(n) - single pass through DP array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Medium
+- **Note**: Uses optimized recurrence dp[i] = 2*dp[i-1] + dp[i-3] to count all possible tilings efficiently
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -837,6 +884,10 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Domino and Tromino Tiling** - Added dynamic programming solution with efficient O(n) approach for counting tilings of a 2×n board using dominoes and trominoes with optimized recurrence relation
+- **🆕 Added House Robber** - Added dynamic programming solution with efficient O(n) approach for finding maximum money that can be robbed without robbing adjacent houses using optimal substructure
+- **🆕 Added Min Cost Climbing Stairs** - Added dynamic programming solution with efficient O(1) space approach for finding minimum cost to reach top of staircase using space-optimized DP
+- **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
