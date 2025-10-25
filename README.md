@@ -327,6 +327,7 @@ mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 #### Dynamic Programming Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
 ```
 
 #### Backtracking Solutions
@@ -787,6 +788,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient DP solution that builds tribonacci numbers iteratively using previous three values
 
+#### 2. Min Cost Climbing Stairs
+- **Problem**: Find minimum cost to reach top of staircase where you can climb 1 or 2 steps, starting from step 0 or 1
+- **Approach**: Space-optimized dynamic programming using only previous two values
+- **Time Complexity**: O(n) - single pass through cost array
+- **Space Complexity**: O(1) - only using two variables for optimization
+- **Difficulty**: Easy
+- **Note**: Efficient DP solution that makes optimal decisions at each step by choosing minimum cost path
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -854,6 +863,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Min Cost Climbing Stairs** - Added dynamic programming solution with efficient O(1) space approach for finding minimum cost to reach top of staircase using space-optimized DP
 - **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
