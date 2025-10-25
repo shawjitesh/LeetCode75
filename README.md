@@ -126,6 +126,7 @@ LeetCode75/
 │               └── LetterCombinationsOfAPhoneNumber.java
 │           └── DP/
 │               └── OneDimensional/
+│                   ├── DominoAndTrominoTiling.java
 │                   ├── HouseRobber.java
 │                   ├── MinCostClimbingStairs.java
 │                   └── NthTribonacciNumber.java
@@ -331,6 +332,7 @@ mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.HouseRobber"
+mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
 ```
 
 #### Backtracking Solutions
@@ -807,6 +809,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Classic DP problem where we choose between robbing current house + best from i-2 houses, or skipping current house
 
+#### 4. Domino and Tromino Tiling
+- **Problem**: Count the number of ways to tile a 2×n board using 2×1 dominoes and L-shaped trominoes (rotatable)
+- **Approach**: Dynamic programming with optimized recurrence relation
+- **Time Complexity**: O(n) - single pass through DP array
+- **Space Complexity**: O(n) - for the DP array
+- **Difficulty**: Medium
+- **Note**: Uses optimized recurrence dp[i] = 2*dp[i-1] + dp[i-3] to count all possible tilings efficiently
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -874,6 +884,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Domino and Tromino Tiling** - Added dynamic programming solution with efficient O(n) approach for counting tilings of a 2×n board using dominoes and trominoes with optimized recurrence relation
 - **🆕 Added House Robber** - Added dynamic programming solution with efficient O(n) approach for finding maximum money that can be robbed without robbing adjacent houses using optimal substructure
 - **🆕 Added Min Cost Climbing Stairs** - Added dynamic programming solution with efficient O(1) space approach for finding minimum cost to reach top of staircase using space-optimized DP
 - **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
