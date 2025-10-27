@@ -63,7 +63,7 @@ public class TotalCostToHireKWorkers {
 
     public static void main(String[] args) {
         TotalCostToHireKWorkers solution = new TotalCostToHireKWorkers();
-        System.out.println(solution.totalCost(new int[] {1,2,4,1}, 3, 3)); // Test case
+        System.out.println(solution.totalCost(new int[] {1,2,4,1}, 3, 3));
     }
     
 }
