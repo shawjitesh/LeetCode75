@@ -124,8 +124,8 @@ LeetCode75/
 │           │       ├── MaximumSubsequenceScore.java
 │           │       └── TotalCostToHireKWorkers.java
 │           ├── Backtracking/
-│           |   ├── CombinationSumIII.java
-│           |   └── LetterCombinationsOfAPhoneNumber.java
+│           │   ├── CombinationSumIII.java
+│           │   └── LetterCombinationsOfAPhoneNumber.java
 │           └── DP/
 │               └── OneDimensional/
 │                   ├── DominoAndTrominoTiling.java
@@ -333,6 +333,7 @@ mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.TotalCostToHireKWorkers"
 
 #### Dynamic Programming Solutions
 ```bash
+# OneDimensional DP
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.HouseRobber"
