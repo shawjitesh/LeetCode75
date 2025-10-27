@@ -120,7 +120,8 @@ LeetCode75/
 │           ├── Heap/
 │           │   └── PriorityQueue/
 │           │       ├── KthLargestElementInAnArray.java
-│           │       └── SmallestNumberInInfiniteSet.java
+│           │       ├── SmallestNumberInInfiniteSet.java
+│           │       └── MaximumSubsequenceScore.java
 │           ├── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -325,6 +326,7 @@ mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 ```bash
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.MaximumSubsequenceScore"
 ```
 
 #### Dynamic Programming Solutions
@@ -784,6 +786,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient solution using priority queue to handle numbers that were removed and added back, while tracking the current smallest available number from the infinite sequence
 
+#### 3. Maximum Subsequence Score
+- **Problem**: Find the maximum score from selecting k indices where score = sum(nums1) * min(nums2)
+- **Approach**: Sort pairs by nums2 descending, use min heap to track k largest nums1 values
+- **Time Complexity**: O(n log n) - sorting dominates
+- **Space Complexity**: O(k) - for the min heap
+- **Difficulty**: Medium
+- **Note**: Efficient greedy solution that sorts by nums2 to ensure current element can be minimum, then uses min heap to maintain k largest nums1 values
+
 ### Dynamic Programming Problems
 #### 1. Nth Tribonacci Number
 - **Problem**: Calculate the nth tribonacci number where T(n) = T(n-1) + T(n-2) + T(n-3)
@@ -890,6 +900,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
+- **🆕 Added Maximum Subsequence Score** - Added heap solution with efficient O(n log n) greedy approach for finding maximum score using sorted pairs and min heap to track k largest values
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
 - **🆕 Added Evaluate Division** - Added graph DFS solution with efficient O(M × N) approach for evaluating division queries using weighted directed graph and DFS path finding
