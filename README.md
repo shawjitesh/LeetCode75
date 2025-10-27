@@ -127,11 +127,13 @@ LeetCode75/
 │           │   ├── CombinationSumIII.java
 │           │   └── LetterCombinationsOfAPhoneNumber.java
 │           └── DP/
-│               └── OneDimensional/
-│                   ├── DominoAndTrominoTiling.java
-│                   ├── HouseRobber.java
-│                   ├── MinCostClimbingStairs.java
-│                   └── NthTribonacciNumber.java
+│               ├── OneDimensional/
+│               │   ├── DominoAndTrominoTiling.java
+│               │   ├── HouseRobber.java
+│               │   ├── MinCostClimbingStairs.java
+│               │   └── NthTribonacciNumber.java
+│               └── MultiDimensional/
+│                   └── UniquePaths.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -338,6 +340,9 @@ mvn exec:java -Dexec.mainClass="DP.OneDimensional.NthTribonacciNumber"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.MinCostClimbingStairs"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.HouseRobber"
 mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
+
+# MultiDimensional DP
+mvn exec:java -Dexec.mainClass="DP.MultiDimensional.UniquePaths"
 ```
 
 #### Backtracking Solutions
@@ -806,7 +811,10 @@ mvn clean package -DskipTests
 - **Note**: Efficient greedy solution using two heaps to always select minimum cost from either end, refilling the heap that was used
 
 ### Dynamic Programming Problems
-#### 1. Nth Tribonacci Number
+
+#### One-Dimensional DP
+
+##### 1. Nth Tribonacci Number
 - **Problem**: Calculate the nth tribonacci number where T(n) = T(n-1) + T(n-2) + T(n-3)
 - **Approach**: Dynamic programming with bottom-up approach using array
 - **Time Complexity**: O(n) - single pass through array
@@ -814,7 +822,7 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient DP solution that builds tribonacci numbers iteratively using previous three values
 
-#### 2. Min Cost Climbing Stairs
+##### 2. Min Cost Climbing Stairs
 - **Problem**: Find minimum cost to reach top of staircase where you can climb 1 or 2 steps, starting from step 0 or 1
 - **Approach**: Space-optimized dynamic programming using only previous two values
 - **Time Complexity**: O(n) - single pass through cost array
@@ -822,7 +830,7 @@ mvn clean package -DskipTests
 - **Difficulty**: Easy
 - **Note**: Efficient DP solution that makes optimal decisions at each step by choosing minimum cost path
 
-#### 3. House Robber
+##### 3. House Robber
 - **Problem**: Find maximum money that can be robbed from houses without robbing adjacent houses
 - **Approach**: Dynamic programming with optimal substructure
 - **Time Complexity**: O(n) - single pass through houses array
@@ -830,13 +838,23 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Classic DP problem where we choose between robbing current house + best from i-2 houses, or skipping current house
 
-#### 4. Domino and Tromino Tiling
+##### 4. Domino and Tromino Tiling
 - **Problem**: Count the number of ways to tile a 2×n board using 2×1 dominoes and L-shaped trominoes (rotatable)
 - **Approach**: Dynamic programming with optimized recurrence relation
 - **Time Complexity**: O(n) - single pass through DP array
 - **Space Complexity**: O(n) - for the DP array
 - **Difficulty**: Medium
 - **Note**: Uses optimized recurrence dp[i] = 2*dp[i-1] + dp[i-3] to count all possible tilings efficiently
+
+#### Multi-Dimensional DP
+
+##### 1. Unique Paths
+- **Problem**: Count the number of unique paths from top-left to bottom-right in an m×n grid, only moving right or down
+- **Approach**: Dynamic programming with 2D array tracking paths to each cell
+- **Time Complexity**: O(m × n) - fills each cell once
+- **Space Complexity**: O(m × n) - for the DP grid
+- **Difficulty**: Medium
+- **Note**: Classic 2D DP problem where each cell's value is the sum of paths from top and left cells
 
 ### Backtracking Problems
 #### 1. Combination Sum III
@@ -905,6 +923,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Unique Paths** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for counting unique paths in a grid using 2D DP
 - **🆕 Added Domino and Tromino Tiling** - Added dynamic programming solution with efficient O(n) approach for counting tilings of a 2×n board using dominoes and trominoes with optimized recurrence relation
 - **🆕 Added House Robber** - Added dynamic programming solution with efficient O(n) approach for finding maximum money that can be robbed without robbing adjacent houses using optimal substructure
 - **🆕 Added Min Cost Climbing Stairs** - Added dynamic programming solution with efficient O(1) space approach for finding minimum cost to reach top of staircase using space-optimized DP

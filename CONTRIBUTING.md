@@ -24,7 +24,8 @@ This project and everyone participating in it is governed by our [Code of Conduc
 
 ### Prerequisites
 
-- **Java 8 or higher** installed on your system
+- **Java 21 (LTS)** or higher installed on your system
+- **Maven 3.6+** for building and managing dependencies
 - **Git** for version control
 - **IDE** of your choice (IntelliJ IDEA, Eclipse, VS Code, etc.)
 - Basic understanding of Java programming
@@ -76,20 +77,24 @@ We welcome several types of contributions:
 
 #### 📚 Current Coverage
 
-✅ **Array & String** - Complete  
-✅ **Two Pointers** - Complete  
-✅ **Sliding Window** - Complete  
-✅ **Prefix Sum** - Complete  
-✅ **HashMap/Set** - Complete  
-✅ **Stack** - Complete  
-✅ **Queue** - Complete  
-✅ **LinkedList** - Complete  
-🔄 **Binary Tree DFS** - In Progress  
-❌ **Tree** - Needed  
-❌ **Graph** - Needed  
-❌ **Dynamic Programming** - Needed  
-❌ **Binary Search** - Needed  
-❌ **Backtracking** - Needed  
+✅ **Array & String** - Complete (9 solutions)  
+✅ **Two Pointers** - Complete (4 solutions)  
+✅ **Sliding Window** - Complete (4 solutions)  
+✅ **Prefix Sum** - Complete (2 solutions)  
+✅ **HashMap/Set** - Complete (4 solutions)  
+✅ **Stack** - Complete (3 solutions)  
+✅ **Queue** - Complete (2 solutions)  
+✅ **LinkedList** - Complete (4 solutions)  
+✅ **BinarySearchTree** - Complete (2 solutions)  
+✅ **Binary Tree DFS** - Complete (6 solutions)  
+✅ **Binary Tree BFS** - Complete (2 solutions)  
+✅ **Graphs DFS** - Complete (4 solutions)  
+✅ **Graphs BFS** - Complete (2 solutions)  
+✅ **Binary Search** - Complete (4 solutions)  
+✅ **Heap/PriorityQueue** - Complete (4 solutions)  
+✅ **Backtracking** - Complete (2 solutions)  
+✅ **DP One-Dimensional** - Complete (4 solutions)  
+🔄 **DP Multi-Dimensional** - In Progress (1 solution)
 
 ## 📝 Contribution Guidelines
 
@@ -480,6 +485,9 @@ A: We welcome alternative approaches! Create a new file with a descriptive name 
 
 **Q: How detailed should my algorithm explanation be?**  
 A: Aim for clarity that helps other developers understand your approach. Include the key insights and reasoning behind your solution.
+
+**Q: What build system does this project use?**  
+A: This project uses Maven. Run `mvn clean compile` to build, or `mvn exec:java -Dexec.mainClass="..."` to run individual solutions.
 
 ## 🎯 Getting Started Checklist
 
