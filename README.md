@@ -121,7 +121,8 @@ LeetCode75/
 │           │   └── PriorityQueue/
 │           │       ├── KthLargestElementInAnArray.java
 │           │       ├── SmallestNumberInInfiniteSet.java
-│           │       └── MaximumSubsequenceScore.java
+│           │       ├── MaximumSubsequenceScore.java
+│           │       └── TotalCostToHireKWorkers.java
 │           ├── Backtracking/
 │               ├── CombinationSumIII.java
 │               └── LetterCombinationsOfAPhoneNumber.java
@@ -327,6 +328,7 @@ mvn exec:java -Dexec.mainClass="BinarySearch.SuccessfulPairsOfSpellsAndPotions"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.KthLargestElementInAnArray"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.SmallestNumberInInfiniteSet"
 mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.MaximumSubsequenceScore"
+mvn exec:java -Dexec.mainClass="Heap.PriorityQueue.TotalCostToHireKWorkers"
 ```
 
 #### Dynamic Programming Solutions
@@ -794,6 +796,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient greedy solution that sorts by nums2 to ensure current element can be minimum, then uses min heap to maintain k largest nums1 values
 
+#### 4. Total Cost to Hire K Workers
+- **Problem**: Find total cost to hire k workers by selecting from either end, choosing minimum cost each time
+- **Approach**: Two min heaps to maintain smallest candidates from left and right ends
+- **Time Complexity**: O(n log candidates) - heap operations
+- **Space Complexity**: O(candidates) - heap space
+- **Difficulty**: Medium
+- **Note**: Efficient greedy solution using two heaps to always select minimum cost from either end, refilling the heap that was used
+
 ### Dynamic Programming Problems
 #### 1. Nth Tribonacci Number
 - **Problem**: Calculate the nth tribonacci number where T(n) = T(n-1) + T(n-2) + T(n-3)
@@ -900,6 +910,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 - **🆕 Added Nth Tribonacci Number** - Added dynamic programming solution with efficient O(n) approach for calculating tribonacci numbers using bottom-up DP
 - **🆕 Added Find Peak Element** - Added binary search solution with efficient O(log n) approach for finding peak elements in array using right neighbor comparison
 - **🆕 Added Successful Pairs of Spells and Potions** - Added binary search solution with efficient O(m log n) approach for finding successful spell-potion pairs using sorted potions and binary search threshold finding
+- **🆕 Added Total Cost to Hire K Workers** - Added heap solution with efficient O(n log candidates) greedy approach using two min heaps to select minimum cost workers from either end
 - **🆕 Added Maximum Subsequence Score** - Added heap solution with efficient O(n log n) greedy approach for finding maximum score using sorted pairs and min heap to track k largest values
 - **🆕 Added Smallest Number in Infinite Set** - Added heap solution with efficient O(log n) approach for managing infinite set of positive integers using priority queue for added-back numbers and current smallest tracking
 - **🆕 Added Kth Largest Element in an Array** - Added heap solution with efficient O(n log k) approach for finding kth largest element using min heap to maintain k largest elements
