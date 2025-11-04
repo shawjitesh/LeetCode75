@@ -850,11 +850,11 @@ mvn clean package -DskipTests
 
 ##### 1. Unique Paths
 - **Problem**: Count the number of unique paths from top-left to bottom-right in an m×n grid, only moving right or down
-- **Approach**: Dynamic programming with 2D array tracking paths to each cell
+- **Approach**: Dynamic programming with space optimization using 1D array instead of 2D grid
 - **Time Complexity**: O(m × n) - fills each cell once
-- **Space Complexity**: O(m × n) - for the DP grid
+- **Space Complexity**: O(n) - optimized from O(m × n) using single array
 - **Difficulty**: Medium
-- **Note**: Classic 2D DP problem where each cell's value is the sum of paths from top and left cells
+- **Note**: Efficient space-optimized DP solution where each cell's value is the sum of paths from top and left cells. Uses 1D array to reduce space complexity while maintaining O(m × n) time complexity
 
 ### Backtracking Problems
 #### 1. Combination Sum III
