@@ -126,6 +126,9 @@ LeetCode75/
 │           ├── Backtracking/
 │           │   ├── CombinationSumIII.java
 │           │   └── LetterCombinationsOfAPhoneNumber.java
+│           ├── Trie/
+│           │   ├── TrieNode.java
+│           │   └── ImplementTrie_PrefixTree.java
 │           └── DP/
 │               ├── OneDimensional/
 │               │   ├── DominoAndTrominoTiling.java
@@ -355,6 +358,11 @@ mvn exec:java -Dexec.mainClass="DP.MultiDimensional.EditDistance"
 ```bash
 mvn exec:java -Dexec.mainClass="Backtracking.CombinationSumIII"
 mvn exec:java -Dexec.mainClass="Backtracking.LetterCombinationsOfAPhoneNumber"
+```
+
+#### Trie Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Trie.ImplementTrie_PrefixTree"
 ```
 
 ### Alternative: Run from IDE
@@ -903,6 +911,15 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient recursive backtracking solution that systematically explores all possible letter combinations using the classic choose-explore-unchoose pattern
 
+### Trie Problems
+#### 1. Implement Trie (Prefix Tree)
+- **Problem**: Implement a Trie data structure that supports inserting, searching, and checking if a string starts with a given prefix
+- **Approach**: Tree data structure with nodes containing arrays of child nodes (one for each letter) and an end-of-word flag
+- **Time Complexity**: O(m) for insert, search, and startsWith - where m is the length of the word/prefix
+- **Space Complexity**: O(ALPHABET_SIZE × N × M) - where N is the number of words and M is the average length of words
+- **Difficulty**: Medium
+- **Note**: Efficient prefix tree implementation with separate TrieNode class. Supports applications like autocomplete, spell checking, and prefix matching. Each node contains 26 children (for lowercase letters a-z) and a boolean flag indicating end of word.
+
 ## 📚 Good to Know
 
 ### Project Structure
@@ -931,6 +948,12 @@ This is a **Maven-based Java project** with the following characteristics:
 ```bash
 # Located in: src/main/java/BinaryTree/TreeNode.java
 # Used by all BinaryTree DFS and BFS problem solutions
+```
+
+#### TrieNode (Trie)
+```bash
+# Located in: src/main/java/Trie/TrieNode.java
+# Used by Trie problem solutions for prefix tree implementation
 ```
 
 ### Maven Configuration
