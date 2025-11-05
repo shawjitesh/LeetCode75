@@ -133,7 +133,8 @@ LeetCode75/
 │               │   ├── MinCostClimbingStairs.java
 │               │   └── NthTribonacciNumber.java
 │               └── MultiDimensional/
-│                   └── UniquePaths.java
+│                   ├── UniquePaths.java
+│                   └── LongestCommonSubsequence.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -343,6 +344,7 @@ mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
 
 # MultiDimensional DP
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.UniquePaths"
+mvn exec:java -Dexec.mainClass="DP.MultiDimensional.LongestCommonSubsequence"
 ```
 
 #### Backtracking Solutions
@@ -856,6 +858,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient space-optimized DP solution where each cell's value is the sum of paths from top and left cells. Uses 1D array to reduce space complexity while maintaining O(m × n) time complexity
 
+##### 2. Longest Common Subsequence
+- **Problem**: Find the length of the longest common subsequence between two strings
+- **Approach**: Dynamic programming with space optimization using two 1D arrays
+- **Time Complexity**: O(m × n) - where m and n are lengths of the two strings
+- **Space Complexity**: O(min(m, n)) - optimized from O(m × n) using two arrays
+- **Difficulty**: Medium
+- **Note**: Efficient space-optimized DP solution that extends LCS when characters match, otherwise takes maximum of skipping one character from either string
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -923,6 +933,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Longest Common Subsequence** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding longest common subsequence using space-optimized DP
 - **🆕 Added Unique Paths** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for counting unique paths in a grid using 2D DP
 - **🆕 Added Domino and Tromino Tiling** - Added dynamic programming solution with efficient O(n) approach for counting tilings of a 2×n board using dominoes and trominoes with optimized recurrence relation
 - **🆕 Added House Robber** - Added dynamic programming solution with efficient O(n) approach for finding maximum money that can be robbed without robbing adjacent houses using optimal substructure
