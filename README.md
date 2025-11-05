@@ -135,7 +135,8 @@ LeetCode75/
 │               └── MultiDimensional/
 │                   ├── UniquePaths.java
 │                   ├── LongestCommonSubsequence.java
-│                   └── BestTimeToBuyAndSellStockWithTransactionFee.java
+│                   ├── BestTimeToBuyAndSellStockWithTransactionFee.java
+│                   └── EditDistance.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -347,6 +348,7 @@ mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.UniquePaths"
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.LongestCommonSubsequence"
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.BestTimeToBuyAndSellStockWithTransactionFee"
+mvn exec:java -Dexec.mainClass="DP.MultiDimensional.EditDistance"
 ```
 
 #### Backtracking Solutions
@@ -876,6 +878,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient state machine DP solution that maintains maximum profit for holding and not holding states, making optimal decisions at each day
 
+##### 4. Edit Distance
+- **Problem**: Find the minimum number of operations (insert, delete, replace) required to convert one string to another
+- **Approach**: Dynamic programming with space optimization using two 1D arrays
+- **Time Complexity**: O(m × n) - where m and n are lengths of word1 and word2
+- **Space Complexity**: O(min(m, n)) - optimized from O(m × n) using two arrays
+- **Difficulty**: Medium
+- **Note**: Efficient space-optimized DP solution (Levenshtein distance) that considers three operations: delete, insert, and replace, taking minimum cost at each step
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -943,6 +953,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Edit Distance** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding minimum edit distance (Levenshtein distance) using space-optimized DP with insert, delete, and replace operations
 - **🆕 Added Best Time to Buy and Sell Stock with Transaction Fee** - Added multi-dimensional dynamic programming solution with efficient O(n) state machine approach for finding maximum profit with transaction fees using hold and sold states
 - **🆕 Added Longest Common Subsequence** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding longest common subsequence using space-optimized DP
 - **🆕 Added Unique Paths** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for counting unique paths in a grid using 2D DP
