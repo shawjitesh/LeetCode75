@@ -126,6 +126,10 @@ LeetCode75/
 │           ├── Backtracking/
 │           │   ├── CombinationSumIII.java
 │           │   └── LetterCombinationsOfAPhoneNumber.java
+│           ├── Trie/
+│           │   ├── TrieNode.java
+│           │   ├── ImplementTrie_PrefixTree.java
+│           │   └── SearchSuggestionsSystem.java
 │           └── DP/
 │               ├── OneDimensional/
 │               │   ├── DominoAndTrominoTiling.java
@@ -355,6 +359,12 @@ mvn exec:java -Dexec.mainClass="DP.MultiDimensional.EditDistance"
 ```bash
 mvn exec:java -Dexec.mainClass="Backtracking.CombinationSumIII"
 mvn exec:java -Dexec.mainClass="Backtracking.LetterCombinationsOfAPhoneNumber"
+```
+
+#### Trie Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Trie.ImplementTrie_PrefixTree"
+mvn exec:java -Dexec.mainClass="Trie.SearchSuggestionsSystem"
 ```
 
 ### Alternative: Run from IDE
@@ -903,6 +913,23 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient recursive backtracking solution that systematically explores all possible letter combinations using the classic choose-explore-unchoose pattern
 
+### Trie Problems
+#### 1. Implement Trie (Prefix Tree)
+- **Problem**: Implement a Trie data structure that supports inserting, searching, and checking if a string starts with a given prefix
+- **Approach**: Tree data structure with nodes containing arrays of child nodes (one for each letter) and an end-of-word flag
+- **Time Complexity**: O(m) for insert, search, and startsWith - where m is the length of the word/prefix
+- **Space Complexity**: O(ALPHABET_SIZE × N × M) - where N is the number of words and M is the average length of words
+- **Difficulty**: Medium
+- **Note**: Efficient prefix tree implementation with separate TrieNode class. Supports applications like autocomplete, spell checking, and prefix matching. Each node contains 26 children (for lowercase letters a-z) and a boolean flag indicating end of word.
+
+#### 2. Search Suggestions System
+- **Problem**: Design a system that suggests at most three product names from products after each character of searchWord is typed. Suggested products should have common prefix with searchWord.
+- **Approach**: Build a Trie from products, then for each prefix of searchWord, perform DFS in lexicographical order to collect up to 3 suggestions
+- **Time Complexity**: O(N × M + S × (M + K)) - where N is number of products, M is average length, S is searchWord length, K is limited to 3
+- **Space Complexity**: O(N × M) - for the trie structure
+- **Difficulty**: Medium
+- **Note**: Efficient Trie-based solution that builds a prefix tree from products and uses DFS traversal in alphabetical order to find lexicographically smallest suggestions. Stops early after collecting 3 suggestions for optimal performance.
+
 ## 📚 Good to Know
 
 ### Project Structure
@@ -933,6 +960,12 @@ This is a **Maven-based Java project** with the following characteristics:
 # Used by all BinaryTree DFS and BFS problem solutions
 ```
 
+#### TrieNode (Trie)
+```bash
+# Located in: src/main/java/Trie/TrieNode.java
+# Used by Trie problem solutions for prefix tree implementation
+```
+
 ### Maven Configuration
 
 The project uses a minimal Maven configuration optimized for LeetCode solutions:
@@ -953,6 +986,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Search Suggestions System** - Added Trie-based solution with efficient O(N × M + S × (M + K)) approach for suggesting products after each character is typed using DFS traversal in lexicographical order
 - **🆕 Added Edit Distance** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding minimum edit distance (Levenshtein distance) using space-optimized DP with insert, delete, and replace operations
 - **🆕 Added Best Time to Buy and Sell Stock with Transaction Fee** - Added multi-dimensional dynamic programming solution with efficient O(n) state machine approach for finding maximum profit with transaction fees using hold and sold states
 - **🆕 Added Longest Common Subsequence** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding longest common subsequence using space-optimized DP
