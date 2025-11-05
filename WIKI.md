@@ -73,9 +73,29 @@ This repository provides:
 
 | Problem | Difficulty | Key Concepts | Time Complexity |
 |---------|------------|--------------|-----------------|
-| [Maximum Depth of Binary Tree](BinaryTreeDFS/MaximumDepthOfBinaryTree.java) | Easy | DFS, Stack-based Iteration | O(n) |
-| [Leaf-Similar Trees](BinaryTreeDFS/LeafSimilarTrees.java) | Easy | DFS, Leaf Collection | O(n + m) |
-| [Count Good Nodes in Binary Tree](BinaryTreeDFS/CountGoodNodesInBinaryTree.java) | Medium | DFS, Path Tracking | O(n) |
+| [Maximum Depth of Binary Tree](BinaryTree/DFS/MaximumDepthOfBinaryTree.java) | Easy | DFS, Stack-based Iteration | O(n) |
+| [Leaf-Similar Trees](BinaryTree/DFS/LeafSimilarTrees.java) | Easy | DFS, Leaf Collection | O(n + m) |
+| [Count Good Nodes in Binary Tree](BinaryTree/DFS/CountGoodNodesInBinaryTree.java) | Medium | DFS, Path Tracking | O(n) |
+| [Path Sum III](BinaryTree/DFS/PathSumIII.java) | Medium | DFS, Iterative Stack | O(n²) |
+| [Longest ZigZag Path in a Binary Tree](BinaryTree/DFS/LongestZigZagPathInABinaryTree.java) | Medium | DFS, Direction Tracking | O(n) |
+| [Lowest Common Ancestor of a Binary Tree](BinaryTree/DFS/LowestCommonAncestorOfABinaryTree.java) | Medium | DFS, Post-order Traversal | O(n) |
+
+### Dynamic Programming Problems
+
+#### One-Dimensional DP
+
+| Problem | Difficulty | Key Concepts | Time Complexity |
+|---------|------------|--------------|-----------------|
+| [Nth Tribonacci Number](DP/OneDimensional/NthTribonacciNumber.java) | Easy | DP, Bottom-up | O(n) |
+| [Min Cost Climbing Stairs](DP/OneDimensional/MinCostClimbingStairs.java) | Easy | DP, Space Optimization | O(n) |
+| [House Robber](DP/OneDimensional/HouseRobber.java) | Medium | DP, Optimal Substructure | O(n) |
+| [Domino and Tromino Tiling](DP/OneDimensional/DominoAndTrominoTiling.java) | Medium | DP, Recurrence Relation | O(n) |
+
+#### Multi-Dimensional DP
+
+| Problem | Difficulty | Key Concepts | Time Complexity |
+|---------|------------|--------------|-----------------|
+| [Unique Paths](DP/MultiDimensional/UniquePaths.java) | Medium | 2D DP, Grid Navigation | O(m × n) |
 
 ## 🎯 Solution Patterns
 
@@ -150,6 +170,37 @@ for (int num : array) {
 ```
 
 **Examples:** Find Difference of Arrays, Unique Occurrences
+
+### 5. Dynamic Programming
+
+**When to use:** Problems with overlapping subproblems and optimal substructure.
+
+**Pattern:**
+```java
+// 1D DP
+int[] dp = new int[n + 1];
+dp[0] = base_case;
+
+for (int i = 1; i <= n; i++) {
+    dp[i] = calculate_from_previous(dp);
+}
+
+return dp[n];
+
+// 2D DP
+int[][] dp = new int[m][n];
+dp[0][0] = base_case;
+
+for (int i = 0; i < m; i++) {
+    for (int j = 0; j < n; j++) {
+        dp[i][j] = calculate_from_top_and_left(dp, i, j);
+    }
+}
+
+return dp[m-1][n-1];
+```
+
+**Examples:** Unique Paths, House Robber, Min Cost Climbing Stairs
 
 ## 📊 Complexity Analysis
 
