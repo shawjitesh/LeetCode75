@@ -134,7 +134,8 @@ LeetCode75/
 │               │   └── NthTribonacciNumber.java
 │               └── MultiDimensional/
 │                   ├── UniquePaths.java
-│                   └── LongestCommonSubsequence.java
+│                   ├── LongestCommonSubsequence.java
+│                   └── BestTimeToBuyAndSellStockWithTransactionFee.java
 ├── target/                          # Maven build output directory
 ├── .github/                         # GitHub workflows and templates
 │   ├── workflows/
@@ -345,6 +346,7 @@ mvn exec:java -Dexec.mainClass="DP.OneDimensional.DominoAndTrominoTiling"
 # MultiDimensional DP
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.UniquePaths"
 mvn exec:java -Dexec.mainClass="DP.MultiDimensional.LongestCommonSubsequence"
+mvn exec:java -Dexec.mainClass="DP.MultiDimensional.BestTimeToBuyAndSellStockWithTransactionFee"
 ```
 
 #### Backtracking Solutions
@@ -866,6 +868,14 @@ mvn clean package -DskipTests
 - **Difficulty**: Medium
 - **Note**: Efficient space-optimized DP solution that extends LCS when characters match, otherwise takes maximum of skipping one character from either string
 
+##### 3. Best Time to Buy and Sell Stock with Transaction Fee
+- **Problem**: Find the maximum profit from buying and selling stocks with unlimited transactions, paying a fee for each transaction
+- **Approach**: State machine dynamic programming with two states (hold and sold)
+- **Time Complexity**: O(n) - single pass through prices array
+- **Space Complexity**: O(1) - only two variables needed
+- **Difficulty**: Medium
+- **Note**: Efficient state machine DP solution that maintains maximum profit for holding and not holding states, making optimal decisions at each day
+
 ### Backtracking Problems
 #### 1. Combination Sum III
 - **Problem**: Find all valid combinations of k numbers that sum up to n using only numbers 1-9, each used at most once
@@ -933,6 +943,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Best Time to Buy and Sell Stock with Transaction Fee** - Added multi-dimensional dynamic programming solution with efficient O(n) state machine approach for finding maximum profit with transaction fees using hold and sold states
 - **🆕 Added Longest Common Subsequence** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding longest common subsequence using space-optimized DP
 - **🆕 Added Unique Paths** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for counting unique paths in a grid using 2D DP
 - **🆕 Added Domino and Tromino Tiling** - Added dynamic programming solution with efficient O(n) approach for counting tilings of a 2×n board using dominoes and trominoes with optimized recurrence relation
