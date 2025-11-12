@@ -124,7 +124,8 @@ LeetCode75/
 │           │       ├── MaximumSubsequenceScore.java
 │           │       └── TotalCostToHireKWorkers.java
 │           ├── BitManipulation/
-│           │   └── CountingBits.java
+│           │   ├── CountingBits.java
+│           │   └── SingleNumber.java
 │           ├── Backtracking/
 │           │   ├── CombinationSumIII.java
 │           │   └── LetterCombinationsOfAPhoneNumber.java
@@ -988,6 +989,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Single Number** - Introduced constant-space bit manipulation solution using cumulative XOR to isolate the unique value in an array of duplicate pairs
 - **🆕 Added Counting Bits** - Introduced bit manipulation solution using dynamic programming recurrence `bits(i) = bits(i >> 1) + (i & 1)` with O(n) time complexity
 - **🆕 Added Search Suggestions System** - Added Trie-based solution with efficient O(N × M + S × (M + K)) approach for suggesting products after each character is typed using DFS traversal in lexicographical order
 - **🆕 Added Edit Distance** - Added multi-dimensional dynamic programming solution with efficient O(m × n) approach for finding minimum edit distance (Levenshtein distance) using space-optimized DP with insert, delete, and replace operations
