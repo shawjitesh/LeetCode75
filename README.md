@@ -71,6 +71,9 @@ LeetCode75/
 │           ├── Intervals/
 │           │   ├── MinimumNumberOfArrowsToBurstBalloons.java
 │           │   └── NonOverlappingIntervals.java
+│           ├── MonotonicStack/
+│           │   ├── DailyTemperatures.java
+│           │   └── OnlineStockSpan.java
 │           ├── HashMap/
 │           │   └── Set/
 │           │       ├── FindTheDifferenceOfTwoArrays.java
@@ -270,6 +273,12 @@ mvn exec:java -Dexec.mainClass="PrefixSum.FindPivotIndex"
 ```bash
 mvn exec:java -Dexec.mainClass="Intervals.MinimumNumberOfArrowsToBurstBalloons"
 mvn exec:java -Dexec.mainClass="Intervals.NonOverlappingIntervals"
+```
+
+#### MonotonicStack Solutions
+```bash
+mvn exec:java -Dexec.mainClass="MonotonicStack.DailyTemperatures"
+mvn exec:java -Dexec.mainClass="MonotonicStack.OnlineStockSpan"
 ```
 
 #### HashMap/Set Solutions
@@ -531,6 +540,22 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(1) - excluding input array
 - **Difficulty**: Medium
 - **Note**: Efficient greedy solution that sorts balloons by end time and counts the minimum arrows needed to burst all balloons
+
+### MonotonicStack Problems
+#### 1. Daily Temperatures
+- **Problem**: Find the number of days until a warmer temperature for each day
+- **Approach**: Monotonic stack to track indices of temperatures in decreasing order
+- **Time Complexity**: O(n) - each element is pushed and popped at most once
+- **Space Complexity**: O(n) - for the stack
+- **Difficulty**: Medium
+- **Note**: Efficient monotonic stack solution that processes temperatures and calculates days until warmer temperature by maintaining a decreasing stack of indices
+#### 2. Online Stock Span
+- **Problem**: Calculate the span of stock's price for each day, where span is the maximum number of consecutive days (including today) for which the stock price was less than or equal to today's price
+- **Approach**: Monotonic stack storing price and span pairs to efficiently calculate consecutive days
+- **Time Complexity**: O(n) - each element is pushed and popped at most once
+- **Space Complexity**: O(n) - for the stack
+- **Difficulty**: Medium
+- **Note**: Efficient monotonic stack solution that stores price-span pairs, allowing quick calculation of consecutive days with prices less than or equal to current price
 
 ### HashMap/Set Problems
 #### 1. Find the Difference of Two Arrays
@@ -1015,6 +1040,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Daily Temperatures** - Added monotonic stack solution with efficient O(n) approach for finding number of days until warmer temperature using decreasing stack of indices
 - **🆕 Added Minimum Number of Arrows to Burst Balloons** - Added intervals solution with efficient O(n log n) greedy approach for finding minimum arrows needed to burst all balloons by sorting by end time
 - **🆕 Added Non-overlapping Intervals** - Added intervals solution with efficient O(n log n) greedy approach for finding minimum intervals to remove by sorting by end time
 - **🆕 Added Minimum Flips to Make a OR b Equal to c** - Added bit manipulation solution that counts necessary bit flips to align `(a | b)` with `c`
