@@ -69,6 +69,7 @@ LeetCode75/
 │           │   ├── FindTheHighestAltitude.java
 │           │   └── FindPivotIndex.java
 │           ├── Intervals/
+│           │   ├── MinimumNumberOfArrowsToBurstBalloons.java
 │           │   └── NonOverlappingIntervals.java
 │           ├── HashMap/
 │           │   └── Set/
@@ -267,6 +268,7 @@ mvn exec:java -Dexec.mainClass="PrefixSum.FindPivotIndex"
 
 #### Intervals Solutions
 ```bash
+mvn exec:java -Dexec.mainClass="Intervals.MinimumNumberOfArrowsToBurstBalloons"
 mvn exec:java -Dexec.mainClass="Intervals.NonOverlappingIntervals"
 ```
 
@@ -522,6 +524,13 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(1) - excluding input array
 - **Difficulty**: Medium
 - **Note**: Efficient greedy solution that sorts intervals by end time and keeps intervals that don't overlap with the last kept interval
+#### 2. Minimum Number of Arrows to Burst Balloons
+- **Problem**: Find the minimum number of arrows needed to burst all balloons
+- **Approach**: Greedy algorithm sorting by end time and counting non-overlapping groups
+- **Time Complexity**: O(n log n) - sorting dominates
+- **Space Complexity**: O(1) - excluding input array
+- **Difficulty**: Medium
+- **Note**: Efficient greedy solution that sorts balloons by end time and counts the minimum arrows needed to burst all balloons
 
 ### HashMap/Set Problems
 #### 1. Find the Difference of Two Arrays
@@ -1006,6 +1015,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Minimum Number of Arrows to Burst Balloons** - Added intervals solution with efficient O(n log n) greedy approach for finding minimum arrows needed to burst all balloons by sorting by end time
 - **🆕 Added Non-overlapping Intervals** - Added intervals solution with efficient O(n log n) greedy approach for finding minimum intervals to remove by sorting by end time
 - **🆕 Added Minimum Flips to Make a OR b Equal to c** - Added bit manipulation solution that counts necessary bit flips to align `(a | b)` with `c`
 - **🆕 Added Single Number** - Introduced constant-space bit manipulation solution using cumulative XOR to isolate the unique value in an array of duplicate pairs
