@@ -72,7 +72,8 @@ LeetCode75/
 │           │   ├── MinimumNumberOfArrowsToBurstBalloons.java
 │           │   └── NonOverlappingIntervals.java
 │           ├── MonotonicStack/
-│           │   └── DailyTemperatures.java
+│           │   ├── DailyTemperatures.java
+│           │   └── OnlineStockSpan.java
 │           ├── HashMap/
 │           │   └── Set/
 │           │       ├── FindTheDifferenceOfTwoArrays.java
@@ -277,6 +278,7 @@ mvn exec:java -Dexec.mainClass="Intervals.NonOverlappingIntervals"
 #### MonotonicStack Solutions
 ```bash
 mvn exec:java -Dexec.mainClass="MonotonicStack.DailyTemperatures"
+mvn exec:java -Dexec.mainClass="MonotonicStack.OnlineStockSpan"
 ```
 
 #### HashMap/Set Solutions
@@ -547,6 +549,13 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(n) - for the stack
 - **Difficulty**: Medium
 - **Note**: Efficient monotonic stack solution that processes temperatures and calculates days until warmer temperature by maintaining a decreasing stack of indices
+#### 2. Online Stock Span
+- **Problem**: Calculate the span of stock's price for each day, where span is the maximum number of consecutive days (including today) for which the stock price was less than or equal to today's price
+- **Approach**: Monotonic stack storing price and span pairs to efficiently calculate consecutive days
+- **Time Complexity**: O(n) - each element is pushed and popped at most once
+- **Space Complexity**: O(n) - for the stack
+- **Difficulty**: Medium
+- **Note**: Efficient monotonic stack solution that stores price-span pairs, allowing quick calculation of consecutive days with prices less than or equal to current price
 
 ### HashMap/Set Problems
 #### 1. Find the Difference of Two Arrays
