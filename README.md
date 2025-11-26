@@ -68,6 +68,8 @@ LeetCode75/
 │           ├── PrefixSum/
 │           │   ├── FindTheHighestAltitude.java
 │           │   └── FindPivotIndex.java
+│           ├── Intervals/
+│           │   └── NonOverlappingIntervals.java
 │           ├── HashMap/
 │           │   └── Set/
 │           │       ├── FindTheDifferenceOfTwoArrays.java
@@ -261,6 +263,11 @@ mvn exec:java -Dexec.mainClass="SlidingWindow.LongestSubarrayOf1sAfterDeletingOn
 ```bash
 mvn exec:java -Dexec.mainClass="PrefixSum.FindTheHighestAltitude"
 mvn exec:java -Dexec.mainClass="PrefixSum.FindPivotIndex"
+```
+
+#### Intervals Solutions
+```bash
+mvn exec:java -Dexec.mainClass="Intervals.NonOverlappingIntervals"
 ```
 
 #### HashMap/Set Solutions
@@ -506,6 +513,15 @@ mvn clean package -DskipTests
 - **Space Complexity**: O(1)
 - **Difficulty**: Easy
 - **Note**: Efficient two-pass solution that first calculates total sum, then finds pivot by comparing left and right sums
+
+### Intervals Problems
+#### 1. Non-overlapping Intervals
+- **Problem**: Find the minimum number of intervals to remove to make the rest non-overlapping
+- **Approach**: Greedy algorithm sorting by end time and selecting non-overlapping intervals
+- **Time Complexity**: O(n log n) - sorting dominates
+- **Space Complexity**: O(1) - excluding input array
+- **Difficulty**: Medium
+- **Note**: Efficient greedy solution that sorts intervals by end time and keeps intervals that don't overlap with the last kept interval
 
 ### HashMap/Set Problems
 #### 1. Find the Difference of Two Arrays
@@ -990,6 +1006,7 @@ The project uses a minimal Maven configuration optimized for LeetCode solutions:
 
 ## 🚀 Recent Updates
 
+- **🆕 Added Non-overlapping Intervals** - Added intervals solution with efficient O(n log n) greedy approach for finding minimum intervals to remove by sorting by end time
 - **🆕 Added Minimum Flips to Make a OR b Equal to c** - Added bit manipulation solution that counts necessary bit flips to align `(a | b)` with `c`
 - **🆕 Added Single Number** - Introduced constant-space bit manipulation solution using cumulative XOR to isolate the unique value in an array of duplicate pairs
 - **🆕 Added Counting Bits** - Introduced bit manipulation solution using dynamic programming recurrence `bits(i) = bits(i >> 1) + (i & 1)` with O(n) time complexity
